@@ -98,6 +98,8 @@ cmd:         set SNEPS_DIR=C:\path\to\Sneps-2.7.0-Windows
 Git Bash:    SNEPS_DIR="C:\path\to\Sneps-2.7.0-Windows" python -m unittest discover -s tests
 ```
 
+On Linux/WSL, `SNEPSPACY_DIR=~/SNePSpaCy python -m unittest discover -s tests` runs the end-to-end test through SNePSpaCy instead.
+
 ## What the relations mean, and their limits
 
 Relations describe the picture, not the world:

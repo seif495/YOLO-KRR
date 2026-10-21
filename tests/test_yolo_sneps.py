@@ -161,5 +161,22 @@ class AllegroEndToEndTest(unittest.TestCase):
         self.assertIn(("isa(person_9", "unbalanced brackets"), errors)
 
 
+@unittest.skipUnless(os.environ.get("SNEPSPACY_DIR") and sys.platform != "win32",
+                     "set SNEPSPACY_DIR on Linux/WSL to run against SNePSpaCy's SNePS build")
+class SnepspacyEndToEndTest(unittest.TestCase):
+    def test_scenes_in_one_session(self):
+        from yolo_sneps.backends import SnepspacyBackend
+        rules = load_rules(RULES)
+        behind_only = [("car", (10, 50, 370, 245), 0.9), ("person", (200, 20, 240, 120), 0.6)]
+        with SnepspacyBackend(os.environ["SNEPSPACY_DIR"], timeout=120) as backend:
+            results = []
+            for raw, extra in [(RUNNER_SCENE, []), (behind_only, []), (RUNNER_SCENE, ["foo(x)!"])]:
+                dets = build_detections(raw)
+                lines, errors = backend.run(rules + extra + scene_statements(dets, relations(dets, 280)),
+                                            "dangerous(?x)")
+                results.append((parse_answers(lines), len(errors)))
+        self.assertEqual(results, [(["person_1"], 0), ([], 0), (["person_1"], 1)])
+
+
 if __name__ == "__main__":
     unittest.main()
