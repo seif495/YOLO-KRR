@@ -141,6 +141,50 @@ class SnepslogTest(unittest.TestCase):
         self.assertEqual(lisp_string('C:\\x "y"'), '"C:\\\\x \\"y\\""')
 
 
+class SnepspacySessionTest(unittest.TestCase):
+    """SnepspacyBackend's session handling, against a stand-in for SNePSpaCy's sneps_api."""
+
+    def backend(self):
+        from types import SimpleNamespace
+        from yolo_sneps.backends import SnepspacyBackend
+
+        class ApiError(Exception): pass
+        class SyntaxErr(ApiError): pass
+        class ProcessErr(ApiError): pass
+
+        calls = []
+
+        class FakeApi:
+            process = SimpleNamespace(timeout=None)
+            def init(self): calls.append("init")
+            def clear_kb(self): calls.append("clear_kb")
+            def terminate(self): calls.append("terminate")
+            def inform(self, s):
+                if s == "slow(x)":
+                    raise ProcessErr("Timeout during inform")
+                if s == "bad(x)!":
+                    raise SyntaxErr("Incorrect Syntax")
+            def ask(self, q): return ["dangerous(person_1)"]
+
+        backend = object.__new__(SnepspacyBackend)  # skip loading a real SNePSpaCy checkout
+        backend.module = SimpleNamespace(SnepsApiError=ApiError, SnepsSyntaxError=SyntaxErr)
+        backend.api, backend.timeout, backend.started = FakeApi(), 30, False
+        return backend, calls
+
+    def test_rejected_statement_keeps_the_session(self):
+        backend, calls = self.backend()
+        self.assertEqual(backend.run(["bad(x)!", "a(b)"], "q")[0], ["dangerous(person_1)"])
+        backend.run(["a(b)"], "q")
+        self.assertEqual(calls, ["init", "clear_kb"])
+
+    def test_timeout_restarts_the_session_for_the_next_image(self):
+        backend, calls = self.backend()
+        lines, errors = backend.run(["slow(x)", "a(b)"], "q")
+        self.assertEqual((lines, len(errors)), ([], 1))
+        self.assertEqual(backend.run(["a(b)"], "q"), (["dangerous(person_1)"], []))
+        self.assertEqual(calls, ["init", "terminate", "init"])
+
+
 @unittest.skipUnless(os.environ.get("SNEPS_DIR"), "set SNEPS_DIR to run against the Windows SNePS build")
 class AllegroEndToEndTest(unittest.TestCase):
     def run_scene(self, extra=()):

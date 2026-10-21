@@ -39,7 +39,8 @@ class SnepspacyBackend:
             raise RuntimeError("the snepspacy backend needs Linux or WSL (pexpect.spawn); "
                                "on Windows use the allegro backend")
         root = Path(snepspacy_dir).resolve()
-        # Load by path: YOLO-KRR has its own (older) sneps_wrapper package that would shadow it.
+        # Load by path rather than putting SNePSpaCy on sys.path, where its top-level modules
+        # (main.py, sneps_wrapper) would collide with YOLO-KRR's.
         spec = importlib.util.spec_from_file_location(
             "snepspacy_sneps_api", root / "sneps_wrapper" / "sneps_api.py")
         self.module = importlib.util.module_from_spec(spec)
@@ -57,22 +58,28 @@ class SnepspacyBackend:
             self.api.terminate()
 
     def run(self, statements, query):
-        if self.started:
-            self.api.clear_kb()
-        else:
-            self.api.init()  # starts SNePSLOG and clears the KB
-            self.started = True
-        self.api.process.timeout = self.timeout
         good, errors = _split_checked(statements)
-        for statement in good:
-            try:
-                self.api.inform(statement)
-            except (self.module.SnepsApiError, ValueError) as e:
-                errors.append((statement, str(e)))
         try:
+            if self.started:
+                self.api.clear_kb()
+            else:
+                self.api.init()  # starts SNePSLOG and clears the KB
+                self.started = True
+            self.api.process.timeout = self.timeout
+            for statement in good:
+                try:
+                    self.api.inform(statement)
+                except (self.module.SnepsSyntaxError, ValueError) as e:
+                    errors.append((statement, str(e)))
             return self.api.ask(query), errors
-        except self.module.SnepsApiError as e:
+        except self.module.SnepsSyntaxError as e:
             return [], errors + [(f"ask({query})", str(e))]
+        except self.module.SnepsApiError as e:
+            # A timeout or a dead process leaves the pexpect stream out of step with SNePS, so the
+            # next image would read this one's late output. Give up on this image and restart.
+            self.api.terminate()
+            self.started = False
+            return [], errors + [(None, f"SNePS session failed and was restarted: {e}")]
 
 
 class AllegroBatchBackend:
