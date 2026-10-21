@@ -1,0 +1,35 @@
+; Danger rules for YOLO-KRR scenes, in SNePSLOG. One statement per line; ';' starts a comment.
+;
+; The scene supplies instance facts:
+;   isa(person_1, person).                     one per detection (class names use '_' for spaces)
+;   leftof(a, b). above(a, b). overlaps(a, b). infrontof(a, b).
+; See yolo_sneps/relations.py for what each relation means.
+;
+; This replaces kb/danger_kb.lisp, which used Prolog syntax that SNePS cannot load. Its rules that
+; flagged any person anywhere left/right/above/below any vehicle, animal or obstacle are not
+; carried over: they ignored distance, so nearly every person in a street scene matched.
+
+; Which detected classes are people, vehicles or animals.
+subclass(person, human).
+subclass(bicycle, vehicle).
+subclass(car, vehicle).
+subclass(motorcycle, vehicle).
+subclass(bus, vehicle).
+subclass(train, vehicle).
+subclass(truck, vehicle).
+subclass(dog, animal).
+subclass(cat, animal).
+subclass(horse, animal).
+subclass(cow, animal).
+subclass(sheep, animal).
+subclass(elephant, animal).
+subclass(bear, animal).
+subclass(zebra, animal).
+subclass(giraffe, animal).
+
+; An instance of a class is an instance of its superclass.
+all(i,c,d)({isa(i,c), subclass(c,d)} &=> {isa(i,d)}).
+
+; A person in front of a vehicle or an animal they overlap with in the picture is in danger.
+all(x,y)({infrontof(x,y), isa(x,human), isa(y,vehicle)} &=> {dangerous(x)}).
+all(x,y)({infrontof(x,y), isa(x,human), isa(y,animal)} &=> {dangerous(x)}).
