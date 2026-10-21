@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Model weights and training/validation runs (re-download or regenerate; Ultralytics weights are AGPL-3.0)
+*.pt
+runs/
+
+# Generated outputs
+yolo_validation_output.txt
+yolo_output.txt
+sneps_output.txt
+output_with_labels.jpg
+outputs/
+
+# Image downloaded at runtime by the demo scripts
+bus.jpg
+
+# Personal IDE state
+.idea/workspace.xml
+.idea/shelf/
