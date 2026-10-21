@@ -44,7 +44,7 @@ ask(dangerous(?x)).               rules in kb/danger.snepslog answer this
   - **Windows:** the SNePS 2.7 Windows build from the [SNePS Research Group](https://cse.buffalo.edu/sneps/), i.e. the folder containing `Sneps-2.7.exe`. Its REPL is a GUI console, so the bridge runs it headless. Nothing in that folder needs editing.
   - **Linux/WSL:** a [SNePSpaCy](https://github.com/numberw8835/SNePSpaCy) checkout, which bundles a 32-bit Linux SNePS build.
     - On 64-bit Ubuntu/WSL this needs `sudo apt install libc6-i386`.
-    - Clone it with git inside Linux/WSL (or with `-c core.autocrlf=false`) so that `Sneps-2.7.0.sh` keeps LF line endings. Git for Windows converts it to CRLF, which breaks it.
+    - Clone it with git inside the Linux/WSL filesystem (e.g. `~/SNePSpaCy`). Run from a Windows drive (`/mnt/c/...`), SNePS stops with `couldn't find exe location`, and Git for Windows would also convert `Sneps-2.7.0.sh` to CRLF line endings, which breaks it.
 
 Install the Python dependencies:
 ```
