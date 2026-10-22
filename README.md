@@ -25,16 +25,7 @@ ask(dangerous(?x)).               rules in kb/danger.snepslog answer this
     - `snepspacy` uses SNePSpaCy's wrapper (Linux/WSL).
     - `allegro` runs the Windows SNePS 2.7 build headless.
 - **`kb/danger.snepslog`**: class hierarchy and danger rules in SNePSLOG.
-- **`kb/danger_kb.lisp`**: the original danger rules. They are written in Prolog syntax, which SNePS cannot load; kept for reference.
-- **`tests/`**: unit tests for the bridge, plus optional end-to-end tests against SNePS.
-- **Earlier scripts**, kept as they were:
-  - `seg_without_depth.py` prints English relation sentences from box positions.
-  - `segmentation.py` tries to drive SNePS through plain SBCL. That does not work, because SNePS is not loaded into SBCL.
-  - `segmentation_test.py` / `seg_test_results.py` are a mask-overlap occlusion experiment.
-  - `main.py` validates YOLO on coco128. Its per-class table repeats the overall metrics on every row.
-  - `old_main.py`, `no_train.py` and `new_segmentation.py` are detection and segmentation demos.
-  - `output_to_sneps.py` turns a metrics table into assert forms.
-  - `sneps_wrapper/sneps_api.py` is an older copy of SNePSpaCy's wrapper, ported to wexpect. It does not work: the Windows SNePS REPL is a GUI console, so `init()` times out, and its error handlers then fail with `AttributeError`, because wexpect has no `exceptions` module.
+- **`legacy/`**: earlier scripts and the original Prolog-syntax `danger_kb.lisp`, kept for reference. None of them is used by the bridge; `legacy/README.md` says what each one did and why it was replaced.
 
 ## Requirements
 

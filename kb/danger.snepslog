@@ -5,7 +5,7 @@
 ;   leftof(a, b). above(a, b). overlaps(a, b). infrontof(a, b).
 ; See yolo_sneps/relations.py for what each relation means.
 ;
-; This replaces kb/danger_kb.lisp, which used Prolog syntax that SNePS cannot load. Its rules that
+; This replaces legacy/danger_kb.lisp, which used Prolog syntax that SNePS cannot load. Its rules that
 ; flagged any person anywhere left/right/above/below any vehicle, animal or obstacle are not
 ; carried over: they ignored distance, so nearly every person in a street scene matched.
 
