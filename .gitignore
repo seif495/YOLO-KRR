@@ -21,3 +21,12 @@ bus.jpg
 # Personal IDE state
 .idea/workspace.xml
 .idea/shelf/
+
+# Earlier test images without a known license; kept locally only
+img.png
+img_1.png
+img_2.png
+img_3.png
+scenery.jpeg
+traffic.webp
+zidane.jpg

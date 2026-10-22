@@ -48,17 +48,17 @@ Run these from the repository root, the folder that contains `yolo_sneps/`:
 
 ```
 # Windows: headless SNePS
-python -m yolo_sneps img_3.png img_2.png --backend allegro --sneps-dir "C:\path\to\Sneps-2.7.0-Windows"
+python -m yolo_sneps examples/man_crossing_in_front_of_trolley.jpg examples/women_in_front_of_parked_van.jpg --backend allegro --sneps-dir "C:\path\to\Sneps-2.7.0-Windows"
 
 # Linux/WSL: SNePS through SNePSpaCy
-python -m yolo_sneps img_3.png img_2.png --backend snepspacy --snepspacy-dir ~/SNePSpaCy
+python -m yolo_sneps examples/man_crossing_in_front_of_trolley.jpg examples/women_in_front_of_parked_van.jpg --backend snepspacy --snepspacy-dir ~/SNePSpaCy
 
 # No SNePS: only write the SNePSLOG transcripts
-python -m yolo_sneps img_3.png
+python -m yolo_sneps examples/man_crossing_in_front_of_trolley.jpg
 ```
 
 For each image, the bridge writes two files to `outputs/` (or `--out`). `<name>` is the image file name without its extension, and a number is appended when two inputs share a name.
-- `<name>.snepslog`: the full SNePSLOG transcript (rules, facts and query). Replay it in a SNePSLOG session with `demo "outputs/img_3.snepslog"`. The path must be in quotes, and the transcript starts with `clearkb`, so it replaces whatever is in the knowledge base.
+- `<name>.snepslog`: the full SNePSLOG transcript (rules, facts and query). Replay it in a SNePSLOG session with `demo "outputs/man_crossing_in_front_of_trolley.snepslog"`. The path must be in quotes, and the transcript starts with `clearkb`, so it replaces whatever is in the knowledge base.
 - `<name>.json`: the detections, the facts and `dangerous`, the objects SNePS found dangerous.
   - `dangerous` is `null` when no backend ran, or when SNePS reported an error or timed out: a rejected statement or a timeout can hide an answer. The console then says `UNKNOWN`, any partial answer is under `partial_answers`, and the exit status is 1.
 
@@ -96,7 +96,7 @@ On Linux/WSL, `SNEPSPACY_DIR=~/SNePSpaCy python -m unittest discover -s tests` r
 Relations describe the picture, not the world:
 - **`above`** in a road scene usually means "farther away".
 - **`infrontof(a, b)`** means the boxes overlap and `a`'s base is lower in the image. For two objects standing on the same ground, that object is nearer the camera. No depth fact is emitted when the two bases are within 2% of the image height.
-  - "Nearer the camera than an overlapping vehicle" is not "in the vehicle's path". People on a pavement beside a parked bus are flagged too (all four in `bus.jpg`).
+  - "Nearer the camera than an overlapping vehicle" is not "in the vehicle's path". People standing beside a parked vehicle are flagged too (both women in `examples/women_in_front_of_parked_van.jpg`).
   - The cue does not hold for things off the ground, such as a sign on a pole or a person on a bus.
 - **Single still images:** there is no motion, speed or tracking.
 - **Classes:** YOLO's COCO classes have no road, crosswalk or sidewalk.
@@ -106,7 +106,10 @@ Relations describe the picture, not the world:
 
 ## License
 
-This project is licensed under the MIT License.
+The code is licensed under the MIT License (see `LICENSE`).
+
+- The photos in `examples/` keep their own licenses (public domain, CC0, CC BY-SA); see `examples/ATTRIBUTION.md`.
+- [Ultralytics YOLO](https://github.com/ultralytics/ultralytics) and its model weights are licensed under AGPL-3.0. Distributing this project together with them, or offering it as a network service, brings in the AGPL's obligations.
 
 ---
 

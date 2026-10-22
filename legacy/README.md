@@ -11,3 +11,5 @@ Earlier experiments, kept for reference and for the history of the thesis. Nothi
 | `output_to_sneps.py` | Turns the validation table into `(assert ...)` forms. | It reads a file nothing writes (`yolo_output.txt`), emits forms SNePS does not accept, and encodes model metrics rather than scene facts. |
 | `danger_kb.lisp` | The original danger rules. | Prolog syntax, which SNePS cannot load. `kb/danger.snepslog` replaces it. |
 | `sneps_wrapper/sneps_api.py` | An early copy of SNePSpaCy's wrapper, ported to wexpect for Windows. | It does not work: the Windows SNePS REPL is a GUI console, so `init()` times out, and its error handlers fail because wexpect has no `exceptions` module. The bridge uses SNePSpaCy's own wrapper instead. |
+
+The images these scripts expect (img_3.png, zidane.jpg, ...) were removed from the repository because their licenses are unknown. Use your own images, or the Ultralytics samples at https://ultralytics.com/images/zidane.jpg and https://ultralytics.com/images/bus.jpg.
