@@ -16,9 +16,10 @@ import sys
 from pathlib import Path
 
 from .backends import AllegroBatchBackend, SnepspacyBackend, transcript
-from .relations import focus_pairs, relations
-from .scene import atom, detections_from_result
-from .snepslog import load_rules, parse_answers, scene_statements
+from .pipeline import describe
+from .relations import focus_pairs
+from .scene import atom
+from .snepslog import load_rules, parse_answers
 
 ROOT = Path(__file__).resolve().parent.parent
 QUERY = "dangerous(?x)"
@@ -96,9 +97,8 @@ def main(argv=None):
                 if Path(image).is_dir():
                     raise ValueError("folders are not supported; pass the image files")
                 result = model(image, conf=args.conf, imgsz=args.imgsz, verbose=False)[0]
-                detections = detections_from_result(result, conf=args.conf)
-                facts = relations(detections, result.orig_shape[0], pair_filter=pair_filter)
-                statements = rules + scene_statements(detections, facts)
+                detections, scene = describe(result, conf=args.conf, pair_filter=pair_filter)
+                statements = rules + scene
                 (out_dir / f"{name}.snepslog").write_text(
                     "\n".join(transcript(statements, QUERY)) + "\n", encoding="utf-8")
                 report["detections"] = [{"label": d.label, "class": d.cls, "conf": round(d.conf, 3),
