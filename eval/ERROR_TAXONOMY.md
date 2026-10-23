@@ -177,6 +177,92 @@ The answer matters for research: If 90% of errors trace to YOLO missing pedestri
 
 ---
 
+## Root Cause vs Contributing Factors
+
+**Important distinction**: An error can have multiple problems, but we assign ONE primary root cause.
+
+### Definitions
+
+**Root Cause**: The earliest stage where the pipeline diverged from correct behavior in a way that causally led to the final error.
+
+**Contributing Factors**: Other issues that helped produce or propagate the error, but were not the initiating failure.
+
+### Assignment Rules
+
+1. **Follow the causal chain backwards**: Start from the final error, trace back through the pipeline
+2. **Find the earliest decisive failure**: The first point where correct output became impossible
+3. **Distinguish propagated vs independent errors**: 
+   - If wrong input inevitably produces wrong output → root cause is earlier
+   - If correct input still produces wrong output → root cause is here
+
+### Examples
+
+**Example 1**: Person beside parked car flagged dangerous
+- Detection: ✓ Person detected, car detected
+- Geometry: ⚠️ infrontof(person, car) asserted (base-overlap heuristic)
+- Rules: ✓ Rule correctly fires given the fact
+- Ground truth: Person NOT dangerous (car is parked)
+
+**Attribution**:
+- **Root cause**: 4b (Rule Too Broad) — Rule cannot distinguish parked from moving
+- **Contributing factors**: 2a (Depth heuristic imperfect) — But even perfect depth wouldn't help
+- **Reasoning**: Even if geometry were perfect, rule would still fire incorrectly on parked cars
+
+**Example 2**: Distant pedestrian missed
+- Detection: ✗ Person not detected (too small/far)
+- Geometry: N/A (no detection to compute relations for)
+- Rules: N/A (no facts to reason about)
+
+**Attribution**:
+- **Root cause**: 1a (Missing Person Detection)
+- **Contributing factors**: None (everything downstream is blocked)
+
+**Example 3**: Misplaced bounding box causes wrong depth order
+- Detection: ✓ Person detected, but box shifted right by poor localization
+- Geometry: ✗ Person appears beside vehicle instead of in front
+- Rules: ✓ Rule correctly doesn't fire (no infrontof fact)
+- Ground truth: Person IS dangerous
+
+**Attribution**:
+- **Root cause**: 1d (Poor Localization)
+- **Contributing factors**: 2a (Depth estimation), but upstream error made it impossible
+- **Reasoning**: Correct boxes would have → correct depth → correct conclusion
+
+### Reporting Format
+
+Each error record includes:
+```json
+{
+  "root_cause": "4b_rule_broad",
+  "contributing_factors": ["2a_depth_order"],
+  "confidence": "high",
+  "requires_manual_review": false,
+  "evidence": {
+    "person_detected": true,
+    "vehicle_detected": true,
+    "infrontof_fact_present": true,
+    "rule_fired": true,
+    "ground_truth_dangerous": false,
+    "scene_notes": "parking lot, vehicle clearly parked"
+  }
+}
+```
+
+Summary statistics report **root causes only** (to avoid >100% totals):
+```
+Root Cause Distribution:
+  1a. Missing Person: 15%
+  2a. Depth Order: 10%
+  4b. Rule Too Broad: 60%
+  ...
+
+Contributing Factor Analysis:
+  Cases with multiple issues: 35%
+  Most common secondary issue: 2a (appears in 25% of errors as contributor)
+```
+
+---
+
 ## Attribution Process
 
 ### For Each False Positive
