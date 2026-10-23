@@ -1,0 +1,38 @@
+; Danger rules for the English route (python -m yolo_sneps --route english). One statement per line.
+;
+; The scene arrives as English sentences that SNePSpaCy translates (see yolo_sneps/english.py):
+;   car_1 is a car.                 state(s), reference(s, car_1), attribute(s, c), car(c)
+;   person_1 is visible.            state(s), reference(s, person_1), content(s, v), visible(v)
+;   person_1 is in front of car_1.  state(s), reference(s, person_1), in(s, f), front(f), of(f, car_1)
+; These rules are kb/danger.snepslog rewritten for that shape. SNePSpaCy also translates rules
+; such as "Every car is a vehicle.", but it makes the class an attribute of a new state rather
+; than of the object itself, so those rules would not reach the detections; they are written
+; here in SNePSLOG instead.
+
+; Which detected classes are people, vehicles or large animals.
+all(s,x,c)({state(s), reference(s,x), attribute(s,c), person(c)} &=> {human(x)}).
+all(s,x,c)({state(s), reference(s,x), attribute(s,c), bicycle(c)} &=> {vehicle(x)}).
+all(s,x,c)({state(s), reference(s,x), attribute(s,c), car(c)} &=> {vehicle(x)}).
+all(s,x,c)({state(s), reference(s,x), attribute(s,c), motorcycle(c)} &=> {vehicle(x)}).
+all(s,x,c)({state(s), reference(s,x), attribute(s,c), bus(c)} &=> {vehicle(x)}).
+all(s,x,c)({state(s), reference(s,x), attribute(s,c), train(c)} &=> {vehicle(x)}).
+all(s,x,c)({state(s), reference(s,x), attribute(s,c), truck(c)} &=> {vehicle(x)}).
+all(s,x,c)({state(s), reference(s,x), attribute(s,c), horse(c)} &=> {largeanimal(x)}).
+all(s,x,c)({state(s), reference(s,x), attribute(s,c), cow(c)} &=> {largeanimal(x)}).
+all(s,x,c)({state(s), reference(s,x), attribute(s,c), sheep(c)} &=> {largeanimal(x)}).
+all(s,x,c)({state(s), reference(s,x), attribute(s,c), elephant(c)} &=> {largeanimal(x)}).
+all(s,x,c)({state(s), reference(s,x), attribute(s,c), bear(c)} &=> {largeanimal(x)}).
+all(s,x,c)({state(s), reference(s,x), attribute(s,c), zebra(c)} &=> {largeanimal(x)}).
+all(s,x,c)({state(s), reference(s,x), attribute(s,c), giraffe(c)} &=> {largeanimal(x)}).
+all(x)({vehicle(x)} &=> {hazard(x)}).
+all(x)({largeanimal(x)} &=> {hazard(x)}).
+
+; A person in front of a vehicle or a large animal they overlap with in the picture is in danger.
+all(s,x,f,y)({state(s), reference(s,x), in(s,f), front(f), of(f,y), human(x), hazard(y)} &=> {dangerous(x)}).
+
+; Partly hidden behind a vehicle: drivers cannot see this person (the "dart-out" case).
+all(s,x,f,y)({state(s), reference(s,y), in(s,f), front(f), of(f,x), human(x), vehicle(y)} &=> {hidden(x)}).
+
+; A dangerous position seen with a confident detection ("x is visible") raises an alert.
+all(s,x,v)({state(s), reference(s,x), content(s,v), visible(v)} &=> {confident(x)}).
+all(x)({dangerous(x), confident(x)} &=> {alert(x)}).

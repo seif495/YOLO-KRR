@@ -1,19 +1,27 @@
 """Evaluate YOLO-KRR against the labelled test set in eval/annotations.json.
 
-    python eval/evaluate.py [--model M] [--imgsz N] [--rules FILE] [--backend allegro|snepspacy] [--name NAME]
+    python eval/evaluate.py [--model M] [--imgsz N] [--rules FILE] [--road] [--route typed|english]
+                            [--backend allegro|snepspacy] [--name NAME]
 
 Three measurements:
   detection  person recall on the coco128 images, whose person boxes come from COCO's own labels
   relation   accuracy of the infrontof cue on the annotated person-hazard pairs, applied to the
              ground-truth boxes so that detector errors do not count against the cue
   danger     the whole system (YOLO, facts, SNePS) against the annotated dangerous people:
-             precision, recall and F1, matching flagged objects to people by IoU >= 0.5
+             precision, recall and F1 of dangerous(x), and of alert(x) (dangerous and detected
+             with confidence >= 0.5), matching flagged objects to people by IoU >= 0.5.
+             hidden(x) has no ground truth; only how many people it flags is reported.
+--road adds onroad/onsidewalk facts from a road segmentation model and uses kb/danger_road.snepslog.
+--route english describes each scene in English and has SNePSpaCy translate it (needs
+--snepspacy-dir and spaCy with en_core_web_trf); the typed route then also runs on the same
+detections, so the two routes' answers can be compared image by image.
 Writes eval/results/<name>.md and .json.
 """
 import argparse
 import json
 import os
 import sys
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -25,7 +33,8 @@ from yolo_sneps.relations import focus_pairs, relations  # noqa: E402
 from yolo_sneps.scene import Detection, iou  # noqa: E402
 from yolo_sneps.snepslog import load_rules, parse_answers  # noqa: E402
 
-QUERY = "dangerous(?x)"
+QUESTIONS = ("dangerous", "alert", "hidden")
+QUERIES = [f"{q}(?x)" for q in QUESTIONS]
 
 
 def image_path(item, coco_dir):
@@ -55,8 +64,30 @@ def cue(person_box, hazard_box, height):
     return "none"
 
 
+def score(flagged, people, persons):
+    """(tp, fp, fn) of the flagged labels against the annotated dangerous people."""
+    flagged_people = [d for d in people if d.label in flagged]
+    hits = match([d.box for d in flagged_people], [p["box"] for p in persons])
+    tp = sum(persons[j]["dangerous"] for j in hits.values())
+    return tp, len(flagged_people) - tp, sum(p["dangerous"] for p in persons) - tp
+
+
+def prf(tp, fp, fn):
+    precision = tp / (tp + fp) if tp + fp else 0.0
+    recall = tp / (tp + fn) if tp + fn else 0.0
+    f1 = 2 * precision * recall / (precision + recall) if precision + recall else 0.0
+    return round(precision, 3), round(recall, 3), round(f1, 3)
+
+
 def ratio(a, b):
     return f"{a}/{b} = {a / b:.0%}" if b else f"{a}/0"
+
+
+def ask(session, statements):
+    """{question: set of answers} and the errors, with the seconds SNePS took."""
+    start = time.perf_counter()
+    lines, errors = session.run(statements, QUERIES)
+    return {q: set(parse_answers(lines, q)) for q in QUESTIONS}, errors, time.perf_counter() - start
 
 
 def main():
@@ -64,7 +95,10 @@ def main():
     parser.add_argument("--model", default=str(ROOT / "yolo11n-seg.pt"))
     parser.add_argument("--imgsz", type=int, default=640)
     parser.add_argument("--conf", type=float, default=0.25)
-    parser.add_argument("--rules", default=str(ROOT / "kb" / "danger.snepslog"))
+    parser.add_argument("--rules", help="default: kb/danger.snepslog, danger_road.snepslog with --road, "
+                                        "danger_english.snepslog with --route english")
+    parser.add_argument("--road", action="store_true", help="assert onroad/onsidewalk from road segmentation")
+    parser.add_argument("--route", choices=["typed", "english"], default="typed")
     parser.add_argument("--backend", choices=["allegro", "snepspacy"],
                         default="snepspacy" if os.environ.get("SNEPSPACY_DIR") else "allegro")
     parser.add_argument("--sneps-dir", default=os.environ.get("SNEPS_DIR"))
@@ -72,6 +106,8 @@ def main():
     parser.add_argument("--coco-dir", help="coco128 folder (default: Ultralytics' datasets_dir/coco128)")
     parser.add_argument("--name", help="name of the result files (default: <model>-<imgsz>)")
     args = parser.parse_args()
+    if args.road and args.route == "english":
+        parser.error("--road is not available on the English route")
 
     from ultralytics import YOLO
     from ultralytics.utils import SETTINGS
@@ -80,13 +116,25 @@ def main():
     coco_dir = Path(args.coco_dir) if args.coco_dir else Path(SETTINGS["datasets_dir"]) / "coco128"
     annotations = json.load(open(ROOT / "eval" / "annotations.json", encoding="utf-8"))["images"]
     model = YOLO(args.model)
-    rules = load_rules(args.rules)
+    rules_path = Path(args.rules) if args.rules else ROOT / "kb" / (
+        "danger_english.snepslog" if args.route == "english" else
+        "danger_road.snepslog" if args.road else "danger.snepslog")
+    rules = load_rules(rules_path)
+    road_model = translator = None
+    if args.road:
+        from yolo_sneps.road import RoadModel
+        road_model = RoadModel()
+    if args.route == "english":
+        from yolo_sneps.english import Translator, sentences
+        translator = Translator(args.snepspacy_dir)
+        typed_rules = load_rules(ROOT / "kb" / "danger.snepslog")
     backend = (SnepspacyBackend(args.snepspacy_dir) if args.backend == "snepspacy"
                else AllegroBatchBackend(args.sneps_dir))
     name = args.name or f"{Path(args.model).stem}-{args.imgsz}"
 
     totals = {"gt_persons": 0, "found": 0, "pairs": 0, "pairs_correct": 0, "pairs_none": 0,
-              "tp": 0, "fp": 0, "fn": 0, "errors": 0}
+              "dangerous": [0, 0, 0], "alert": [0, 0, 0], "hidden": 0, "errors": 0, "agree": 0,
+              "warnings": 0, "yolo_seconds": 0.0, "sneps_seconds": 0.0, "translate_seconds": 0.0}
     rows = []
     with backend as session:
         for item in annotations:
@@ -104,52 +152,74 @@ def main():
                 totals["pairs_none"] += said == "none"
 
             # the whole system
+            start = time.perf_counter()
             result = model(str(path), conf=args.conf, imgsz=args.imgsz, verbose=False)[0]
-            detections, scene = describe(result, conf=args.conf, pair_filter=focus_pairs({"person"}))
-            lines, errors = session.run(rules + scene, QUERY)
+            totals["yolo_seconds"] += time.perf_counter() - start
+            detections, facts, scene = describe(result, conf=args.conf, pair_filter=focus_pairs({"person"}),
+                                                road_model=road_model)
+            row = {"image": item["file"]}
+            if translator:
+                start = time.perf_counter()
+                translated, warnings = translator.statements(sentences(detections, facts))
+                totals["translate_seconds"] += time.perf_counter() - start
+                totals["warnings"] += len(warnings)
+                answers, errors, seconds = ask(session, rules + translated)
+                typed, typed_errors, _ = ask(session, typed_rules + scene)
+                row["agrees_with_typed"] = answers == typed and not typed_errors
+                totals["agree"] += row["agrees_with_typed"]
+            else:
+                answers, errors, seconds = ask(session, rules + scene)
+            totals["sneps_seconds"] += seconds
             totals["errors"] += bool(errors)
-            flagged = set(parse_answers(lines))
+
             people = [d for d in detections if d.cls == "person"]
-            found = match([d.box for d in people], truth)
             if item["source"] == "coco128":
                 totals["gt_persons"] += len(truth)
-                totals["found"] += len(found)
+                totals["found"] += len(match([d.box for d in people], truth))
+            counts = {q: score(answers[q], people, item["persons"]) for q in ("dangerous", "alert")}
+            for q, c in counts.items():
+                totals[q] = [a + b for a, b in zip(totals[q], c)]
+            totals["hidden"] += len(answers["hidden"])
+            row.update({"persons": len(truth), "detected": len(match([d.box for d in people], truth)),
+                        "dangerous": sum(p["dangerous"] for p in item["persons"]),
+                        "flagged": sorted(answers["dangerous"]), "alert": sorted(answers["alert"]),
+                        "hidden": sorted(answers["hidden"]), "tp_fp_fn": list(counts["dangerous"]),
+                        "alert_tp_fp_fn": list(counts["alert"]), "errors": len(errors)})
+            rows.append(row)
+            print(f"{item['file']}: flagged {row['flagged'] or '-'} alert {row['alert'] or '-'} "
+                  f"hidden {row['hidden'] or '-'} tp/fp/fn={row['tp_fp_fn']}")
 
-            flagged_people = [d for d in people if d.label in flagged]
-            hits = match([d.box for d in flagged_people], truth)
-            tp = sum(item["persons"][j]["dangerous"] for j in hits.values())
-            fp = len(flagged_people) - tp
-            fn = sum(p["dangerous"] for p in item["persons"]) - tp
-            totals["tp"] += tp
-            totals["fp"] += fp
-            totals["fn"] += fn
-            rows.append({"image": item["file"], "persons": len(truth), "detected": len(found),
-                         "dangerous": sum(p["dangerous"] for p in item["persons"]),
-                         "flagged": sorted(flagged), "tp": tp, "fp": fp, "fn": fn, "errors": len(errors)})
-            print(f"{item['file']}: flagged {sorted(flagged) or '-'}  tp={tp} fp={fp} fn={fn}")
-
-    t = totals
-    precision = t["tp"] / (t["tp"] + t["fp"]) if t["tp"] + t["fp"] else 0.0
-    recall = t["tp"] / (t["tp"] + t["fn"]) if t["tp"] + t["fn"] else 0.0
-    f1 = 2 * precision * recall / (precision + recall) if precision + recall else 0.0
+    t, n = totals, len(annotations)
     summary = {
-        "model": Path(args.model).name, "imgsz": args.imgsz, "conf": args.conf, "rules": Path(args.rules).name,
-        "backend": args.backend, "images": len(annotations),
+        "model": Path(args.model).name, "imgsz": args.imgsz, "conf": args.conf,
+        "rules": rules_path.name,
+        "route": args.route, "road": args.road, "backend": args.backend, "images": n,
         "person_recall_coco128": ratio(t["found"], t["gt_persons"]),
         "infrontof_accuracy": ratio(t["pairs_correct"], t["pairs"]),
         "infrontof_no_answer": ratio(t["pairs_none"], t["pairs"]),
-        "danger_tp_fp_fn": [t["tp"], t["fp"], t["fn"]],
-        "danger_precision": round(precision, 3), "danger_recall": round(recall, 3), "danger_f1": round(f1, 3),
+        "danger_tp_fp_fn": t["dangerous"],
+        **dict(zip(("danger_precision", "danger_recall", "danger_f1"), prf(*t["dangerous"]))),
+        "alert_tp_fp_fn": t["alert"],
+        **dict(zip(("alert_precision", "alert_recall", "alert_f1"), prf(*t["alert"]))),
+        "hidden_flagged": t["hidden"],
         "images_with_sneps_errors": t["errors"],
+        "yolo_seconds_per_image": round(t["yolo_seconds"] / n, 3),
+        "sneps_seconds_per_image": round(t["sneps_seconds"] / n, 3),
     }
+    if translator:
+        summary.update({"translate_seconds_per_image": round(t["translate_seconds"] / n, 3),
+                        "translation_warnings": t["warnings"],
+                        "same_answers_as_typed_route": ratio(t["agree"], n)})
     out = ROOT / "eval" / "results"
     out.mkdir(exist_ok=True)
     json.dump({"summary": summary, "images": rows}, open(out / f"{name}.json", "w", encoding="utf-8"), indent=1)
     md = [f"# Evaluation: {name}", "", "| Measure | Value |", "|---|---|"]
     md += [f"| {k} | {v} |" for k, v in summary.items()]
-    md += ["", "| Image | People | Detected | Dangerous | Flagged | TP | FP | FN |", "|---|---|---|---|---|---|---|---|"]
+    md += ["", "| Image | People | Detected | Dangerous | Flagged | Alert | Hidden | TP | FP | FN |",
+           "|---|---|---|---|---|---|---|---|---|---|"]
     md += [f"| {r['image']} | {r['persons']} | {r['detected']} | {r['dangerous']} | {', '.join(r['flagged']) or '-'} | "
-           f"{r['tp']} | {r['fp']} | {r['fn']} |" for r in rows]
+           f"{', '.join(r['alert']) or '-'} | {', '.join(r['hidden']) or '-'} | "
+           + " | ".join(map(str, r["tp_fp_fn"])) + " |" for r in rows]
     (out / f"{name}.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     print(json.dumps(summary, indent=1))
 

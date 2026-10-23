@@ -73,6 +73,8 @@ Options:
 | `--focus` | Classes whose pairs with *other* objects get relation facts; default `person`. |
 | `--all-pairs` | Relation facts for every pair. SNePS slows down sharply as the knowledge base grows, so this can be slow on busy scenes. |
 | `--rules` | Rules file; default `kb/danger.snepslog`. |
+| `--road` | Segment the road (SegFormer, needs `transformers`) and tell whether each person is on the road or pavement. Uses `kb/danger_road.snepslog`. |
+| `--route english` | Describe the scene in English and have SNePSpaCy translate it to SNePSLOG (needs `--snepspacy-dir` and `spaCy` with `en_core_web_trf`). Uses `kb/danger_english.snepslog`. |
 | `--timeout` | SNePS seconds per image; default 300. With `snepspacy` it applies to each SNePS call. |
 | `--out` | Output folder; default `outputs`. |
 

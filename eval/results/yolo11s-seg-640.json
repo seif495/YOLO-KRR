@@ -1,0 +1,304 @@
+{
+ "summary": {
+  "model": "yolo11s-seg.pt",
+  "imgsz": 640,
+  "conf": 0.25,
+  "rules": "danger.snepslog",
+  "backend": "allegro",
+  "images": 24,
+  "person_recall_coco128": "48/83 = 58%",
+  "infrontof_accuracy": "21/28 = 75%",
+  "infrontof_no_answer": "5/28 = 18%",
+  "danger_tp_fp_fn": [
+   2,
+   7,
+   4
+  ],
+  "danger_precision": 0.222,
+  "danger_recall": 0.333,
+  "danger_f1": 0.267,
+  "images_with_sneps_errors": 0,
+  "yolo_seconds_per_image": 0.494
+ },
+ "images": [
+  {
+   "image": "000000000049.jpg",
+   "persons": 6,
+   "detected": 5,
+   "dangerous": 0,
+   "flagged": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "000000000061.jpg",
+   "persons": 3,
+   "detected": 3,
+   "dangerous": 0,
+   "flagged": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "000000000074.jpg",
+   "persons": 6,
+   "detected": 4,
+   "dangerous": 0,
+   "flagged": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "000000000086.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "000000000109.jpg",
+   "persons": 5,
+   "detected": 3,
+   "dangerous": 0,
+   "flagged": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "000000000136.jpg",
+   "persons": 2,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "000000000149.jpg",
+   "persons": 12,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "000000000151.jpg",
+   "persons": 1,
+   "detected": 0,
+   "dangerous": 0,
+   "flagged": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "000000000257.jpg",
+   "persons": 13,
+   "detected": 9,
+   "dangerous": 0,
+   "flagged": [
+    "person_3",
+    "person_4",
+    "person_9"
+   ],
+   "tp": 0,
+   "fp": 3,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "000000000260.jpg",
+   "persons": 2,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [
+    "person_2"
+   ],
+   "tp": 0,
+   "fp": 1,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "000000000328.jpg",
+   "persons": 3,
+   "detected": 3,
+   "dangerous": 0,
+   "flagged": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "000000000419.jpg",
+   "persons": 2,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "000000000443.jpg",
+   "persons": 3,
+   "detected": 3,
+   "dangerous": 0,
+   "flagged": [
+    "person_2"
+   ],
+   "tp": 0,
+   "fp": 1,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "000000000471.jpg",
+   "persons": 1,
+   "detected": 0,
+   "dangerous": 0,
+   "flagged": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "000000000529.jpg",
+   "persons": 2,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "000000000531.jpg",
+   "persons": 8,
+   "detected": 8,
+   "dangerous": 0,
+   "flagged": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "000000000532.jpg",
+   "persons": 4,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "000000000641.jpg",
+   "persons": 9,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "man_crossing_in_front_of_trolley.jpg",
+   "persons": 4,
+   "detected": 3,
+   "dangerous": 1,
+   "flagged": [
+    "person_4"
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "women_crossing_in_front_of_wagon.jpg",
+   "persons": 6,
+   "detected": 5,
+   "dangerous": 2,
+   "flagged": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 2,
+   "errors": 0
+  },
+  {
+   "image": "pedestrian_crossing_road.jpg",
+   "persons": 3,
+   "detected": 3,
+   "dangerous": 1,
+   "flagged": [
+    "person_5"
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "night_intersection.jpg",
+   "persons": 9,
+   "detected": 9,
+   "dangerous": 2,
+   "flagged": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 2,
+   "errors": 0
+  },
+  {
+   "image": "women_in_front_of_parked_van.jpg",
+   "persons": 2,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_2"
+   ],
+   "tp": 0,
+   "fp": 2,
+   "fn": 0,
+   "errors": 0
+  },
+  {
+   "image": "empty_street.jpg",
+   "persons": 0,
+   "detected": 0,
+   "dangerous": 0,
+   "flagged": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "errors": 0
+  }
+ ]
+}

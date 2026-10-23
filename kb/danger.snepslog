@@ -2,14 +2,20 @@
 ;
 ; The scene supplies instance facts:
 ;   isa(person_1, person).                     one per detection (class names use '_' for spaces)
-;   leftof(a, b). above(a, b). overlaps(a, b). infrontof(a, b).
-; See yolo_sneps/relations.py for what each relation means.
+;   leftof(a, b). above(a, b). overlaps(a, b). near(a, b). infrontof(a, b).
+;   confident(x).                              detection confidence >= 0.5
+; See yolo_sneps/relations.py for what each relation means. kb/danger_road.snepslog is a variant
+; that also uses what people stand on (python -m yolo_sneps --road).
 ;
 ; This replaces legacy/danger_kb.lisp, which used Prolog syntax that SNePS cannot load. Its rules that
 ; flagged any person anywhere left/right/above/below any vehicle, animal or obstacle are not
 ; carried over: they ignored distance, so nearly every person in a street scene matched.
 
-; Which detected classes are people, vehicles or animals.
+; Which detected classes are people, vehicles and hazards (vehicles and large animals). Cats and
+; dogs are left out: a pet on a lap or a leash is not a collision hazard.
+; Each class is listed under every category it belongs to, so the rule below needs one step. SNePS
+; 2.7 does not finish a chain of two steps through the same rule (car -> vehicle -> hazard) within
+; one ask: dangerous(?x) then finds nothing, until a later query happens to fill in the gap.
 subclass(person, human).
 subclass(bicycle, vehicle).
 subclass(car, vehicle).
@@ -17,19 +23,28 @@ subclass(motorcycle, vehicle).
 subclass(bus, vehicle).
 subclass(train, vehicle).
 subclass(truck, vehicle).
-subclass(dog, animal).
-subclass(cat, animal).
-subclass(horse, animal).
-subclass(cow, animal).
-subclass(sheep, animal).
-subclass(elephant, animal).
-subclass(bear, animal).
-subclass(zebra, animal).
-subclass(giraffe, animal).
+subclass(bicycle, hazard).
+subclass(car, hazard).
+subclass(motorcycle, hazard).
+subclass(bus, hazard).
+subclass(train, hazard).
+subclass(truck, hazard).
+subclass(horse, hazard).
+subclass(cow, hazard).
+subclass(sheep, hazard).
+subclass(elephant, hazard).
+subclass(bear, hazard).
+subclass(zebra, hazard).
+subclass(giraffe, hazard).
 
-; An instance of a class is an instance of its superclass.
+; An instance of a class is an instance of the category the class belongs to.
 all(i,c,d)({isa(i,c), subclass(c,d)} &=> {isa(i,d)}).
 
-; A person in front of a vehicle or an animal they overlap with in the picture is in danger.
-all(x,y)({infrontof(x,y), isa(x,human), isa(y,vehicle)} &=> {dangerous(x)}).
-all(x,y)({infrontof(x,y), isa(x,human), isa(y,animal)} &=> {dangerous(x)}).
+; A person in front of a vehicle or a large animal they overlap with in the picture is in danger.
+all(x,y)({infrontof(x,y), isa(x,human), isa(y,hazard)} &=> {dangerous(x)}).
+
+; Partly hidden behind a vehicle: drivers cannot see this person (the "dart-out" case).
+all(x,y)({infrontof(y,x), isa(x,human), isa(y,vehicle)} &=> {hidden(x)}).
+
+; A dangerous position seen with a confident detection (confidence >= 0.5) raises an alert.
+all(x)({dangerous(x), confident(x)} &=> {alert(x)}).
