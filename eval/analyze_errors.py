@@ -60,15 +60,21 @@ def load_annotations(path):
 
 
 def load_results(path):
-    """Load evaluation results."""
+    """Load evaluation results (JSONL format)."""
+    results = []
     with open(path) as f:
-        return json.load(f)
+        for line in f:
+            if line.strip():
+                results.append(json.loads(line))
+    return {"images": results}
 
 
 def match_detection(truth_box, detections, threshold=0.5):
     """Find detection matching ground truth box, or None."""
     for d in detections:
-        if iou(truth_box, d["box"]) >= threshold:
+        # Handle both dict and object formats
+        box = d.box if hasattr(d, 'box') else d["box"]
+        if iou(truth_box, box) >= threshold:
             return d
     return None
 
@@ -81,13 +87,25 @@ def match_person_to_detection(person_box, detections):
 def has_fact(facts, predicate, *args):
     """Check if a fact with predicate and arguments exists."""
     fact_str = f"{predicate}({', '.join(args)})"
-    return any(fact_str in f for f in facts)
+    # Handle both list-of-lists and list-of-strings
+    for f in facts:
+        if isinstance(f, list):
+            # Format: ['predicate', 'arg1', 'arg2']
+            if f[0] == predicate and len(f) == len(args) + 1:
+                if all(f[i+1] == arg for i, arg in enumerate(args)):
+                    return True
+        elif isinstance(f, str):
+            if fact_str in f:
+                return True
+    return False
 
 
 def get_hazard_label(hazard_box, detections):
     """Get detection label for a hazard box."""
     matched = match_detection(hazard_box, detections)
-    return matched["label"] if matched else None
+    if matched:
+        return matched.label if hasattr(matched, 'label') else matched["label"]
+    return None
 
 
 def attribute_false_positive(image_name, person_idx, gt_image, detections, facts, dangerous_flags):
@@ -103,7 +121,8 @@ def attribute_false_positive(image_name, person_idx, gt_image, detections, facts
     if not detected:
         return "unknown", "Person flagged but no matching detection found (shouldn't happen)"
     
-    person_label = detected["label"]
+    # Handle both dict and object formats
+    person_label = detected.label if hasattr(detected, 'label') else detected["label"]
     
     # Check if this person is annotated as being near any vehicle
     relevant_pairs = [p for p in gt_image.get("pairs", []) if p["person"] == person_idx]
@@ -171,11 +190,13 @@ def attribute_false_negative(image_name, person_idx, gt_image, detections, facts
     if not detected:
         return "1a_missing_person", f"Person at {person_box} not detected by YOLO"
     
-    person_label = detected["label"]
+    # Handle both dict and object formats
+    person_label = detected.label if hasattr(detected, 'label') else detected["label"]
+    detected_conf = detected.conf if hasattr(detected, 'conf') else detected["conf"]
     
     # Check confidence
-    if detected["conf"] < 0.25:  # Assuming default threshold
-        return "3c_threshold", f"{person_label} detected but confidence {detected['conf']:.2f} below threshold"
+    if detected_conf < 0.25:  # Assuming default threshold
+        return "3c_threshold", f"{person_label} detected but confidence {detected_conf:.2f} below threshold"
     
     # Person detected - check for relevant vehicles
     relevant_pairs = [p for p in gt_image.get("pairs", []) if p["person"] == person_idx]
@@ -232,18 +253,21 @@ def attribute_false_negative(image_name, person_idx, gt_image, detections, facts
 def analyze_image(image_name, gt_image, results):
     """Analyze errors for a single image."""
     # Find corresponding result
-    image_result = next((r for r in results.get("images", []) if r.get("image") == image_name or r.get("file") == image_name), None)
+    image_result = next((r for r in results.get("images", []) if r.get("image") == image_name), None)
     if not image_result:
         return []
     
-    # For summary-only results, we need the detailed data
-    # Check if we have detections/facts
-    if "detections" not in image_result:
-        return []  # Can't analyze without detailed data
-    
-    detections = image_result["detections"]
-    facts = image_result["facts"]
-    dangerous_flags = set(image_result.get("dangerous", []))
+    # Extract from detailed format
+    detections = [
+        type('Detection', (), {
+            'label': d['label'],
+            'cls': d['class'],
+            'box': tuple(d['box']),
+            'conf': d['confidence']
+        })() for d in image_result.get("detections", [])
+    ]
+    facts = image_result.get("facts", [])
+    dangerous_flags = set(image_result.get("predictions", {}).get("dangerous", []))
     
     errors = []
     
@@ -253,7 +277,7 @@ def analyze_image(image_name, gt_image, results):
         
         # Match to detected person
         detected = match_person_to_detection(person["box"], detections)
-        person_label = detected["label"] if detected else None
+        person_label = detected.label if (detected and hasattr(detected, 'label')) else (detected["label"] if detected else None)
         
         is_flagged = person_label in dangerous_flags if person_label else False
         
