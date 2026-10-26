@@ -385,7 +385,7 @@ def main():
     # NEW: Configuration file for reproducibility
     json.dump(config, open(out / f"{name}_config.json", "w", encoding="utf-8"), indent=2)
     
-    print(f"\n✅ Outputs written:")
+    print("\nOutputs written:")
     print(f"  - {out / f'{name}.json'} (summary, original format)")
     print(f"  - {out / f'{name}.md'} (markdown report)")
     print(f"  - {out / f'{name}_detailed.jsonl'} (per-image detailed, {len(detailed_rows)} lines)")
