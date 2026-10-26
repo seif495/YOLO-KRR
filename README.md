@@ -25,16 +25,7 @@ ask(dangerous(?x)).               rules in kb/danger.snepslog answer this
     - `snepspacy` uses SNePSpaCy's wrapper (Linux/WSL).
     - `allegro` runs the Windows SNePS 2.7 build headless.
 - **`kb/danger.snepslog`**: class hierarchy and danger rules in SNePSLOG.
-- **`kb/danger_kb.lisp`**: the original danger rules. They are written in Prolog syntax, which SNePS cannot load; kept for reference.
-- **`tests/`**: unit tests for the bridge, plus optional end-to-end tests against SNePS.
-- **Earlier scripts**, kept as they were:
-  - `seg_without_depth.py` prints English relation sentences from box positions.
-  - `segmentation.py` tries to drive SNePS through plain SBCL. That does not work, because SNePS is not loaded into SBCL.
-  - `segmentation_test.py` / `seg_test_results.py` are a mask-overlap occlusion experiment.
-  - `main.py` validates YOLO on coco128. Its per-class table repeats the overall metrics on every row.
-  - `old_main.py`, `no_train.py` and `new_segmentation.py` are detection and segmentation demos.
-  - `output_to_sneps.py` turns a metrics table into assert forms.
-  - `sneps_wrapper/sneps_api.py` is an older copy of SNePSpaCy's wrapper, ported to wexpect. It does not work: the Windows SNePS REPL is a GUI console, so `init()` times out, and its error handlers then fail with `AttributeError`, because wexpect has no `exceptions` module.
+- **`legacy/`**: earlier scripts and the original Prolog-syntax `danger_kb.lisp`, kept for reference. None of them is used by the bridge; `legacy/README.md` says what each one did and why it was replaced.
 
 ## Requirements
 
@@ -57,17 +48,17 @@ Run these from the repository root, the folder that contains `yolo_sneps/`:
 
 ```
 # Windows: headless SNePS
-python -m yolo_sneps img_3.png img_2.png --backend allegro --sneps-dir "C:\path\to\Sneps-2.7.0-Windows"
+python -m yolo_sneps examples/man_crossing_in_front_of_trolley.jpg examples/women_in_front_of_parked_van.jpg --backend allegro --sneps-dir "C:\path\to\Sneps-2.7.0-Windows"
 
 # Linux/WSL: SNePS through SNePSpaCy
-python -m yolo_sneps img_3.png img_2.png --backend snepspacy --snepspacy-dir ~/SNePSpaCy
+python -m yolo_sneps examples/man_crossing_in_front_of_trolley.jpg examples/women_in_front_of_parked_van.jpg --backend snepspacy --snepspacy-dir ~/SNePSpaCy
 
 # No SNePS: only write the SNePSLOG transcripts
-python -m yolo_sneps img_3.png
+python -m yolo_sneps examples/man_crossing_in_front_of_trolley.jpg
 ```
 
 For each image, the bridge writes two files to `outputs/` (or `--out`). `<name>` is the image file name without its extension, and a number is appended when two inputs share a name.
-- `<name>.snepslog`: the full SNePSLOG transcript (rules, facts and query). Replay it in a SNePSLOG session with `demo "outputs/img_3.snepslog"`. The path must be in quotes, and the transcript starts with `clearkb`, so it replaces whatever is in the knowledge base.
+- `<name>.snepslog`: the full SNePSLOG transcript (rules, facts and query). Replay it in a SNePSLOG session with `demo "outputs/man_crossing_in_front_of_trolley.snepslog"`. The path must be in quotes, and the transcript starts with `clearkb`, so it replaces whatever is in the knowledge base.
 - `<name>.json`: the detections, the facts and `dangerous`, the objects SNePS found dangerous.
   - `dangerous` is `null` when no backend ran, or when SNePS reported an error or timed out: a rejected statement or a timeout can hide an answer. The console then says `UNKNOWN`, any partial answer is under `partial_answers`, and the exit status is 1.
 
@@ -82,6 +73,8 @@ Options:
 | `--focus` | Classes whose pairs with *other* objects get relation facts; default `person`. |
 | `--all-pairs` | Relation facts for every pair. SNePS slows down sharply as the knowledge base grows, so this can be slow on busy scenes. |
 | `--rules` | Rules file; default `kb/danger.snepslog`. |
+| `--road` | Segment the road (SegFormer, needs `transformers`) and tell whether each person is on the road or pavement. Uses `kb/danger_road.snepslog`. |
+| `--route english` | Describe the scene in English and have SNePSpaCy translate it to SNePSLOG (needs `--snepspacy-dir` and `spaCy` with `en_core_web_trf`). Uses `kb/danger_english.snepslog`. |
 | `--timeout` | SNePS seconds per image; default 300. With `snepspacy` it applies to each SNePS call. |
 | `--out` | Output folder; default `outputs`. |
 
@@ -105,7 +98,7 @@ On Linux/WSL, `SNEPSPACY_DIR=~/SNePSpaCy python -m unittest discover -s tests` r
 Relations describe the picture, not the world:
 - **`above`** in a road scene usually means "farther away".
 - **`infrontof(a, b)`** means the boxes overlap and `a`'s base is lower in the image. For two objects standing on the same ground, that object is nearer the camera. No depth fact is emitted when the two bases are within 2% of the image height.
-  - "Nearer the camera than an overlapping vehicle" is not "in the vehicle's path". People on a pavement beside a parked bus are flagged too (all four in `bus.jpg`).
+  - "Nearer the camera than an overlapping vehicle" is not "in the vehicle's path". People standing beside a parked vehicle are flagged too (both women in `examples/women_in_front_of_parked_van.jpg`).
   - The cue does not hold for things off the ground, such as a sign on a pole or a person on a bus.
 - **Single still images:** there is no motion, speed or tracking.
 - **Classes:** YOLO's COCO classes have no road, crosswalk or sidewalk.
@@ -115,7 +108,10 @@ Relations describe the picture, not the world:
 
 ## License
 
-This project is licensed under the MIT License.
+The code is licensed under the MIT License (see `LICENSE`).
+
+- The photos in `examples/` keep their own licenses (public domain, CC0, CC BY-SA); see `examples/ATTRIBUTION.md`.
+- [Ultralytics YOLO](https://github.com/ultralytics/ultralytics) and its model weights are licensed under AGPL-3.0. Distributing this project together with them, or offering it as a network service, brings in the AGPL's obligations.
 
 ---
 

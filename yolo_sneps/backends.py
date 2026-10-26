@@ -1,8 +1,8 @@
 """Ways to run SNePSLOG statements through SNePS.
 
-Each backend's run(statements, query) asserts the statements into an empty KB, asks the query,
-and returns (answer_lines, errors), where errors is a list of (statement or None, message).
-A non-empty error list means the answer may be incomplete.
+Each backend's run(statements, queries) asserts the statements into an empty KB, asks each query
+(one query or a list of them), and returns (answer_lines, errors), where errors is a list of
+(statement or None, message). A non-empty error list means the answers may be incomplete.
 """
 import importlib.util
 import os
@@ -12,6 +12,10 @@ import tempfile
 from pathlib import Path
 
 from .snepslog import check_statement
+
+
+def _queries(queries):
+    return [queries] if isinstance(queries, str) else list(queries)
 
 
 def _split_checked(statements):
@@ -57,8 +61,9 @@ class SnepspacyBackend:
         if self.started:
             self.api.terminate()
 
-    def run(self, statements, query):
+    def run(self, statements, queries):
         good, errors = _split_checked(statements)
+        query = None
         try:
             if self.started:
                 self.api.clear_kb()
@@ -71,9 +76,12 @@ class SnepspacyBackend:
                     self.api.inform(statement)
                 except (self.module.SnepsSyntaxError, ValueError) as e:
                     errors.append((statement, str(e)))
-            return self.api.ask(query), errors
+            answers = []
+            for query in _queries(queries):
+                answers += self.api.ask(query)
+            return answers, errors
         except self.module.SnepsSyntaxError as e:
-            return [], errors + [(f"ask({query})", str(e))]
+            return [], errors + [(f"ask({query})" if query else None, str(e))]
         except self.module.SnepsApiError as e:
             # A timeout or a dead process leaves the pexpect stream out of step with SNePS, so the
             # next image would read this one's late output. Give up on this image and restart.
@@ -125,9 +133,9 @@ class AllegroBatchBackend:
     def __exit__(self, *exc):
         pass
 
-    def run(self, statements, query):
+    def run(self, statements, queries):
         good, errors = _split_checked(statements)
-        lines = transcript(good, query) + ["lisp"]  # "lisp" leaves the REPL so the driver can exit
+        lines = transcript(good, queries) + ["lisp"]  # "lisp" leaves the REPL so the driver can exit
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp) / "transcript.txt"
             driver = Path(tmp) / "driver.lisp"
@@ -168,9 +176,9 @@ def _driver_markers(lines):
     return messages
 
 
-def transcript(statements, query):
-    """The SNePSLOG input lines for one scene: start from an empty KB, assert, then ask."""
-    return ["clearkb"] + [s + "." for s in statements] + [f"ask({query})."]
+def transcript(statements, queries):
+    """The SNePSLOG input lines for one scene: start from an empty KB, assert, then ask each query."""
+    return ["clearkb"] + [s + "." for s in statements] + [f"ask({q})." for q in _queries(queries)]
 
 
 def lisp_string(text):

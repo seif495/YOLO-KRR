@@ -77,8 +77,15 @@ class RelationTest(unittest.TestCase):
         facts = self.facts([("person", (0, 0, 10, 10), 0.9), ("car", (0, 50, 10, 60), 0.8)])
         self.assertIn(("above", "person_1", "car_1"), facts)
 
-    def test_touching_boxes_get_no_relation(self):
-        self.assertEqual(self.facts([("person", (0, 0, 10, 10), 0.9), ("car", (10, 0, 20, 10), 0.8)]), set())
+    def test_touching_boxes_are_near_but_unordered(self):
+        self.assertEqual(self.facts([("person", (0, 0, 10, 10), 0.9), ("car", (10, 0, 20, 10), 0.8)]),
+                         {("near", "car_1", "person_1")})
+
+    def test_near_needs_similar_bases_and_a_small_gap(self):
+        person = ("person", (0, 0, 10, 40), 0.9)
+        self.assertIn(("near", "car_1", "person_1"), self.facts([person, ("car", (30, 10, 90, 45), 0.8)]))
+        self.assertFalse(any(p == "near" for p, _, _ in self.facts([person, ("car", (60, 10, 90, 45), 0.8)])))
+        self.assertFalse(any(p == "near" for p, _, _ in self.facts([person, ("car", (30, 50, 90, 95), 0.8)])))
 
     def test_lower_base_is_in_front(self):
         facts = self.facts(RUNNER_SCENE, height=280)
@@ -97,6 +104,28 @@ class RelationTest(unittest.TestCase):
         self.assertEqual(len(facts), 4)
         for _, x, y in facts:
             self.assertEqual(sorted(label.split("_")[0] for label in (x, y)), ["car", "person"])
+
+
+class RoadTest(unittest.TestCase):
+    def test_ground_is_read_just_below_the_feet_ignoring_objects(self):
+        import numpy as np
+        from yolo_sneps.road import ground_under
+        segmentation = np.full((100, 100), 1)  # sidewalk
+        segmentation[60:, :] = 0  # road from row 60 down
+        segmentation[20:60, 40:60] = 11  # a person standing on the kerb line
+        self.assertEqual(ground_under(segmentation, (40, 20, 60, 60)), "road")
+        self.assertEqual(ground_under(segmentation, (0, 10, 20, 50)), "sidewalk")
+        self.assertIsNone(ground_under(segmentation, (40, 20, 60, 40)))  # only the person under the box
+
+
+class EnglishTest(unittest.TestCase):
+    def test_sentences_for_classes_confidence_and_the_relations_the_rules_use(self):
+        from yolo_sneps.english import sentences
+        dets = build_detections([("person", (180, 30, 330, 245), 0.8), ("traffic light", (0, 0, 10, 10), 0.3)])
+        facts = [("infrontof", "person_1", "traffic_light_1"), ("leftof", "traffic_light_1", "person_1")]
+        self.assertEqual(sentences(dets, facts),
+                         ["person_1 is a person.", "traffic_light_1 is a traffic light.", "person_1 is visible.",
+                          "person_1 is in front of traffic_light_1."])
 
 
 class SnepslogTest(unittest.TestCase):
@@ -138,6 +167,7 @@ class SnepslogTest(unittest.TestCase):
 
     def test_transcript_and_lisp_string(self):
         self.assertEqual(transcript(["a(b)"], "q(?x)"), ["clearkb", "a(b).", "ask(q(?x))."])
+        self.assertEqual(transcript(["a(b)"], ["q(?x)", "r(?x)"]), ["clearkb", "a(b).", "ask(q(?x)).", "ask(r(?x))."])
         self.assertEqual(lisp_string('C:\\x "y"'), '"C:\\\\x \\"y\\""')
 
 
@@ -177,6 +207,10 @@ class SnepspacySessionTest(unittest.TestCase):
         backend.run(["a(b)"], "q")
         self.assertEqual(calls, ["init", "clear_kb"])
 
+    def test_each_query_is_asked(self):
+        backend, _ = self.backend()
+        self.assertEqual(backend.run(["a(b)"], ["q", "r"]), (["dangerous(person_1)"] * 2, []))
+
     def test_timeout_restarts_the_session_for_the_next_image(self):
         backend, calls = self.backend()
         lines, errors = backend.run(["slow(x)", "a(b)"], "q")
@@ -197,6 +231,15 @@ class AllegroEndToEndTest(unittest.TestCase):
 
     def test_runner_in_front_of_car_is_dangerous(self):
         self.assertEqual(self.run_scene(), (["person_1"], []))
+
+    def test_alert_and_hidden(self):
+        from yolo_sneps.backends import AllegroBatchBackend
+        dets = build_detections(RUNNER_SCENE)
+        statements = load_rules(RULES) + scene_statements(dets, relations(dets, 280)) + ["confident(person_1)"]
+        with AllegroBatchBackend(os.environ["SNEPS_DIR"], timeout=120) as backend:
+            lines, errors = backend.run(statements, ["dangerous(?x)", "alert(?x)", "hidden(?x)"])
+        self.assertEqual(([parse_answers(lines, q) for q in ("dangerous", "alert", "hidden")], errors),
+                         ([["person_1"], ["person_1"], ["person_2"]], []))
 
     def test_rejected_statement_is_reported_and_the_rest_still_runs(self):
         answers, errors = self.run_scene(extra=["foo(x)!", "isa(person_9"])
