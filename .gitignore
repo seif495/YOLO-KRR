@@ -30,3 +30,6 @@ img_3.png
 scenery.jpeg
 traffic.webp
 zidane.jpg
+
+# Review overlays drawn by eval/render_errors.py (regenerate them)
+eval/review/
