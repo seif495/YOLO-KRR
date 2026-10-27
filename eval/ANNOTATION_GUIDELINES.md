@@ -1,8 +1,8 @@
 # Annotation Guidelines
 ## Ground Truth Definitions for Pedestrian Danger Assessment
 
-**Version**: 1.0  
-**Date**: 2026-10-23  
+**Version**: 1.1  
+**Date**: 2026-10-27  
 **Purpose**: Ensure consistent, defensible annotations across all datasets
 
 ---
@@ -31,7 +31,7 @@ We can only see:
 **Definition**: A pedestrian whose spatial position in this frame suggests immediate collision risk with a detected vehicle, based on observable geometric evidence alone.
 
 **Annotate as TRUE when**:
-- Pedestrian and vehicle bounding boxes overlap significantly (IoU > 0.1)
+- Pedestrian and vehicle bounding boxes overlap (any intersection; IoU is the wrong measure here, since a person in front of a bus or tram overlaps it at IoU well below 0.1)
 - Pedestrian appears spatially in front of vehicle (lower base in image)
 - Vehicle is on a roadway (not sidewalk/parking lot) when determinable
 - No clear protective barrier visible between them
@@ -39,7 +39,7 @@ We can only see:
 **Annotate as FALSE when**:
 - Pedestrian on sidewalk/pathway clearly separated from road
 - Pedestrian behind vehicle (higher base in image)
-- Pedestrian beside vehicle with no overlap
+- Pedestrian beside vehicle with no overlap, even if the vehicle could move towards them
 - Clear barrier (fence, wall, curb with significant height difference) present
 
 **Annotate as NULL (ambiguous) when**:
@@ -55,6 +55,7 @@ We can only see:
 
 **NOT considered**:
 - Whether vehicle is actually moving (unknowable from static image)
+- Where the vehicle or the pedestrian will go next (path, turning, intent)
 - Whether driver would stop (unknowable)
 - Pedestrian reaction time (unknowable)
 - Contextual danger not visible in frame
@@ -161,7 +162,7 @@ Record:
 ```
 START: Person P and Vehicle V detected
 
-Q1: Do their bounding boxes overlap (IoU > 0.1)?
+Q1: Do their bounding boxes overlap (any intersection)?
   NO  → dangerous: FALSE (not spatially close)
   YES → Continue to Q2
 
@@ -337,6 +338,7 @@ If κ < 0.7:
 | Version | Date | Changes |
 |---|---|---|
 | 1.0 | 2026-10-23 | Initial guidelines |
+| 1.1 | 2026-10-27 | Q1 and the TRUE criteria use any box intersection instead of IoU > 0.1, which labelled the baseline's clearest positive (a man crossing in front of a tram, IoU 0.05) not dangerous. States that a pedestrian beside a vehicle stays FALSE even if the vehicle could move towards them, and that predicted paths are not considered. Applied to the baseline: see `eval/results/BASELINE_ERROR_ANALYSIS.md`. |
 
 ---
 
