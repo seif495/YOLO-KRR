@@ -43,9 +43,9 @@ Unchanged by the relabel: `hidden(x)` flags 11 people (no ground truth); the inf
 
 **Why not broaden the definition instead.** Calling those four people dangerous requires predicting where the scooter or the horse goes next. The guidelines exclude that, because it is not visible in one frame and annotators would disagree on it. A rule could not check it from one frame either.
 
-**What this costs, to be stated in the thesis:**
+**What this costs, to be stated wherever these results are reported:**
 - The relabel was made after seeing the system's errors, and it removes all four false negatives. Both results are therefore reported, and the original-label one is the blind measurement.
-- Under v1.1 the definition of danger is close to the rule's own geometry (overlap plus a lower base). Against these labels the system is tested on detection, on the depth cue, and on the context the rule lacks (Q3/Q4). It is not tested on whether "in front and overlapping" is the right notion of danger; that notion is a design choice the thesis has to state and defend.
+- Under v1.1 the definition of danger is close to the rule's own geometry (overlap plus a lower base). Against these labels the system is tested on detection, on the depth cue, and on the context the rule lacks (Q3/Q4). It is not tested on whether "in front and overlapping" is the right notion of danger; that notion is a design choice of the project, and results against these labels should say so.
 - People about to step into a vehicle's path are out of scope for single-frame labels. Phase 4 should still collect them, label them per v1.1 and tag them `category: crossing`, so they can be counted separately.
 
 ## Error distribution (root causes)
