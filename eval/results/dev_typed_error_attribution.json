@@ -17,6 +17,7 @@
   "truck",
   "zebra"
  ],
+ "danger_premises": [],
  "summary": {
   "counts": {
    "TP": 6,

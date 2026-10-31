@@ -17,7 +17,9 @@ with the run's summary (<name>.json by default); any difference stops the analys
 Each annotated hazard is linked to the detection whose box overlaps it best (IoU >= 0.5, one to
 one), whatever class YOLO gave it: YOLO calls some annotated trucks buses and some vans trucks.
 Only infrontof facts whose object is of a hazard class (subclass(c, hazard) in the rules) count as
-what made dangerous(x) hold, since the danger rule needs isa(y, hazard).
+what made dangerous(x) hold, since the danger rule needs isa(y, hazard). The rule's other one-place
+premises (onroad(x), onroad(y), pedestrian(x) in the Phase 5 variants) must be among the scene's
+statements too: a dangerous person in front of a hazard whom one of them is missing for is 3a.
 
 Root causes are ERROR_TAXONOMY.md's codes plus unmatched_detection: a flagged detection that
 matches no annotated person (a second box on someone already matched, or a person the annotations
@@ -94,6 +96,16 @@ def hazard_classes(rules_path):
     return {m.group(1) for m in map(pattern.fullmatch, load_rules(rules_path)) if m}
 
 
+def danger_premises(rules_path):
+    """(predicate, variable) for each one-place premise of the infrontof(x, y) danger rule, such as
+    ("onroad", "x") or ("pedestrian", "x"): facts the scene must assert for the rule to fire."""
+    for rule in load_rules(rules_path):
+        m = re.fullmatch(r"all\(x,y\)\(\{(.*)\}\s*&=>\s*\{dangerous\(x\)\}\)\.?", rule)
+        if m and "infrontof(x,y)" in m.group(1).replace(" ", ""):
+            return re.findall(r"(\w+)\(\s*([xy])\s*\)", m.group(1))
+    return []
+
+
 def boxes_intersect(a, b):
     """The test relations.py uses before it asserts overlaps or infrontof."""
     return a[0] < b[2] and b[0] < a[2] and a[1] < b[3] and b[1] < a[3]
@@ -114,8 +126,10 @@ def described(t):
 class Scene:
     """One evaluated image and the matchings the attribution needs."""
 
-    def __init__(self, record, hazards):
+    def __init__(self, record, hazards, premises=()):
         self.image = record["image"]
+        self.premises = premises
+        self.statements = set(record.get("statements", []))
         self.truth = record["ground_truth"]
         self.detections = record["detections"]
         self.dets = {d["label"]: d for d in self.detections}
@@ -134,6 +148,11 @@ class Scene:
         hazard_boxes = [h["box"] for h in self.truth["hazards"]]
         self.hazard_det = {j: others[i]["label"] for i, j in match([d["box"] for d in others], hazard_boxes).items()}
         self.det_hazard = {label: j for j, label in self.hazard_det.items()}
+
+    def missing_premises(self, x, y):
+        """The danger rule's one-place premises on x and y that the scene did not assert."""
+        facts = (f"{p}({x if v == 'x' else y})" for p, v in self.premises)
+        return [f for f in facts if f not in self.statements]
 
     def is_hazard(self, label):
         return atom(self.dets[label]["class"]) in self.hazards
@@ -238,7 +257,9 @@ def fn_verdict(scene, person_idx, label, hazard, y, nearer):
         return "6b_uncertain"
     relation = scene.relation(label, y)
     if relation == "front":
-        return "4d_chained"  # the premise was asserted, yet SNePS did not conclude dangerous
+        if scene.missing_premises(label, y):
+            return "3a_missing_fact"  # e.g. no onroad(x): the road model found no road under the person
+        return "4d_chained"  # every premise was asserted, yet SNePS did not conclude dangerous
     if relation in ("behind", "level"):
         return "2a_depth_order"
     person_box = scene.truth["persons"][person_idx]["box"]
@@ -303,6 +324,8 @@ def attribute_fn(scene, j):
                           f"asserted (cue said: {c['relation']})",
         "4c_rule_narrow": f"{label} does not overlap {c['detection']} (facts: {c['facts'] or 'none'}); infrontof "
                           f"needs overlapping boxes, so the danger rule cannot fire",
+        "3a_missing_fact": f"infrontof({label}, {c['detection']}) was asserted, but the danger rule also needs "
+                           f"{', '.join(scene.missing_premises(label, c['detection']))}, which the scene lacks",
         "4d_chained": f"infrontof({label}, {c['detection']}) was asserted, yet SNePS did not conclude dangerous",
         "6b_uncertain": f"the annotation leaves the depth order with {c['annotated_class']} unclear",
     }[root]
@@ -326,14 +349,14 @@ def image_errors(scene):
     return errors
 
 
-def analyze(records, hazards, summary=None):
+def analyze(records, hazards, summary=None, premises=()):
     """All errors, reconciled with each record's evaluation and, when given, the run's summary.
 
     Raises ReconciliationError if the attributed errors are not exactly the evaluator's.
     """
     errors, totals = [], [0, 0, 0]
     for record in records:
-        scene = Scene(record, hazards)
+        scene = Scene(record, hazards, premises)
         found = image_errors(scene)
         tp = sum(scene.truth["persons"][j]["dangerous"] is True for j in scene.scored.values())
         counts = [tp, sum(e["type"] == "FP" for e in found), sum(e["type"] == "FN" for e in found)]
@@ -414,12 +437,13 @@ def main():
         used = Path(json.loads(config.read_text(encoding="utf-8"))["rules_path"])
         rules = used if used.exists() else ROOT / "kb" / used.name
     hazards = hazard_classes(rules)
+    premises = danger_premises(rules)
     rules_name = rules.resolve().relative_to(ROOT).as_posix() if rules.resolve().is_relative_to(ROOT) else str(rules)
 
     try:
         if args.annotations:
             check_annotations(records, args.annotations)
-        errors, counts = analyze(records, hazards, run_summary)
+        errors, counts = analyze(records, hazards, run_summary, premises)
     except ReconciliationError as e:
         sys.exit(f"Reconciliation failed: {e}")
 
@@ -429,7 +453,7 @@ def main():
     if args.output:
         Path(args.output).write_text(json.dumps({
             "results_file": results.as_posix(), "summary_file": summary_path.as_posix(), "rules_file": rules_name,
-            "hazard_classes": sorted(hazards), "summary": summary, "errors": errors}, indent=1) + "\n",
+            "hazard_classes": sorted(hazards), "danger_premises": [f"{p}({v})" for p, v in premises], "summary": summary, "errors": errors}, indent=1) + "\n",
             encoding="utf-8")
         print(f"\nAttribution written to {args.output}")
 
