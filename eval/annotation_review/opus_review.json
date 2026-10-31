@@ -1,0 +1,1153 @@
+{
+ "000000121938.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "unclear",
+   "P1-H1": "unclear",
+   "P1-H2": "unclear",
+   "P1-H3": "person",
+   "P1-H4": "unclear",
+   "P2-H3": "person",
+   "P2-H4": "person"
+  },
+  "traffic_area": {
+   "H0": "yes",
+   "H2": "yes",
+   "H3": "yes",
+   "H4": "yes"
+  },
+  "person_area": {
+   "P0": "unclear",
+   "P1": "road",
+   "P2": "road"
+  },
+  "motion": {
+   "H0": "stopped",
+   "H2": "stopped",
+   "H3": "stopped",
+   "H4": "stopped"
+  },
+  "confidence": {
+   "P0": "medium",
+   "P1": "medium",
+   "P2": "medium"
+  },
+  "notes": {
+   "P0": "officer photographing in the foreground, well in front of the crash-damaged bus; cannot tell whether she is on the pavement or the roadway",
+   "P1": "officer standing on the roadway in front of the SUV and beside the stopped cars at a bus crash scene",
+   "P2": "officer on the roadway in front of the silver car at the right edge",
+   "image": "bus crash scene: police officers working among stopped cars and a cone, damaged bus behind"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead): agreed"
+ },
+ "000000401482.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P2-H0": "person",
+   "P3-H0": "person",
+   "P4-H0": "person",
+   "P5-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "unclear"
+  },
+  "person_area": {
+   "P0": "road",
+   "P1": "road",
+   "P2": "road",
+   "P3": "road",
+   "P4": "road",
+   "P5": "road"
+  },
+  "motion": {
+   "H0": "stopped"
+  },
+  "confidence": {
+   "P0": "medium",
+   "P1": "medium",
+   "P2": "medium",
+   "P3": "medium",
+   "P4": "medium",
+   "P5": "medium"
+  },
+  "notes": {
+   "P0": "seated on the ballast right beside the freight wagons on the track side, no platform or barrier",
+   "P5": "standing on the rails with the wagons just behind him; only his edge touches the wagon box",
+   "image": "old sepia photograph of soldiers and civilians posing in a rail yard beside a string of freight wagons [review: wagons stabled on a siding with no locomotive, so traffic area unclear]"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead): changed traffic_area H0 yes -> unclear"
+ },
+ "000000398246.jpg": {
+  "scene": "crossing",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P1-H1": "person",
+   "P1-H2": "person",
+   "P2-H0": "unclear",
+   "P2-H1": "unclear",
+   "P2-H2": "unclear",
+   "P3-H0": "person",
+   "P3-H1": "person",
+   "P3-H2": "person",
+   "P4-H2": "person",
+   "P5-H2": "person",
+   "P6-H2": "person",
+   "P7-H2": "person",
+   "P7-H3": "person",
+   "P8-H2": "person",
+   "P10-H3": "hazard"
+  },
+  "traffic_area": {
+   "H0": "yes",
+   "H1": "yes",
+   "H2": "yes",
+   "H3": "no"
+  },
+  "person_area": {
+   "P0": "road",
+   "P1": "road",
+   "P2": "road",
+   "P3": "road",
+   "P4": "off_road",
+   "P7": "off_road",
+   "P10": "off_road"
+  },
+  "distant": [
+   "P3-H1",
+   "P3-H2"
+  ],
+  "motion": {
+   "H0": "unclear",
+   "H2": "unclear"
+  },
+  "confidence": {
+   "P0": "medium",
+   "P1": "medium",
+   "P2": "low",
+   "P3": "medium",
+   "P10": "medium"
+  },
+  "notes": {
+   "P0": "woman in the crosswalk beside a city bus standing at the junction, in front of the bus body",
+   "P1": "woman on the phone crossing the crosswalk directly in front of the bus's flank, steam from a manhole around her",
+   "P2": "woman partly hidden behind P1 and the steam, at the bus's front; her feet are not visible so the depth order against the bus is unclear",
+   "P3": "man crossing in the crosswalk just ahead of the near bus's nose, in front of a far bus (distant); his box overlaps the near bus only slightly",
+   "image": "New York crosswalk in manhole steam: pedestrians crossing right in front of a stopped MTA bus",
+   "P10": "woman standing behind P7 with a bicycle in front of her lower body"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead): agreed"
+ },
+ "000000064088.jpg": {
+  "scene": "crossing",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H2": "person",
+   "P1-H3": "person",
+   "P2-H3": "hazard",
+   "P3-H3": "hazard",
+   "P4-H3": "hazard"
+  },
+  "traffic_area": {
+   "H3": "yes"
+  },
+  "person_area": {
+   "P1": "road"
+  },
+  "motion": {
+   "H3": "stopped"
+  },
+  "confidence": {
+   "P1": "medium"
+  },
+  "notes": {
+   "P1": "elderly woman walking along the carriageway in a marked bus lane directly in front of the bus (brake lights on), no barrier",
+   "image": "New York street: woman walking in the road ahead of a stopped bus, other people tiny on the far pavement"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead): agreed (she is behind the bus in its direction of travel, but the guidelines exclude direction)"
+ },
+ "000000235919.jpg": {
+  "scene": "crossing",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "person",
+   "P1-H1": "person",
+   "P1-H2": "unclear",
+   "P2-H1": "unclear",
+   "P2-H2": "hazard",
+   "P2-H3": "unclear",
+   "P3-H1": "unclear",
+   "P3-H2": "unclear",
+   "P3-H3": "person",
+   "P3-H4": "unclear",
+   "P4-H2": "unclear",
+   "P4-H3": "person",
+   "P4-H4": "unclear",
+   "P4-H5": "unclear",
+   "P5-H2": "unclear",
+   "P5-H3": "unclear",
+   "P5-H4": "unclear",
+   "P5-H5": "unclear",
+   "P5-H6": "unclear",
+   "P6-H7": "hazard",
+   "P6-H8": "unclear",
+   "P7-H7": "hazard",
+   "P8-H7": "hazard",
+   "P9-H7": "unclear",
+   "P9-H9": "unclear",
+   "P10-H9": "hazard",
+   "P10-H10": "unclear"
+  },
+  "traffic_area": {
+   "H1": "yes",
+   "H3": "yes",
+   "H4": "yes"
+  },
+  "person_area": {
+   "P1": "road",
+   "P3": "road",
+   "P4": "road",
+   "P5": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    null
+   ]
+  },
+  "confidence": {
+   "P1": "medium",
+   "P3": "medium",
+   "P4": "medium"
+  },
+  "motion": {
+   "H1": "stopped",
+   "H3": "stopped"
+  },
+  "notes": {
+   "P0": "passenger in a pedicab (the pedicab itself is not boxed)",
+   "P1": "man walking across the road immediately in front of a yellow double-decker bus at the junction, tiny in the frame",
+   "P3": "pedestrian crossing the junction directly in front of a black car whose brake lights are lit; both are tiny so the margin is small",
+   "P4": "in an orange vest, crossing with P3 in front of the same black car",
+   "P5": "standing by the pole next to a white van's front corner; same depth, so order and road or pavement unclear",
+   "P2": "standing on the far side of a white car, car roof hides most of the box",
+   "image": "junction in front of Berlin Cathedral in grey weather: tiny pedestrians crossing in front of a bus and cars, leopard-print Trabant, pedicab"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead): agreed"
+ },
+ "000000465575.jpg": {
+  "scene": "crossing",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "person",
+   "P0-H2": "person"
+  },
+  "traffic_area": {
+   "H0": "yes",
+   "H1": "yes",
+   "H2": "yes"
+  },
+  "person_area": {
+   "P0": "road"
+  },
+  "confidence": {
+   "P0": "medium"
+  },
+  "motion": {
+   "H0": "moving",
+   "H1": "stopped",
+   "H2": "stopped"
+  },
+  "notes": {
+   "P0": "crossing guard in a hi-vis vest holding a STOP sign while standing in the street; a silver car is blurred passing at his left, a car stands at the kerb right beside his legs and another behind the blur; judged dangerous on geometry alone",
+   "image": "school crossing guard at a city junction, red traffic light, cars at the kerb and a motion-blurred car in the foreground"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead): agreed"
+ },
+ "000000182801.jpg": {
+  "scene": "crossing",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P1-H0": "unclear",
+   "P2-H0": "unclear",
+   "P2-H1": "unclear",
+   "P2-H2": "unclear",
+   "P3-H4": "person",
+   "P3-H5": "person",
+   "P3-H6": "person",
+   "P3-H7": "person",
+   "P4-H5": "unclear",
+   "P4-H6": "hazard",
+   "P4-H7": "hazard",
+   "P5-H6": "unclear",
+   "P5-H7": "hazard",
+   "P6-H6": "unclear",
+   "P6-H7": "unclear",
+   "P7-H6": "unclear",
+   "P7-H7": "hazard"
+  },
+  "traffic_area": {
+   "H5": "yes",
+   "H6": "yes",
+   "H7": "yes"
+  },
+  "person_area": {
+   "P3": "road",
+   "P4": "off_road",
+   "P5": "off_road",
+   "P7": "off_road"
+  },
+  "roles": {
+   "P2": [
+    "rider",
+    "H0"
+   ]
+  },
+  "distant": [
+   "P3-H5",
+   "P3-H6"
+  ],
+  "confidence": {
+   "P3": "medium"
+  },
+  "notes": {
+   "P3": "man in a black coat crossing the junction, queued taxis and cars on the road several metres behind him; overlap comes mostly from the picture, so labelled distant (null), a borderline case",
+   "P4": "tiny pedestrian on the far pavement, behind the cars; the car roof cuts the bottom of his box",
+   "P7": "as P4",
+   "image": "Canary Wharf pedestrian crossing: a man crossing in front of a queue of taxis and cars under a traffic light, a cyclist and pavement walkers"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead): agreed"
+ },
+ "000000340454.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P5-H0": "person",
+   "P5-H1": "person",
+   "P8-H0": "person",
+   "P8-H1": "person",
+   "P8-H2": "unclear"
+  },
+  "traffic_area": {
+   "H1": "yes"
+  },
+  "person_area": {
+   "P8": "off_road"
+  },
+  "distant": [
+   "P8-H1"
+  ],
+  "confidence": {
+   "P8": "medium"
+  },
+  "notes": {
+   "P8": "woman standing in a crowd at a street corner; her box overlaps a tiny car far down the street, overlap only in the picture",
+   "image": "Chicago street corner under a 'turning vehicles yield to pedestrians' sign: pedestrians at the kerb, tiny vehicles far down the street"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead, random sample): P8 is on the pavement, person_area unclear -> off_road"
+ },
+ "000000547136.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "unclear",
+   "P0-H4": "unclear",
+   "P1-H1": "unclear",
+   "P1-H4": "unclear",
+   "P1-H5": "unclear",
+   "P2-H1": "unclear",
+   "P2-H2": "unclear",
+   "P2-H4": "person",
+   "P3-H1": "unclear",
+   "P3-H2": "unclear",
+   "P3-H4": "person"
+  },
+  "traffic_area": {
+   "H1": "no",
+   "H4": "no"
+  },
+  "person_area": {
+   "P0": "unclear",
+   "P2": "unclear",
+   "P3": "unclear"
+  },
+  "motion": {
+   "H0": "stopped",
+   "H1": "stopped",
+   "H2": "stopped",
+   "H4": "stopped"
+  },
+  "confidence": {
+   "P0": "low",
+   "P2": "low",
+   "P3": "low"
+  },
+  "notes": {
+   "P0": "ramp worker standing at a baggage dolly beside a belt loader; the dollies and loader are at the aircraft stand and it is not clear which markings are traffic lanes",
+   "P2": "ramp worker at the end of the belt loader, standing in front of it",
+   "P3": "as P2",
+   "image": "airport apron: ground crew loading a United 737 with a belt loader and baggage dollies"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead, random sample): crew at a stationary belt loader in the aircraft's loading position, traffic_area unclear -> no (dev 000000308328.jpg convention)"
+ },
+ "000000010693.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "rain",
+  "nearer": {
+   "P0-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "unclear"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "barrier": [
+   "P0-H0"
+  ],
+  "motion": {
+   "H0": "unclear"
+  },
+  "confidence": {
+   "P0": "medium"
+  },
+  "notes": {
+   "P0": "woman with an umbrella at a metal barrier; the barrier runs between her and the car on the wet track area behind",
+   "image": "black and white rainy photo: spectator at a barrier, a sports car on a wet circuit beyond"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead, random sample): agreed"
+ },
+ "000000024343.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "rain",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "unclear",
+   "P0-H2": "unclear",
+   "P0-H3": "unclear",
+   "P1-H1": "unclear",
+   "P1-H2": "unclear",
+   "P1-H3": "unclear",
+   "P1-H4": "unclear",
+   "P1-H5": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H2"
+   ],
+   "P1": [
+    "rider",
+    "H3"
+   ]
+  },
+  "motion": {
+   "H2": "stopped",
+   "H3": "stopped"
+  },
+  "notes": {
+   "image": "two motorcyclists seen from behind on a wet city road, cars alongside"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead, random sample): agreed"
+ },
+ "000000029761.jpg": {
+  "scene": "small_distant",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H5": "hazard",
+   "P0-H6": "hazard",
+   "P0-H7": "hazard",
+   "P0-H8": "unclear",
+   "P0-H9": "unclear",
+   "P1-H5": "hazard",
+   "P1-H6": "hazard",
+   "P1-H7": "hazard",
+   "P1-H8": "unclear",
+   "P1-H9": "unclear",
+   "P2-H5": "hazard",
+   "P2-H7": "hazard",
+   "P2-H8": "unclear",
+   "P2-H9": "unclear"
+  },
+  "traffic_area": {
+   "H8": "no",
+   "H9": "no"
+  },
+  "person_area": {
+   "P0": "unclear",
+   "P1": "unclear",
+   "P2": "unclear"
+  },
+  "motion": {
+   "H5": "parked",
+   "H6": "parked",
+   "H7": "parked",
+   "H8": "parked",
+   "H9": "parked"
+  },
+  "notes": {
+   "image": "truck show on a gravel field: tiny people between rows of parked, decorated tractor units"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead, random sample): agreed"
+ },
+ "000000033572.jpg": {
+  "scene": "crowded",
+  "lighting": "night",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P0-H1": "hazard",
+   "P1-H0": "hazard",
+   "P1-H1": "hazard",
+   "P2-H0": "person",
+   "P2-H1": "person",
+   "P3-H0": "hazard",
+   "P3-H1": "hazard",
+   "P4-H0": "person",
+   "P4-H1": "person",
+   "P4-H2": "person",
+   "P5-H0": "hazard",
+   "P5-H1": "hazard",
+   "P5-H2": "hazard",
+   "P6-H1": "hazard",
+   "P6-H2": "hazard",
+   "P7-H2": "person"
+  },
+  "roles": {
+   "P2": [
+    "rider",
+    "H1"
+   ]
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no",
+   "H2": "no"
+  },
+  "person_area": {
+   "P4": "unclear",
+   "P7": "unclear"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H2": "parked"
+  },
+  "confidence": {
+   "P4": "medium",
+   "P7": "medium"
+  },
+  "notes": {
+   "P4": "man standing right in front of a display electric bike with a woman sitting on it; the lot is an outdoor night event, the bike is stationary",
+   "image": "night bike expo: crowd around a display electric bike, woman seated on it"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead, random sample): agreed"
+ },
+ "000000045475.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "unclear",
+   "P0-H2": "unclear",
+   "P1-H3": "unclear",
+   "P1-H4": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H1"
+   ],
+   "P1": [
+    "occupant",
+    "H4"
+   ]
+  },
+  "motion": {
+   "H1": "moving"
+  },
+  "notes": {
+   "P0": "motorcyclist on a vintage BMW riding past a lorry",
+   "P1": "driver seen through the window of the silver car behind the fence",
+   "image": "man riding a vintage BMW motorcycle in traffic beside a green lorry, a mesh fence on the pavement"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead, random sample): agreed"
+ },
+ "000000073182.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P0-H2": "unclear",
+   "P1-H0": "unclear",
+   "P1-H1": "unclear",
+   "P1-H2": "unclear",
+   "P2-H0": "person",
+   "P2-H1": "hazard",
+   "P2-H2": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H0"
+   ],
+   "P1": [
+    "rider",
+    "H2"
+   ],
+   "P2": [
+    "rider",
+    "H1"
+   ]
+  },
+  "motion": {
+   "H0": "moving",
+   "H1": "moving",
+   "H2": "moving"
+  },
+  "notes": {
+   "image": "panning shot of scooters and a car on a city road in Vietnam; motion-blurred background, riders in helmets"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead, random sample): agreed"
+ },
+ "000000150559.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "unclear",
+   "P0-H2": "unclear",
+   "P1-H0": "unclear",
+   "P1-H1": "unclear",
+   "P1-H2": "unclear",
+   "P1-H3": "unclear",
+   "P1-H4": "unclear",
+   "P1-H5": "unclear",
+   "P1-H6": "unclear",
+   "P1-H7": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H0"
+   ],
+   "P1": [
+    "rider",
+    "H5"
+   ]
+  },
+  "motion": {
+   "H1": "parked",
+   "H2": "parked",
+   "H3": "parked",
+   "H4": "parked",
+   "H7": "parked"
+  },
+  "notes": {
+   "P1": "cyclist riding on the carriageway; his COCO box is oversized (spans the street and the worker by the vans) but he is a rider, not a pedestrian",
+   "P0": "small person visible through the windscreen of the truck at the far left, an occupant",
+   "image": "city street with a cyclist on a phone; cars parked along the far kerb and a worker in a hi-vis vest beside a van"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead, random sample): agreed"
+ },
+ "000000258129.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P1-H0": "person",
+   "P1-H1": "person",
+   "P1-H2": "person",
+   "P1-H3": "person",
+   "P3-H2": "person",
+   "P3-H3": "person",
+   "P3-H4": "person",
+   "P3-H5": "person",
+   "P3-H6": "person",
+   "P3-H7": "person",
+   "P3-H8": "person",
+   "P4-H3": "person",
+   "P4-H4": "person",
+   "P4-H5": "person",
+   "P4-H6": "person",
+   "P4-H7": "person",
+   "P4-H8": "person",
+   "P4-H9": "person",
+   "P5-H3": "person",
+   "P5-H6": "person",
+   "P5-H7": "person",
+   "P5-H8": "person",
+   "P5-H9": "person",
+   "P5-H10": "person",
+   "P5-H11": "person",
+   "P5-H12": "person",
+   "P6-H9": "person",
+   "P6-H10": "person",
+   "P6-H11": "person",
+   "P6-H12": "person",
+   "P7-H9": "person",
+   "P7-H10": "person",
+   "P7-H11": "person",
+   "P7-H12": "person"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H3": "no",
+   "H4": "no",
+   "H7": "no",
+   "H9": "no",
+   "H10": "no"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road",
+   "P3": "off_road",
+   "P4": "off_road",
+   "P5": "off_road",
+   "P6": "off_road",
+   "P7": "off_road"
+  },
+  "motion": {
+   "H4": "parked",
+   "H10": "parked"
+  },
+  "notes": {
+   "image": "man lying on the grass playing frisbee with a leaping dog; spectators on the lawn, cars parked along the edge of the park far behind"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead, random sample): agreed"
+ },
+ "000000263828.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "unclear",
+   "P1-H0": "person",
+   "P1-H1": "person",
+   "P2-H0": "unclear",
+   "P2-H1": "person",
+   "P2-H2": "person"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no",
+   "H2": "no"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road",
+   "P2": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H2": "parked",
+   "H3": "parked"
+  },
+  "confidence": {
+   "P0": "medium",
+   "P1": "medium",
+   "P2": "medium"
+  },
+  "notes": {
+   "image": "visitors on a pavement around a parked vintage Triumph motorcycle at a classic vehicle show, a bicycle and a white truck parked behind them; only their legs and arms are in frame",
+   "P2": "stands behind the motorcycle seat, which cuts off his lower legs in the picture; depth versus the bike unclear",
+   "P0": "man at the left whose leg runs past the rear wheel and tail light; depth versus the bike unclear"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead, random sample): agreed"
+ },
+ "000000272194.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P1-H0": "unclear",
+   "P1-H1": "unclear",
+   "P2-H0": "unclear",
+   "P2-H1": "unclear",
+   "P3-H0": "hazard",
+   "P3-H1": "hazard",
+   "P4-H0": "unclear",
+   "P4-H1": "unclear",
+   "P5-H0": "unclear",
+   "P5-H1": "unclear",
+   "P6-H2": "unclear",
+   "P6-H3": "person",
+   "P7-H2": "hazard",
+   "P7-H3": "unclear"
+  },
+  "roles": {
+   "P1": [
+    "rider",
+    "H1"
+   ],
+   "P2": [
+    "rider",
+    "H1"
+   ],
+   "P6": [
+    "rider",
+    "H2"
+   ],
+   "P7": [
+    "rider",
+    "H3"
+   ]
+  },
+  "traffic_area": {
+   "H0": "unclear",
+   "H1": "unclear"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "confidence": {
+   "P0": "medium",
+   "P3": "medium"
+  },
+  "notes": {
+   "P0": "blurred figure at the left edge, on the far side of the kerb",
+   "P3": "standing behind the cyclists; their bike covers his lower legs",
+   "image": "children on wooden balance bikes at a street event (chalk lines, cones, stop sign); blurred passers-by and a cyclist on the far side"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead, random sample): agreed"
+ },
+ "000000290724.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "person",
+   "P1-H0": "unclear",
+   "P1-H1": "unclear",
+   "P1-H2": "hazard",
+   "P2-H0": "unclear",
+   "P2-H1": "unclear",
+   "P2-H2": "unclear",
+   "P3-H0": "unclear",
+   "P3-H1": "unclear",
+   "P3-H2": "unclear",
+   "P4-H2": "unclear",
+   "P4-H3": "unclear",
+   "P5-H2": "unclear",
+   "P7-H3": "hazard"
+  },
+  "traffic_area": {
+   "H1": "yes"
+  },
+  "person_area": {
+   "P0": "unclear"
+  },
+  "distant": [
+   "P0-H1"
+  ],
+  "roles": {
+   "P3": [
+    "rider",
+    "H2"
+   ],
+   "P4": [
+    "rider",
+    "H3"
+   ]
+  },
+  "confidence": {
+   "P0": "low",
+   "P1": "medium",
+   "P7": "medium"
+  },
+  "notes": {
+   "P0": "tiny figure at the far corner; the car it overlaps is a long way down the street",
+   "P1": "man behind the orange cyclist, his legs partly behind the cyclist's folding bike",
+   "P7": "woman at the kerb behind a cyclist's bike saddle; the bike box only grazes her",
+   "P3": "cyclist in orange stopped at the kerb, astride his folding bike",
+   "P4": "helmeted cyclist stopped at the kerb beside his bike",
+   "image": "cyclists and pedestrians gathered at a street corner in San Francisco, a large box truck passing on the road at left"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead, random sample): agreed"
+ },
+ "000000322106.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P1-H1": "person",
+   "P1-H2": "person",
+   "P2-H2": "person",
+   "P3-H2": "person",
+   "P4-H2": "person",
+   "P4-H3": "person",
+   "P4-H4": "person",
+   "P5-H4": "person"
+  },
+  "traffic_area": {
+   "H2": "yes",
+   "H3": "yes",
+   "H4": "yes"
+  },
+  "person_area": {
+   "P2": "off_road",
+   "P3": "off_road",
+   "P4": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H2": "moving",
+   "H3": "parked",
+   "H4": "moving"
+  },
+  "notes": {
+   "image": "street musicians on the pavement behind an iron railing, cars on the street beyond, pedestrians walking on the pavement at the top right"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead, random sample): agreed"
+ },
+ "000000336221.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H1": "person",
+   "P0-H2": "person",
+   "P0-H3": "person",
+   "P0-H4": "person",
+   "P0-H5": "person",
+   "P1-H5": "person",
+   "P2-H5": "person",
+   "P3-H5": "person",
+   "P4-H5": "person",
+   "P5-H5": "person",
+   "P6-H5": "person",
+   "P6-H6": "person",
+   "P7-H5": "person",
+   "P7-H6": "person",
+   "P8-H5": "person",
+   "P8-H6": "person",
+   "P9-H6": "person",
+   "P9-H7": "person",
+   "P9-H8": "person",
+   "P10-H6": "person",
+   "P10-H7": "person",
+   "P10-H8": "person",
+   "P11-H7": "person",
+   "P11-H8": "person"
+  },
+  "traffic_area": {
+   "H4": "yes",
+   "H5": "yes",
+   "H6": "yes",
+   "H7": "yes",
+   "H8": "yes"
+  },
+  "person_area": {
+   "P0": "unclear",
+   "P2": "unclear",
+   "P3": "unclear",
+   "P4": "unclear",
+   "P5": "unclear",
+   "P6": "unclear",
+   "P7": "unclear",
+   "P8": "unclear",
+   "P9": "unclear",
+   "P10": "unclear",
+   "P11": "unclear"
+  },
+  "confidence": {
+   "P0": "low",
+   "P2": "low",
+   "P3": "low",
+   "P4": "low",
+   "P5": "low",
+   "P6": "low",
+   "P7": "low",
+   "P8": "low",
+   "P9": "low",
+   "P10": "low",
+   "P11": "low"
+  },
+  "motion": {
+   "H0": "moving"
+  },
+  "notes": {
+   "image": "Istanbul crossing: a crowd of pedestrians seen from close up at the kerb, waiting at the signal with taxis, cars and a bus on the road a few metres behind",
+   "P0": "crowd member at the front; cannot see the ground, so whether they stand on the pavement or the carriageway is unclear (applies to the whole crowd P0, P2-P11)"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead, random sample): agreed"
+ },
+ "000000428754.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "rain",
+  "nearer": {
+   "P0-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "no"
+  },
+  "person_area": {
+   "P0": "unclear"
+  },
+  "motion": {
+   "H0": "parked"
+  },
+  "confidence": {
+   "P0": "medium"
+  },
+  "notes": {
+   "P0": "woman bending over an air-hose beside the rear corner of a GMC parked in a marked bay at a filling-station forecourt; boxes touch only at the edge",
+   "image": "photo through a car windscreen of a woman using a tyre-inflation station next to a parked SUV"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead, random sample): agreed"
+ },
+ "000000451008.jpg": {
+  "scene": "small_distant",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "yes"
+  },
+  "person_area": {
+   "P0": "road"
+  },
+  "distant": [
+   "P0-H0"
+  ],
+  "confidence": {
+   "P0": "medium"
+  },
+  "notes": {
+   "P0": "surfer kneeling on the street to wax his board; the pickup he overlaps in the picture is far down the street",
+   "image": "close-up of a surfer waxing a board on a residential street, cars parked or far away"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead, random sample): agreed"
+ },
+ "000000461187.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "unclear"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "barrier": [
+   "P0-H0"
+  ],
+  "notes": {
+   "P0": "man sitting on a park bench phoning; a white vehicle stands behind a chain fence",
+   "image": "man in a blazer on a park bench talking on a mobile phone"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead, random sample): agreed"
+ },
+ "000000493245.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "snow",
+  "nearer": {
+   "P0-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "yes"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "distant": [
+   "P0-H0"
+  ],
+  "notes": {
+   "P0": "pedestrian walking on the snowy pavement with an umbrella; the truck is across the junction far behind him",
+   "image": "snowstorm on a city street, a pedestrian on the pavement, a truck at the junction"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead, random sample): agreed"
+ },
+ "000000580978.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "unclear"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road"
+  },
+  "motion": {
+   "H0": "parked"
+  },
+  "notes": {
+   "image": "black and white photo of a tennis player on a court; a boy and a parked car by the clubhouse behind"
+  },
+  "annotator": "claude-sonnet (subagent)",
+  "reviewed_by": "claude-opus (lead, random sample): agreed"
+ }
+}

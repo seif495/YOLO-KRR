@@ -1,7 +1,7 @@
 # Annotation Guidelines
 ## Ground Truth Definitions for Pedestrian Danger Assessment
 
-**Version**: 1.1  
+**Version**: 1.2  
 **Date**: 2026-10-27  
 **Purpose**: Ensure consistent, defensible annotations across all datasets
 
@@ -107,6 +107,8 @@ For each visible person in the image:
 2. Record box coordinates: `[x1, y1, x2, y2]`
 3. Assign unique person index (0-based, left-to-right order)
 
+When the source dataset has human-drawn boxes (COCO), use those. Never take boxes from the detector being evaluated.
+
 ### Step 2: Hazard Detection Ground Truth
 
 For each vehicle that could pose danger:
@@ -124,7 +126,7 @@ For each vehicle that could pose danger:
 
 For each person:
 
-1. Identify all vehicles within proximity (boxes within ~50 pixels or overlapping)
+1. Identify all vehicles within proximity (boxes within ~50 pixels of the original image, or overlapping)
 2. For each person-vehicle pair:
    - Determine spatial relationship: person nearer, vehicle nearer, or unclear
    - Record in `pairs` array: `{"person": idx, "hazard": idx, "nearer": "person|hazard|unclear"}`
@@ -135,6 +137,8 @@ For each person:
    - `"medium"`: Reasonable judgment but some uncertainty
    - `"low"`: Genuinely ambiguous, forced to choose
 6. Add `notes` if needed: "parking lot scene, unclear if vehicle moving"
+
+**Riders and occupants.** A person riding or driving a vehicle (cyclist, motorcyclist, horse rider) or sitting inside one is not a pedestrian, so `dangerous` and `hidden` are FALSE for them. Record `role: "rider"` or `"occupant"` and, when it is boxed, the vehicle's index. A depicted person (a statue, a poster, a reflection) that the dataset boxes as a person is not a pedestrian either: record `role: "depiction"`. Likewise a vehicle or animal the dataset boxes that is not real (a toy, a model, a picture, a reflection) is no hazard: mark it `not_vehicle` and ignore it for both labels.
 
 ### Step 4: Hidden Classification
 
@@ -170,7 +174,8 @@ Q2: Is P's base lower in image than V's base?
   NO  → dangerous: FALSE (P is behind V, should be hidden instead)
   YES → Continue to Q3
 
-Q3: Is V clearly on a sidewalk/parking lot/safe area?
+Q3: Is V clearly outside the traffic area (on a sidewalk, plaza or other pedestrian area, or in a parking bay or kerbside parking space)?
+    A carriageway, a crossing, a junction and a parking lot's driving aisles are traffic area.
   YES → dangerous: FALSE (not in traffic area)
   NO  → Continue to Q4
 
@@ -297,7 +302,7 @@ If κ < 0.7:
    - Use observable cues only: motion blur, tire spray, position in lane
 
 2. **Assuming parking = safe**
-   - Parking lot can have maneuvering vehicles
+   - Parking lot can have maneuvering vehicles: its driving aisles are traffic area (Q3); only a vehicle in a bay is outside it
    - Mark based on spatial relationship, not assumed vehicle state
 
 3. **Considering pedestrian intent**
@@ -339,6 +344,7 @@ If κ < 0.7:
 |---|---|---|
 | 1.0 | 2026-10-23 | Initial guidelines |
 | 1.1 | 2026-10-27 | Q1 and the TRUE criteria use any box intersection instead of IoU > 0.1, which labelled the baseline's clearest positive (a man crossing in front of a tram, IoU 0.05) not dangerous. States that a pedestrian beside a vehicle stays FALSE even if the vehicle could move towards them, and that predicted paths are not considered. Applied to the baseline: see `eval/results/BASELINE_ERROR_ANALYSIS.md`. |
+| 1.2 | 2026-10-27 | Before annotating the Phase 4 sets: riders and vehicle occupants are not pedestrians, so both their labels are FALSE; Q3 defines the traffic area (resolving its conflict with pitfall 2); proximity is measured in original-image pixels; boxes come from the dataset's human annotations, never from the detector. Added during dev annotation (image 129 of 192), with the earlier images re-checked: depicted people are not pedestrians, and depicted vehicles (toys, models) are no hazards; a vehicle that overlaps a person only in the picture, far behind them, falls under "significant distance but unclear if safe" (NULL). |
 
 ---
 
