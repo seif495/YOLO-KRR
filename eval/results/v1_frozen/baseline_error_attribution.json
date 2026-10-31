@@ -1,0 +1,97 @@
+{
+  "results_file": "eval/results/baseline_instrumented_detailed.jsonl",
+  "annotations_file": "eval/annotations.json",
+  "total_errors": 10,
+  "errors": [
+    {
+      "type": "FP",
+      "image": "000000000257.jpg",
+      "person_idx": 0,
+      "person_label": "person_4",
+      "category": "4b_rule_broad",
+      "explanation": "person_4 correctly detected in front of bus_1, but scenario is safe (likely parked/stopped vehicle)"
+    },
+    {
+      "type": "FP",
+      "image": "000000000257.jpg",
+      "person_idx": 4,
+      "person_label": "person_9",
+      "category": "4b_rule_broad",
+      "explanation": "person_9 correctly detected in front of truck_1, but scenario is safe (likely parked/stopped vehicle)"
+    },
+    {
+      "type": "FP",
+      "image": "000000000257.jpg",
+      "person_idx": 7,
+      "person_label": "person_10",
+      "category": "4b_rule_broad",
+      "explanation": "person_10 correctly detected in front of truck_1, but scenario is safe (likely parked/stopped vehicle)"
+    },
+    {
+      "type": "FP",
+      "image": "000000000260.jpg",
+      "person_idx": 0,
+      "person_label": "person_1",
+      "category": "4b_rule_broad",
+      "explanation": "person_1 correctly detected in front of car_1, but scenario is safe (likely parked/stopped vehicle)"
+    },
+    {
+      "type": "FN",
+      "image": "women_crossing_in_front_of_wagon.jpg",
+      "person_idx": 0,
+      "person_label": "person_2",
+      "category": "unknown",
+      "explanation": "person_2 marked dangerous but no vehicle pairs annotated"
+    },
+    {
+      "type": "FN",
+      "image": "women_crossing_in_front_of_wagon.jpg",
+      "person_idx": 2,
+      "person_label": "person_1",
+      "category": "unknown",
+      "explanation": "person_1 marked dangerous but no vehicle pairs annotated"
+    },
+    {
+      "type": "FN",
+      "image": "night_intersection.jpg",
+      "person_idx": 0,
+      "person_label": "person_7",
+      "category": "unknown",
+      "explanation": "person_7 marked dangerous but no vehicle pairs annotated"
+    },
+    {
+      "type": "FN",
+      "image": "night_intersection.jpg",
+      "person_idx": 1,
+      "person_label": "person_6",
+      "category": "unknown",
+      "explanation": "person_6 marked dangerous but no vehicle pairs annotated"
+    },
+    {
+      "type": "FP",
+      "image": "women_in_front_of_parked_van.jpg",
+      "person_idx": 0,
+      "person_label": "person_1",
+      "category": "4b_rule_broad",
+      "explanation": "person_1 correctly detected in front of truck_1, but scenario is safe (likely parked/stopped vehicle)"
+    },
+    {
+      "type": "FP",
+      "image": "women_in_front_of_parked_van.jpg",
+      "person_idx": 1,
+      "person_label": "person_2",
+      "category": "4b_rule_broad",
+      "explanation": "person_2 correctly detected in front of truck_1, but scenario is safe (likely parked/stopped vehicle)"
+    }
+  ],
+  "summary": {
+    "by_type": {
+      "FP": 6,
+      "FN": 4
+    },
+    "by_category": {
+      "4b_rule_broad": 6,
+      "unknown": 4
+    }
+  }
+}

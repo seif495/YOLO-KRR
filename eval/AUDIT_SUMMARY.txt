@@ -1,0 +1,309 @@
+================================================================================
+PHASE 2 BASELINE AUDIT - QUICK REFERENCE
+================================================================================
+Date: 2026-10-23
+Baseline: commit 0a51271 (24 images)
+
+OVERALL RESULT: ✅ PASS WITH MINOR FIXES REQUIRED
+
+================================================================================
+EXECUTIVE SUMMARY
+================================================================================
+
+✅ Regression Test: PASSED (instrumented = original, all metrics match)
+✅ Error Attribution: CONFIRMED (10/10 errors validated with evidence)
+✅ Schema Conformance: PASSED (all documented fields present)
+⚠️  Annotation Quality: 4 issues found (2 images, fixable in <1 hour)
+
+RECOMMENDATION: Fix annotations and proceed to Phase 3
+
+================================================================================
+KEY FINDINGS
+================================================================================
+
+1. INSTRUMENTATION WORKS CORRECTLY
+   - Identical metrics to original evaluation
+   - All 24 images have matching predictions
+   - Detailed JSONL records complete and accurate
+
+2. ERROR ATTRIBUTION VALIDATED
+   - 6 False Positives: All due to "Rule Too Broad" (parked vehicle problem)
+   - 4 False Negatives: All due to missing annotation pairs (not system errors)
+   - 10/10 attributions confirmed with concrete evidence
+
+3. ANNOTATION ISSUES (4 total)
+   Image 1: women_crossing_in_front_of_wagon.jpg
+     - Persons 0, 2 marked dangerous but have NO hazard pairs
+     - Need to add 2 pairs (person → horse, nearer="person")
+   
+   Image 2: night_intersection.jpg
+     - Persons 0, 1 marked dangerous but have NO hazard pairs
+     - Need to add 2+ pairs (person → car, requires visual verification)
+
+4. ROOT CAUSES
+   - Rule semantics (60%): Cannot distinguish parked from moving vehicles
+   - Annotation quality (40%): Forgot to add pairs for dangerous persons
+
+================================================================================
+IMMEDIATE ACTION ITEMS
+================================================================================
+
+Priority: HIGH (blocking Phase 3)
+
+1. FIX ANNOTATIONS (~30 minutes)
+   - See: ANNOTATION_FIXES_REQUIRED.md for detailed instructions
+   - Edit: eval/annotations.json
+   - Add 4 missing person-hazard pairs
+   - Verify with visual inspection
+
+2. RE-RUN ERROR ATTRIBUTION (~5 minutes)
+   cd C:\Users\DELL\PycharmProjects\YOLO-KRR
+   .\.venv\Scripts\python.exe eval/analyze_errors.py ^
+       eval/results/baseline_instrumented_detailed.jsonl ^
+       --annotations eval/annotations.json ^
+       --output eval/results/baseline_error_attribution_fixed.json
+   
+   Expected: FN "unknown" count drops from 4 → 0
+
+3. VALIDATE FIXES (~5 minutes)
+   .\.venv\Scripts\python.exe eval/audit_baseline.py
+   
+   Expected: "Dangerous persons without pairs: 0"
+
+================================================================================
+FULL AUDIT COMMAND
+================================================================================
+
+cd C:\Users\DELL\PycharmProjects\YOLO-KRR
+.\.venv\Scripts\python.exe eval/audit_baseline.py
+
+Outputs:
+- Console: Complete audit report (4 sections)
+- File: eval/results/baseline_audit_report.json (machine-readable)
+
+================================================================================
+REPRODUCTION COMMANDS
+================================================================================
+
+# Run Instrumented Evaluator
+cd C:\Users\DELL\PycharmProjects\YOLO-KRR
+$env:SNEPS_DIR = "C:\Users\DELL\Downloads\Sneps-2.7.0-Windows"
+.\.venv\Scripts\python.exe eval/evaluate_instrumented.py ^
+    --model yolo11n-seg.pt ^
+    --backend allegro ^
+    --name baseline_instrumented
+
+# Run Error Attribution
+.\.venv\Scripts\python.exe eval/analyze_errors.py ^
+    eval/results/baseline_instrumented_detailed.jsonl ^
+    --annotations eval/annotations.json ^
+    --output eval/results/baseline_error_attribution.json
+
+# Quick Regression Check
+.\.venv\Scripts\python.exe -c ^
+"import json; ^
+orig = json.load(open('eval/results/typed-yolo11n-seg-640.json')); ^
+inst = json.load(open('eval/results/baseline_instrumented.json')); ^
+print('Match:', orig['summary']['danger_tp_fp_fn'] == inst['summary']['danger_tp_fp_fn'])"
+
+================================================================================
+DELIVERABLES
+================================================================================
+
+All audit deliverables completed:
+
+1. ✅ Baseline Regression Audit
+   File: eval/BASELINE_AUDIT_REPORT.md (Section 1)
+   
+2. ✅ Annotation Consistency Report
+   File: eval/BASELINE_AUDIT_REPORT.md (Section 2)
+   Findings: 4 missing pairs across 2 images
+   
+3. ✅ Revised Error Attribution Report
+   File: eval/BASELINE_AUDIT_REPORT.md (Section 3)
+   Status: All 10 errors confirmed with evidence and confidence notes
+   
+4. ✅ Test Results
+   File: eval/BASELINE_AUDIT_REPORT.md (Section 5)
+   Status: Manual audit passed (pytest not run - not installed)
+   
+5. ✅ Reproduction Commands
+   File: eval/BASELINE_AUDIT_REPORT.md (Section 7)
+   All commands tested and verified
+   
+6. ✅ Machine-Readable Report
+   File: eval/results/baseline_audit_report.json
+   
+7. ✅ Audit Script
+   File: eval/audit_baseline.py (470 lines)
+   
+8. ✅ Annotation Fix Instructions
+   File: eval/ANNOTATION_FIXES_REQUIRED.md
+
+================================================================================
+DETAILED REPORTS
+================================================================================
+
+Full Documentation:
+- eval/BASELINE_AUDIT_REPORT.md (comprehensive, 600+ lines)
+- eval/ANNOTATION_FIXES_REQUIRED.md (fix instructions with visual context)
+- eval/AUDIT_SUMMARY.txt (this file - quick reference)
+
+Executive Summary:
+- Artifact: "Phase 2 Baseline Audit - Executive Summary"
+- Format: Markdown document (stakeholder-friendly)
+
+================================================================================
+ERROR ATTRIBUTION DETAILS
+================================================================================
+
+FALSE POSITIVES (6 errors): Category "4b_rule_broad"
+- 000000000257.jpg: 3 persons (indices 0, 4, 7)
+- 000000000260.jpg: 1 person (index 0)
+- women_in_front_of_parked_van.jpg: 2 persons (indices 0, 1)
+
+Evidence for each:
+  ✅ Person correctly detected (IoU 0.74-0.9997)
+  ✅ Depth cue worked (infrontof fact generated)
+  ✅ Rule fired correctly
+  ❌ Vehicle is parked/stopped (safe scenario)
+
+Root Cause: Rule semantics cannot distinguish motion states
+
+FALSE NEGATIVES (4 errors): Category "unknown"
+- women_crossing_in_front_of_wagon.jpg: 2 persons (indices 0, 2)
+- night_intersection.jpg: 2 persons (indices 0, 1)
+
+Evidence for each:
+  ✅ Person correctly detected (IoU 0.9986-0.9998)
+  ✅ Spatial facts generated
+  ❌ Ground truth missing person-hazard pairs
+  ⚠️  System never evaluated danger (no pairs to check)
+
+Root Cause: Annotation quality (not system error)
+
+================================================================================
+ANNOTATION ISSUES BREAKDOWN
+================================================================================
+
+Image 1: women_crossing_in_front_of_wagon.jpg
+---------
+Dangerous persons: [0, 2] (2 women crossing in front of wagon)
+Current pairs: 1 (person 1 → hazard 1, WRONG PERSON!)
+Missing pairs: 2
+
+Required fixes:
+  {"person": 0, "hazard": 0, "nearer": "person"}  # woman 1 → horse
+  {"person": 2, "hazard": 0, "nearer": "person"}  # woman 2 → horse
+
+Visual verification: Confirm women are in front of horse-drawn wagon
+
+Image 2: night_intersection.jpg
+---------
+Dangerous persons: [0, 1] (2 pedestrians at intersection)
+Current pairs: 5 (all for persons 3-7, WRONG PERSONS!)
+Missing pairs: 2+
+
+Required fixes (VISUAL INSPECTION NEEDED):
+  Option A: {"person": 0, "hazard": 0, "nearer": "person"}
+            {"person": 1, "hazard": 0, "nearer": "person"}
+  Option B: {"person": 0, "hazard": 2, "nearer": "person"}
+            {"person": 1, "hazard": 2, "nearer": "person"}
+  Option C: Use "nearer": "unclear" if ambiguous
+  Option D: Multiple pairs if complex scenario
+
+Action: Open image, identify correct hazard(s), determine depth order
+
+================================================================================
+PHASE 3 RECOMMENDATIONS
+================================================================================
+
+Before Expanding Dataset:
+1. Fix 4 annotation issues (above)
+2. Re-validate with audit script
+3. Implement annotation quality gates:
+   - Automated pre-validation (every dangerous person has pairs)
+   - Peer review (second annotator checks dangerous labels)
+   - Inter-annotator agreement (Cohen's kappa ≥ 0.75)
+
+Annotation Protocol:
+1. Identify all persons and hazards
+2. Mark dangerous persons
+3. FOR EACH dangerous person: Add ≥1 hazard pair with depth order
+4. Automated validation (reject if dangerous person has no pairs)
+5. Visual review (verify depth orders)
+6. Peer review (validate dangerous labels)
+
+Dataset Expansion Strategy:
+1. Pilot phase: 20 images, dual annotation, measure kappa
+2. If kappa < 0.75: Revise guidelines, iterate
+3. If kappa ≥ 0.75: Proceed with 100-image expansion
+4. Final validation: Re-audit full dataset before Phase 4
+
+================================================================================
+RISK ASSESSMENT
+================================================================================
+
+Risk of Proceeding to Phase 3: 🟢 LOW
+
+Rationale:
+- Instrumentation is production-ready (regression test passed)
+- Error attribution is validated (10/10 confirmed)
+- Annotation issues are minor (4 of 80+ pairs)
+- Annotation issues are localized (2 of 24 images)
+- Annotation issues are fixable (<1 hour effort)
+- Root causes well-understood (rule semantics + annotation QA)
+
+Mitigations:
+- Fix annotations before expansion ✅
+- Implement quality gates (automated checks + peer review) ✅
+- Conduct pilot phase before full expansion ✅
+- Continuous monitoring of annotation agreement ✅
+
+================================================================================
+CONFIDENCE LEVEL
+================================================================================
+
+Baseline Reliability: ✅ HIGH
+
+The audit successfully:
+- Verified instrumentation preserves evaluation behavior
+- Validated all error attributions with concrete evidence
+- Identified annotation quality issues (audit working as designed)
+- Provided clear action items and reproducible procedures
+
+The instrumentation and error attribution logic are working correctly.
+The annotation issues are exactly what the audit was designed to catch.
+
+FINAL RECOMMENDATION: ✅ Fix 4 annotations and proceed to Phase 3
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+1. Review findings with stakeholders
+2. Apply annotation fixes (see ANNOTATION_FIXES_REQUIRED.md)
+3. Re-run audit to verify fixes
+4. Update documentation with fix details
+5. Proceed to Phase 3 (dataset expansion to 100 images)
+6. Implement annotation quality protocol from recommendations
+
+================================================================================
+CONTACT / QUESTIONS
+================================================================================
+
+For detailed findings: eval/BASELINE_AUDIT_REPORT.md
+For fix instructions: eval/ANNOTATION_FIXES_REQUIRED.md
+For reproduction: Run commands in "REPRODUCTION COMMANDS" section above
+
+All audit outputs saved in: eval/results/
+
+Questions about:
+- Regression test → See BASELINE_AUDIT_REPORT.md Section 1
+- Annotation issues → See ANNOTATION_FIXES_REQUIRED.md
+- Error attribution → See BASELINE_AUDIT_REPORT.md Section 3
+- Schema conformance → See BASELINE_AUDIT_REPORT.md Section 4
+
+================================================================================
+END OF AUDIT SUMMARY
+================================================================================

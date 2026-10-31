@@ -1,0 +1,855 @@
+{
+  "regression": {
+    "passed": true,
+    "summary_metrics_match": true,
+    "per_image_predictions_match": true,
+    "mismatches": []
+  },
+  "annotations": {
+    "dangerous_without_pairs": [
+      {
+        "image": "women_crossing_in_front_of_wagon.jpg",
+        "person_indices": [
+          0,
+          2
+        ],
+        "boxes": [
+          [
+            428.1,
+            519.3,
+            584.6,
+            851.7
+          ],
+          [
+            281.0,
+            505.1,
+            398.8,
+            831.5
+          ]
+        ]
+      },
+      {
+        "image": "night_intersection.jpg",
+        "person_indices": [
+          0,
+          1
+        ],
+        "boxes": [
+          [
+            1091.1,
+            553.5,
+            1158.3,
+            734.2
+          ],
+          [
+            1005.5,
+            537.7,
+            1061.6,
+            663.1
+          ]
+        ]
+      }
+    ],
+    "invalid_person_indices": [],
+    "invalid_hazard_indices": [],
+    "duplicate_pairs": [],
+    "missing_nearer_labels": [],
+    "ambiguous_nearer": [],
+    "total_issues": 4
+  },
+  "attributions": {
+    "validations": [
+      {
+        "image": "000000000257.jpg",
+        "person_idx": 0,
+        "person_label": "person_4",
+        "error_type": "FP",
+        "category": "4b_rule_broad",
+        "explanation": "person_4 correctly detected in front of bus_1, but scenario is safe (likely parked/stopped vehicle)",
+        "ground_truth": {
+          "dangerous": false,
+          "box": [
+            139.6,
+            345.6,
+            211.1,
+            480.0
+          ],
+          "pairs": [
+            {
+              "person": 0,
+              "hazard": 3,
+              "nearer": "person"
+            }
+          ]
+        },
+        "system_prediction": {
+          "dangerous": true,
+          "alert": true,
+          "hidden": false
+        },
+        "person_detected": {
+          "detected": true,
+          "label": "person_4",
+          "confidence": 0.7761262655258179,
+          "iou": 0.9186401169171358
+        },
+        "facts": [
+          [
+            "overlaps",
+            "backpack_1",
+            "person_4"
+          ],
+          [
+            "infrontof",
+            "person_4",
+            "backpack_1"
+          ],
+          [
+            "overlaps",
+            "bus_1",
+            "person_4"
+          ],
+          [
+            "infrontof",
+            "person_4",
+            "bus_1"
+          ],
+          [
+            "overlaps",
+            "motorcycle_1",
+            "person_4"
+          ],
+          [
+            "overlaps",
+            "motorcycle_2",
+            "person_4"
+          ],
+          [
+            "leftof",
+            "person_4",
+            "truck_1"
+          ],
+          [
+            "near",
+            "person_4",
+            "truck_1"
+          ],
+          [
+            "leftof",
+            "person_4",
+            "truck_2"
+          ]
+        ],
+        "reasoning": [
+          "isa(person_4, person)",
+          "overlaps(backpack_1, person_4)",
+          "infrontof(person_4, backpack_1)",
+          "overlaps(bus_1, person_4)",
+          "infrontof(person_4, bus_1)"
+        ],
+        "attribution_status": "confirmed"
+      },
+      {
+        "image": "000000000257.jpg",
+        "person_idx": 4,
+        "person_label": "person_9",
+        "error_type": "FP",
+        "category": "4b_rule_broad",
+        "explanation": "person_9 correctly detected in front of truck_1, but scenario is safe (likely parked/stopped vehicle)",
+        "ground_truth": {
+          "dangerous": false,
+          "box": [
+            287.8,
+            337.1,
+            321.0,
+            414.1
+          ],
+          "pairs": [
+            {
+              "person": 4,
+              "hazard": 0,
+              "nearer": "person"
+            }
+          ]
+        },
+        "system_prediction": {
+          "dangerous": true,
+          "alert": true,
+          "hidden": false
+        },
+        "person_detected": {
+          "detected": true,
+          "label": "person_9",
+          "confidence": 0.6933056116104126,
+          "iou": 0.8218425871166001
+        },
+        "facts": [
+          [
+            "leftof",
+            "backpack_1",
+            "person_9"
+          ],
+          [
+            "near",
+            "backpack_1",
+            "person_9"
+          ],
+          [
+            "leftof",
+            "bus_1",
+            "person_9"
+          ],
+          [
+            "leftof",
+            "motorcycle_1",
+            "person_9"
+          ],
+          [
+            "above",
+            "person_9",
+            "motorcycle_1"
+          ],
+          [
+            "leftof",
+            "motorcycle_2",
+            "person_9"
+          ],
+          [
+            "above",
+            "person_9",
+            "motorcycle_2"
+          ],
+          [
+            "overlaps",
+            "person_9",
+            "truck_1"
+          ],
+          [
+            "infrontof",
+            "person_9",
+            "truck_1"
+          ],
+          [
+            "leftof",
+            "person_9",
+            "truck_2"
+          ],
+          [
+            "near",
+            "person_9",
+            "truck_2"
+          ]
+        ],
+        "reasoning": [
+          "isa(person_9, person)",
+          "leftof(backpack_1, person_9)",
+          "near(backpack_1, person_9)",
+          "leftof(bus_1, person_9)",
+          "leftof(motorcycle_1, person_9)"
+        ],
+        "attribution_status": "confirmed"
+      },
+      {
+        "image": "000000000257.jpg",
+        "person_idx": 7,
+        "person_label": "person_10",
+        "error_type": "FP",
+        "category": "4b_rule_broad",
+        "explanation": "person_10 correctly detected in front of truck_1, but scenario is safe (likely parked/stopped vehicle)",
+        "ground_truth": {
+          "dangerous": false,
+          "box": [
+            316.7,
+            334.1,
+            336.9,
+            408.9
+          ],
+          "pairs": [
+            {
+              "person": 7,
+              "hazard": 0,
+              "nearer": "person"
+            }
+          ]
+        },
+        "system_prediction": {
+          "dangerous": true,
+          "alert": true,
+          "hidden": false
+        },
+        "person_detected": {
+          "detected": true,
+          "label": "person_10",
+          "confidence": 0.6013132929801941,
+          "iou": 0.7403121140171359
+        },
+        "facts": [
+          [
+            "leftof",
+            "backpack_1",
+            "person_10"
+          ],
+          [
+            "leftof",
+            "bus_1",
+            "person_10"
+          ],
+          [
+            "leftof",
+            "motorcycle_1",
+            "person_10"
+          ],
+          [
+            "above",
+            "person_10",
+            "motorcycle_1"
+          ],
+          [
+            "leftof",
+            "motorcycle_2",
+            "person_10"
+          ],
+          [
+            "above",
+            "person_10",
+            "motorcycle_2"
+          ],
+          [
+            "overlaps",
+            "person_10",
+            "truck_1"
+          ],
+          [
+            "infrontof",
+            "person_10",
+            "truck_1"
+          ],
+          [
+            "leftof",
+            "person_10",
+            "truck_2"
+          ],
+          [
+            "near",
+            "person_10",
+            "truck_2"
+          ]
+        ],
+        "reasoning": [
+          "isa(person_10, person)",
+          "leftof(backpack_1, person_10)",
+          "leftof(bus_1, person_10)",
+          "leftof(motorcycle_1, person_10)",
+          "above(person_10, motorcycle_1)"
+        ],
+        "attribution_status": "confirmed"
+      },
+      {
+        "image": "000000000260.jpg",
+        "person_idx": 0,
+        "person_label": "person_1",
+        "error_type": "FP",
+        "category": "4b_rule_broad",
+        "explanation": "person_1 correctly detected in front of car_1, but scenario is safe (likely parked/stopped vehicle)",
+        "ground_truth": {
+          "dangerous": false,
+          "box": [
+            261.0,
+            139.9,
+            312.8,
+            309.4
+          ],
+          "pairs": [
+            {
+              "person": 0,
+              "hazard": 1,
+              "nearer": "person"
+            }
+          ]
+        },
+        "system_prediction": {
+          "dangerous": true,
+          "alert": true,
+          "hidden": false
+        },
+        "person_detected": {
+          "detected": true,
+          "label": "person_1",
+          "confidence": 0.5109053254127502,
+          "iou": 0.7324621597199826
+        },
+        "facts": [
+          [
+            "leftof",
+            "bus_1",
+            "person_1"
+          ],
+          [
+            "near",
+            "bus_1",
+            "person_1"
+          ],
+          [
+            "overlaps",
+            "car_1",
+            "person_1"
+          ],
+          [
+            "infrontof",
+            "person_1",
+            "car_1"
+          ],
+          [
+            "leftof",
+            "person_1",
+            "suitcase_1"
+          ],
+          [
+            "near",
+            "person_1",
+            "suitcase_1"
+          ],
+          [
+            "leftof",
+            "person_1",
+            "suitcase_2"
+          ],
+          [
+            "near",
+            "person_1",
+            "suitcase_2"
+          ],
+          [
+            "leftof",
+            "person_1",
+            "suitcase_3"
+          ],
+          [
+            "near",
+            "person_1",
+            "suitcase_3"
+          ]
+        ],
+        "reasoning": [
+          "isa(person_1, person)",
+          "leftof(bus_1, person_1)",
+          "near(bus_1, person_1)",
+          "overlaps(car_1, person_1)",
+          "infrontof(person_1, car_1)"
+        ],
+        "attribution_status": "confirmed"
+      },
+      {
+        "image": "women_crossing_in_front_of_wagon.jpg",
+        "person_idx": 0,
+        "person_label": "person_2",
+        "error_type": "FN",
+        "category": "unknown",
+        "explanation": "person_2 marked dangerous but no vehicle pairs annotated",
+        "ground_truth": {
+          "dangerous": true,
+          "box": [
+            428.1,
+            519.3,
+            584.6,
+            851.7
+          ],
+          "pairs": []
+        },
+        "system_prediction": {
+          "dangerous": false,
+          "alert": false,
+          "hidden": false
+        },
+        "person_detected": {
+          "detected": true,
+          "label": "person_2",
+          "confidence": 0.8374587297439575,
+          "iou": 0.9998301740090075
+        },
+        "facts": [
+          [
+            "leftof",
+            "person_2",
+            "car_1"
+          ],
+          [
+            "leftof",
+            "person_2",
+            "horse_1"
+          ],
+          [
+            "near",
+            "horse_1",
+            "person_2"
+          ]
+        ],
+        "reasoning": [
+          "isa(person_2, person)",
+          "leftof(person_2, car_1)",
+          "leftof(person_2, horse_1)",
+          "near(horse_1, person_2)",
+          "confident(person_2)"
+        ],
+        "attribution_status": "confirmed",
+        "explanation_updated": "Annotation incomplete: no hazard pairs for dangerous person"
+      },
+      {
+        "image": "women_crossing_in_front_of_wagon.jpg",
+        "person_idx": 2,
+        "person_label": "person_1",
+        "error_type": "FN",
+        "category": "unknown",
+        "explanation": "person_1 marked dangerous but no vehicle pairs annotated",
+        "ground_truth": {
+          "dangerous": true,
+          "box": [
+            281.0,
+            505.1,
+            398.8,
+            831.5
+          ],
+          "pairs": []
+        },
+        "system_prediction": {
+          "dangerous": false,
+          "alert": false,
+          "hidden": false
+        },
+        "person_detected": {
+          "detected": true,
+          "label": "person_1",
+          "confidence": 0.6492470502853394,
+          "iou": 0.999691121086147
+        },
+        "facts": [
+          [
+            "leftof",
+            "person_1",
+            "car_1"
+          ],
+          [
+            "leftof",
+            "person_1",
+            "horse_1"
+          ],
+          [
+            "near",
+            "horse_1",
+            "person_1"
+          ]
+        ],
+        "reasoning": [
+          "isa(person_1, person)",
+          "leftof(person_1, car_1)",
+          "leftof(person_1, horse_1)",
+          "near(horse_1, person_1)",
+          "confident(person_1)"
+        ],
+        "attribution_status": "confirmed",
+        "explanation_updated": "Annotation incomplete: no hazard pairs for dangerous person"
+      },
+      {
+        "image": "night_intersection.jpg",
+        "person_idx": 0,
+        "person_label": "person_7",
+        "error_type": "FN",
+        "category": "unknown",
+        "explanation": "person_7 marked dangerous but no vehicle pairs annotated",
+        "ground_truth": {
+          "dangerous": true,
+          "box": [
+            1091.1,
+            553.5,
+            1158.3,
+            734.2
+          ],
+          "pairs": []
+        },
+        "system_prediction": {
+          "dangerous": false,
+          "alert": false,
+          "hidden": false
+        },
+        "person_detected": {
+          "detected": true,
+          "label": "person_7",
+          "confidence": 0.8123045563697815,
+          "iou": 0.9986053638749027
+        },
+        "facts": [
+          [
+            "leftof",
+            "car_1",
+            "person_7"
+          ],
+          [
+            "leftof",
+            "car_2",
+            "person_7"
+          ],
+          [
+            "leftof",
+            "motorcycle_1",
+            "person_7"
+          ],
+          [
+            "near",
+            "motorcycle_1",
+            "person_7"
+          ],
+          [
+            "leftof",
+            "umbrella_1",
+            "person_7"
+          ],
+          [
+            "overlaps",
+            "person_7",
+            "umbrella_2"
+          ],
+          [
+            "infrontof",
+            "person_7",
+            "umbrella_2"
+          ],
+          [
+            "leftof",
+            "person_7",
+            "umbrella_3"
+          ],
+          [
+            "above",
+            "umbrella_3",
+            "person_7"
+          ]
+        ],
+        "reasoning": [
+          "isa(person_7, person)",
+          "leftof(car_1, person_7)",
+          "leftof(car_2, person_7)",
+          "leftof(motorcycle_1, person_7)",
+          "near(motorcycle_1, person_7)"
+        ],
+        "attribution_status": "confirmed",
+        "explanation_updated": "Annotation incomplete: no hazard pairs for dangerous person"
+      },
+      {
+        "image": "night_intersection.jpg",
+        "person_idx": 1,
+        "person_label": "person_6",
+        "error_type": "FN",
+        "category": "unknown",
+        "explanation": "person_6 marked dangerous but no vehicle pairs annotated",
+        "ground_truth": {
+          "dangerous": true,
+          "box": [
+            1005.5,
+            537.7,
+            1061.6,
+            663.1
+          ],
+          "pairs": []
+        },
+        "system_prediction": {
+          "dangerous": false,
+          "alert": false,
+          "hidden": false
+        },
+        "person_detected": {
+          "detected": true,
+          "label": "person_6",
+          "confidence": 0.7110427021980286,
+          "iou": 0.999255803849877
+        },
+        "facts": [
+          [
+            "leftof",
+            "car_1",
+            "person_6"
+          ],
+          [
+            "leftof",
+            "car_2",
+            "person_6"
+          ],
+          [
+            "leftof",
+            "motorcycle_1",
+            "person_6"
+          ],
+          [
+            "near",
+            "motorcycle_1",
+            "person_6"
+          ],
+          [
+            "leftof",
+            "umbrella_1",
+            "person_6"
+          ],
+          [
+            "overlaps",
+            "person_6",
+            "umbrella_2"
+          ],
+          [
+            "infrontof",
+            "person_6",
+            "umbrella_2"
+          ],
+          [
+            "leftof",
+            "person_6",
+            "umbrella_3"
+          ]
+        ],
+        "reasoning": [
+          "isa(person_6, person)",
+          "leftof(car_1, person_6)",
+          "leftof(car_2, person_6)",
+          "leftof(motorcycle_1, person_6)",
+          "near(motorcycle_1, person_6)"
+        ],
+        "attribution_status": "confirmed",
+        "explanation_updated": "Annotation incomplete: no hazard pairs for dangerous person"
+      },
+      {
+        "image": "women_in_front_of_parked_van.jpg",
+        "person_idx": 0,
+        "person_label": "person_1",
+        "error_type": "FP",
+        "category": "4b_rule_broad",
+        "explanation": "person_1 correctly detected in front of truck_1, but scenario is safe (likely parked/stopped vehicle)",
+        "ground_truth": {
+          "dangerous": false,
+          "box": [
+            509.8,
+            175.9,
+            710.4,
+            660.5
+          ],
+          "pairs": [
+            {
+              "person": 0,
+              "hazard": 0,
+              "nearer": "person"
+            }
+          ]
+        },
+        "system_prediction": {
+          "dangerous": true,
+          "alert": true,
+          "hidden": false
+        },
+        "person_detected": {
+          "detected": true,
+          "label": "person_1",
+          "confidence": 0.8973256945610046,
+          "iou": 0.9997470198718985
+        },
+        "facts": [
+          [
+            "overlaps",
+            "car_1",
+            "person_1"
+          ],
+          [
+            "infrontof",
+            "person_1",
+            "car_1"
+          ],
+          [
+            "overlaps",
+            "person_1",
+            "truck_1"
+          ],
+          [
+            "infrontof",
+            "person_1",
+            "truck_1"
+          ]
+        ],
+        "reasoning": [
+          "isa(person_1, person)",
+          "overlaps(car_1, person_1)",
+          "infrontof(person_1, car_1)",
+          "overlaps(person_1, truck_1)",
+          "infrontof(person_1, truck_1)"
+        ],
+        "attribution_status": "confirmed"
+      },
+      {
+        "image": "women_in_front_of_parked_van.jpg",
+        "person_idx": 1,
+        "person_label": "person_2",
+        "error_type": "FP",
+        "category": "4b_rule_broad",
+        "explanation": "person_2 correctly detected in front of truck_1, but scenario is safe (likely parked/stopped vehicle)",
+        "ground_truth": {
+          "dangerous": false,
+          "box": [
+            671.9,
+            165.6,
+            897.4,
+            687.0
+          ],
+          "pairs": [
+            {
+              "person": 1,
+              "hazard": 0,
+              "nearer": "person"
+            }
+          ]
+        },
+        "system_prediction": {
+          "dangerous": true,
+          "alert": false,
+          "hidden": false
+        },
+        "person_detected": {
+          "detected": true,
+          "label": "person_2",
+          "confidence": 0.3437005877494812,
+          "iou": 0.9997805170837908
+        },
+        "facts": [
+          [
+            "overlaps",
+            "car_1",
+            "person_2"
+          ],
+          [
+            "infrontof",
+            "person_2",
+            "car_1"
+          ],
+          [
+            "overlaps",
+            "person_2",
+            "truck_1"
+          ],
+          [
+            "infrontof",
+            "person_2",
+            "truck_1"
+          ]
+        ],
+        "reasoning": [
+          "isa(person_2, person)",
+          "overlaps(car_1, person_2)",
+          "infrontof(person_2, car_1)",
+          "overlaps(person_2, truck_1)",
+          "infrontof(person_2, truck_1)"
+        ],
+        "attribution_status": "confirmed"
+      }
+    ],
+    "summary": {
+      "confirmed": 10
+    }
+  },
+  "schema": {
+    "issues": []
+  }
+}

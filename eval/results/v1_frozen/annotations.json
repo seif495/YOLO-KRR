@@ -1,0 +1,2070 @@
+{
+ "images": [
+  {
+   "source": "coco128",
+   "file": "000000000049.jpg",
+   "persons": [
+    {
+     "box": [
+      203.4,
+      260.4,
+      269.1,
+      333.5
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      118.4,
+      261.3,
+      175.3,
+      324.2
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      119.3,
+      334.2,
+      131.3,
+      367.8
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      284.3,
+      333.4,
+      295.2,
+      360.8
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      191.0,
+      334.4,
+      198.2,
+      357.8
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      346.8,
+      333.4,
+      361.6,
+      342.6
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "horse",
+     "box": [
+      162.6,
+      226.6,
+      293.0,
+      411.0
+     ]
+    },
+    {
+     "class": "horse",
+     "box": [
+      81.7,
+      244.9,
+      165.4,
+      403.1
+     ]
+    }
+   ],
+   "pairs": [
+    {
+     "person": 0,
+     "hazard": 0,
+     "nearer": "unclear"
+    },
+    {
+     "person": 1,
+     "hazard": 0,
+     "nearer": "unclear"
+    },
+    {
+     "person": 1,
+     "hazard": 1,
+     "nearer": "unclear"
+    },
+    {
+     "person": 2,
+     "hazard": 1,
+     "nearer": "hazard"
+    },
+    {
+     "person": 3,
+     "hazard": 0,
+     "nearer": "hazard"
+    },
+    {
+     "person": 4,
+     "hazard": 0,
+     "nearer": "hazard"
+    }
+   ]
+  },
+  {
+   "source": "coco128",
+   "file": "000000000061.jpg",
+   "persons": [
+    {
+     "box": [
+      261.2,
+      205.9,
+      309.3,
+      263.2
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      393.4,
+      210.3,
+      425.9,
+      250.1
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      261.5,
+      196.6,
+      295.8,
+      250.8
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "elephant",
+     "box": [
+      370.1,
+      248.9,
+      453.2,
+      296.5
+     ]
+    },
+    {
+     "class": "elephant",
+     "box": [
+      223.2,
+      250.1,
+      365.2,
+      327.8
+     ]
+    }
+   ],
+   "pairs": [
+    {
+     "person": 0,
+     "hazard": 1,
+     "nearer": "unclear"
+    },
+    {
+     "person": 1,
+     "hazard": 0,
+     "nearer": "unclear"
+    },
+    {
+     "person": 2,
+     "hazard": 1,
+     "nearer": "unclear"
+    }
+   ]
+  },
+  {
+   "source": "coco128",
+   "file": "000000000074.jpg",
+   "persons": [
+    {
+     "box": [
+      295.5,
+      94.0,
+      314.0,
+      152.8
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      326.9,
+      97.0,
+      340.5,
+      123.0
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      356.6,
+      95.5,
+      372.3,
+      147.6
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      462.1,
+      105.1,
+      493.7,
+      147.0
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      277.1,
+      103.8,
+      292.4,
+      150.7
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      282.6,
+      103.4,
+      294.3,
+      127.7
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "dog",
+     "box": [
+      61.9,
+      276.2,
+      358.3,
+      379.4
+     ]
+    },
+    {
+     "class": "bicycle",
+     "box": [
+      2.7,
+      3.7,
+      162.2,
+      316.1
+     ]
+    }
+   ],
+   "pairs": []
+  },
+  {
+   "source": "coco128",
+   "file": "000000000086.jpg",
+   "persons": [
+    {
+     "box": [
+      152.1,
+      183.1,
+      281.3,
+      559.1
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "motorcycle",
+     "box": [
+      130.1,
+      346.5,
+      424.4,
+      635.2
+     ]
+    }
+   ],
+   "pairs": [
+    {
+     "person": 0,
+     "hazard": 0,
+     "nearer": "unclear"
+    }
+   ]
+  },
+  {
+   "source": "coco128",
+   "file": "000000000109.jpg",
+   "persons": [
+    {
+     "box": [
+      512.9,
+      271.4,
+      534.1,
+      304.2
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      585.9,
+      268.3,
+      604.1,
+      291.2
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      548.0,
+      249.6,
+      552.6,
+      257.7
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      74.6,
+      197.8,
+      80.8,
+      213.1
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      604.3,
+      271.5,
+      613.5,
+      282.8
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "dog",
+     "box": [
+      539.7,
+      295.5,
+      562.6,
+      313.8
+     ]
+    }
+   ],
+   "pairs": []
+  },
+  {
+   "source": "coco128",
+   "file": "000000000136.jpg",
+   "persons": [
+    {
+     "box": [
+      0.8,
+      114.7,
+      54.4,
+      372.4
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      0.0,
+      61.4,
+      68.9,
+      374.0
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "giraffe",
+     "box": [
+      82.0,
+      116.4,
+      267.7,
+      369.1
+     ]
+    },
+    {
+     "class": "giraffe",
+     "box": [
+      316.7,
+      131.8,
+      444.8,
+      296.1
+     ]
+    }
+   ],
+   "pairs": []
+  },
+  {
+   "source": "coco128",
+   "file": "000000000149.jpg",
+   "persons": [
+    {
+     "box": [
+      388.0,
+      324.6,
+      397.6,
+      338.0
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      339.4,
+      316.8,
+      346.3,
+      329.9
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      333.2,
+      315.7,
+      339.5,
+      329.7
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      401.7,
+      325.7,
+      416.4,
+      338.7
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      559.6,
+      317.5,
+      566.7,
+      336.0
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      538.5,
+      316.0,
+      543.5,
+      330.7
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      274.3,
+      326.6,
+      282.3,
+      339.4
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      544.7,
+      317.6,
+      549.1,
+      333.9
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      586.4,
+      321.3,
+      591.0,
+      331.2
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      249.9,
+      316.3,
+      255.2,
+      339.3
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      233.6,
+      315.3,
+      241.4,
+      339.6
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      220.1,
+      313.4,
+      227.7,
+      340.7
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "car",
+     "box": [
+      278.6,
+      311.7,
+      288.3,
+      317.0
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      311.3,
+      316.9,
+      321.8,
+      321.6
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      295.0,
+      316.5,
+      303.6,
+      320.7
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      256.3,
+      321.4,
+      275.8,
+      328.6
+     ]
+    }
+   ],
+   "pairs": [
+    {
+     "person": 6,
+     "hazard": 3,
+     "nearer": "unclear"
+    }
+   ]
+  },
+  {
+   "source": "coco128",
+   "file": "000000000151.jpg",
+   "persons": [
+    {
+     "box": [
+      434.6,
+      61.5,
+      465.2,
+      114.8
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "train",
+     "box": [
+      210.8,
+      4.6,
+      480.0,
+      640.0
+     ]
+    }
+   ],
+   "pairs": [
+    {
+     "person": 0,
+     "hazard": 0,
+     "nearer": "unclear"
+    }
+   ]
+  },
+  {
+   "source": "coco128",
+   "file": "000000000257.jpg",
+   "persons": [
+    {
+     "box": [
+      139.6,
+      345.6,
+      211.1,
+      480.0
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      236.7,
+      326.5,
+      265.1,
+      406.2
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      211.6,
+      332.5,
+      233.9,
+      393.0
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      264.1,
+      330.7,
+      280.5,
+      403.5
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      287.8,
+      337.1,
+      321.0,
+      414.1
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      571.0,
+      327.8,
+      585.7,
+      370.0
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      125.2,
+      325.5,
+      135.3,
+      362.5
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      316.7,
+      334.1,
+      336.9,
+      408.9
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      77.7,
+      326.4,
+      98.0,
+      374.6
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      138.1,
+      325.6,
+      153.7,
+      364.0
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      225.2,
+      327.3,
+      240.4,
+      396.9
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      190.8,
+      330.6,
+      211.5,
+      370.4
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      537.2,
+      328.9,
+      551.2,
+      368.7
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "truck",
+     "box": [
+      249.2,
+      278.0,
+      454.1,
+      400.9
+     ]
+    },
+    {
+     "class": "truck",
+     "box": [
+      508.4,
+      304.5,
+      639.2,
+      368.4
+     ]
+    },
+    {
+     "class": "truck",
+     "box": [
+      520.0,
+      323.8,
+      640.0,
+      480.0
+     ]
+    },
+    {
+     "class": "truck",
+     "box": [
+      55.2,
+      301.1,
+      196.5,
+      361.0
+     ]
+    },
+    {
+     "class": "truck",
+     "box": [
+      473.6,
+      320.4,
+      498.4,
+      334.4
+     ]
+    }
+   ],
+   "pairs": [
+    {
+     "person": 0,
+     "hazard": 3,
+     "nearer": "person"
+    },
+    {
+     "person": 1,
+     "hazard": 0,
+     "nearer": "person"
+    },
+    {
+     "person": 3,
+     "hazard": 0,
+     "nearer": "person"
+    },
+    {
+     "person": 4,
+     "hazard": 0,
+     "nearer": "person"
+    },
+    {
+     "person": 7,
+     "hazard": 0,
+     "nearer": "person"
+    },
+    {
+     "person": 5,
+     "hazard": 1,
+     "nearer": "unclear"
+    },
+    {
+     "person": 12,
+     "hazard": 1,
+     "nearer": "unclear"
+    },
+    {
+     "person": 5,
+     "hazard": 2,
+     "nearer": "hazard"
+    },
+    {
+     "person": 12,
+     "hazard": 2,
+     "nearer": "hazard"
+    },
+    {
+     "person": 6,
+     "hazard": 3,
+     "nearer": "unclear"
+    },
+    {
+     "person": 8,
+     "hazard": 3,
+     "nearer": "person"
+    },
+    {
+     "person": 9,
+     "hazard": 3,
+     "nearer": "unclear"
+    },
+    {
+     "person": 11,
+     "hazard": 3,
+     "nearer": "person"
+    }
+   ]
+  },
+  {
+   "source": "coco128",
+   "file": "000000000260.jpg",
+   "persons": [
+    {
+     "box": [
+      261.0,
+      139.9,
+      312.8,
+      309.4
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      17.3,
+      142.2,
+      41.0,
+      170.0
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "bus",
+     "box": [
+      2.3,
+      93.8,
+      68.4,
+      251.6
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      238.4,
+      175.3,
+      271.6,
+      191.0
+     ]
+    }
+   ],
+   "pairs": [
+    {
+     "person": 0,
+     "hazard": 1,
+     "nearer": "person"
+    },
+    {
+     "person": 1,
+     "hazard": 0,
+     "nearer": "unclear"
+    }
+   ]
+  },
+  {
+   "source": "coco128",
+   "file": "000000000328.jpg",
+   "persons": [
+    {
+     "box": [
+      44.8,
+      68.1,
+      268.6,
+      425.0
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      197.9,
+      90.5,
+      403.0,
+      479.9
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      336.9,
+      58.5,
+      586.8,
+      484.5
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "car",
+     "box": [
+      350.5,
+      77.3,
+      451.5,
+      142.9
+     ]
+    }
+   ],
+   "pairs": [
+    {
+     "person": 1,
+     "hazard": 0,
+     "nearer": "person"
+    },
+    {
+     "person": 2,
+     "hazard": 0,
+     "nearer": "person"
+    }
+   ]
+  },
+  {
+   "source": "coco128",
+   "file": "000000000419.jpg",
+   "persons": [
+    {
+     "box": [
+      124.8,
+      130.2,
+      170.0,
+      283.0
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      458.5,
+      228.8,
+      589.5,
+      404.9
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "car",
+     "box": [
+      434.2,
+      202.5,
+      448.8,
+      216.9
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      529.3,
+      203.3,
+      545.7,
+      214.3
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      329.9,
+      202.7,
+      363.3,
+      214.4
+     ]
+    }
+   ],
+   "pairs": []
+  },
+  {
+   "source": "coco128",
+   "file": "000000000443.jpg",
+   "persons": [
+    {
+     "box": [
+      117.6,
+      1.1,
+      637.5,
+      473.5
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      488.6,
+      2.2,
+      640.0,
+      305.3
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      2.4,
+      152.7,
+      145.8,
+      464.4
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "cat",
+     "box": [
+      198.6,
+      53.3,
+      571.0,
+      434.0
+     ]
+    }
+   ],
+   "pairs": [
+    {
+     "person": 0,
+     "hazard": 0,
+     "nearer": "hazard"
+    },
+    {
+     "person": 1,
+     "hazard": 0,
+     "nearer": "unclear"
+    }
+   ]
+  },
+  {
+   "source": "coco128",
+   "file": "000000000471.jpg",
+   "persons": [
+    {
+     "box": [
+      211.0,
+      155.1,
+      227.2,
+      200.1
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "bus",
+     "box": [
+      120.9,
+      112.3,
+      580.5,
+      324.3
+     ]
+    }
+   ],
+   "pairs": [
+    {
+     "person": 0,
+     "hazard": 0,
+     "nearer": "unclear"
+    }
+   ]
+  },
+  {
+   "source": "coco128",
+   "file": "000000000529.jpg",
+   "persons": [
+    {
+     "box": [
+      108.5,
+      76.4,
+      337.8,
+      487.0
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      25.5,
+      97.9,
+      297.8,
+      294.0
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "motorcycle",
+     "box": [
+      17.7,
+      238.9,
+      379.9,
+      587.4
+     ]
+    }
+   ],
+   "pairs": [
+    {
+     "person": 0,
+     "hazard": 0,
+     "nearer": "unclear"
+    },
+    {
+     "person": 1,
+     "hazard": 0,
+     "nearer": "unclear"
+    }
+   ]
+  },
+  {
+   "source": "coco128",
+   "file": "000000000531.jpg",
+   "persons": [
+    {
+     "box": [
+      262.7,
+      248.3,
+      302.1,
+      337.5
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      82.9,
+      256.1,
+      120.5,
+      321.8
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      251.6,
+      253.2,
+      263.9,
+      279.5
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      216.2,
+      255.0,
+      226.8,
+      278.8
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      446.8,
+      246.3,
+      459.7,
+      281.7
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      504.1,
+      244.5,
+      516.8,
+      276.4
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      389.5,
+      256.4,
+      401.6,
+      277.2
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      6.5,
+      258.4,
+      28.9,
+      294.3
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "bicycle",
+     "box": [
+      48.9,
+      268.8,
+      74.2,
+      285.6
+     ]
+    },
+    {
+     "class": "bicycle",
+     "box": [
+      18.6,
+      271.1,
+      43.8,
+      286.7
+     ]
+    },
+    {
+     "class": "bicycle",
+     "box": [
+      628.7,
+      266.1,
+      639.2,
+      275.7
+     ]
+    }
+   ],
+   "pairs": [
+    {
+     "person": 7,
+     "hazard": 1,
+     "nearer": "unclear"
+    }
+   ]
+  },
+  {
+   "source": "coco128",
+   "file": "000000000532.jpg",
+   "persons": [
+    {
+     "box": [
+      269.1,
+      234.6,
+      313.6,
+      390.8
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      124.3,
+      253.5,
+      170.0,
+      367.5
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      221.3,
+      212.8,
+      239.3,
+      231.2
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      154.4,
+      216.5,
+      166.7,
+      236.1
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "bus",
+     "box": [
+      86.3,
+      127.1,
+      548.0,
+      389.2
+     ]
+    },
+    {
+     "class": "bus",
+     "box": [
+      0.3,
+      163.5,
+      97.1,
+      353.5
+     ]
+    }
+   ],
+   "pairs": [
+    {
+     "person": 0,
+     "hazard": 0,
+     "nearer": "person"
+    },
+    {
+     "person": 1,
+     "hazard": 0,
+     "nearer": "person"
+    },
+    {
+     "person": 2,
+     "hazard": 0,
+     "nearer": "unclear"
+    },
+    {
+     "person": 3,
+     "hazard": 0,
+     "nearer": "unclear"
+    }
+   ]
+  },
+  {
+   "source": "coco128",
+   "file": "000000000641.jpg",
+   "persons": [
+    {
+     "box": [
+      578.3,
+      233.5,
+      589.5,
+      246.6
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      565.2,
+      240.9,
+      582.7,
+      275.3
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      596.9,
+      232.9,
+      606.6,
+      246.1
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      555.7,
+      231.6,
+      562.7,
+      254.5
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      463.7,
+      225.6,
+      468.7,
+      251.9
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      606.6,
+      231.9,
+      613.7,
+      246.3
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      26.9,
+      207.5,
+      56.3,
+      230.5
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      3.8,
+      209.9,
+      24.2,
+      232.9
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      0.0,
+      221.0,
+      6.3,
+      239.9
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "bicycle",
+     "box": [
+      115.5,
+      237.7,
+      141.5,
+      297.7
+     ]
+    },
+    {
+     "class": "bicycle",
+     "box": [
+      565.2,
+      265.0,
+      582.7,
+      286.8
+     ]
+    },
+    {
+     "class": "bus",
+     "box": [
+      142.3,
+      100.0,
+      559.8,
+      328.9
+     ]
+    }
+   ],
+   "pairs": [
+    {
+     "person": 1,
+     "hazard": 1,
+     "nearer": "unclear"
+    },
+    {
+     "person": 3,
+     "hazard": 2,
+     "nearer": "unclear"
+    },
+    {
+     "person": 4,
+     "hazard": 2,
+     "nearer": "unclear"
+    }
+   ]
+  },
+  {
+   "source": "examples",
+   "file": "man_crossing_in_front_of_trolley.jpg",
+   "persons": [
+    {
+     "box": [
+      107.1,
+      116.5,
+      287.9,
+      599.3
+     ],
+     "dangerous": true
+    },
+    {
+     "box": [
+      48.4,
+      205.9,
+      79.0,
+      294.9
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      13.9,
+      191.8,
+      46.5,
+      287.1
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      61.0,
+      218.3,
+      89.5,
+      301.2
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "bus",
+     "box": [
+      259.9,
+      0.0,
+      463.0,
+      404.2
+     ]
+    }
+   ],
+   "pairs": [
+    {
+     "person": 0,
+     "hazard": 0,
+     "nearer": "person"
+    }
+   ]
+  },
+  {
+   "source": "examples",
+   "file": "women_crossing_in_front_of_wagon.jpg",
+   "persons": [
+    {
+     "box": [
+      428.1,
+      519.3,
+      584.6,
+      851.7
+     ],
+     "dangerous": true
+    },
+    {
+     "box": [
+      1068.1,
+      462.1,
+      1104.4,
+      545.2
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      281.0,
+      505.1,
+      398.8,
+      831.5
+     ],
+     "dangerous": true
+    },
+    {
+     "box": [
+      1137.8,
+      479.5,
+      1163.8,
+      545.8
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      1120.3,
+      476.4,
+      1142.5,
+      540.8
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      1138.6,
+      481.7,
+      1169.0,
+      554.2
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "horse",
+     "box": [
+      616.5,
+      453.5,
+      876.2,
+      804.7
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      926.1,
+      494.9,
+      1085.8,
+      566.4
+     ]
+    }
+   ],
+   "pairs": [
+    {
+     "person": 1,
+     "hazard": 1,
+     "nearer": "unclear"
+    }
+   ]
+  },
+  {
+   "source": "examples",
+   "file": "pedestrian_crossing_road.jpg",
+   "persons": [
+    {
+     "box": [
+      552.8,
+      209.2,
+      663.9,
+      485.9
+     ],
+     "dangerous": true
+    },
+    {
+     "box": [
+      220.4,
+      206.5,
+      239.9,
+      265.8
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      212.3,
+      206.8,
+      227.2,
+      261.4
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "car",
+     "box": [
+      778.0,
+      226.4,
+      967.5,
+      329.6
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      1040.5,
+      226.5,
+      1123.8,
+      269.7
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      1198.0,
+      229.6,
+      1279.4,
+      282.9
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      1152.8,
+      230.5,
+      1227.0,
+      278.0
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      927.3,
+      220.8,
+      1030.4,
+      268.6
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      0.1,
+      188.7,
+      42.4,
+      247.3
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      403.2,
+      221.5,
+      482.3,
+      266.3
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      356.5,
+      216.4,
+      396.9,
+      254.6
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      608.8,
+      212.2,
+      664.8,
+      254.1
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      320.4,
+      207.9,
+      372.9,
+      247.8
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      982.8,
+      225.1,
+      1032.6,
+      268.8
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      483.8,
+      215.2,
+      653.1,
+      310.2
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      922.7,
+      223.6,
+      970.8,
+      262.1
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      384.4,
+      212.3,
+      481.8,
+      264.5
+     ]
+    },
+    {
+     "class": "truck",
+     "box": [
+      788.1,
+      181.6,
+      897.7,
+      246.7
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      720.8,
+      226.1,
+      754.5,
+      244.0
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      487.9,
+      222.1,
+      571.9,
+      295.9
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      665.1,
+      213.4,
+      728.6,
+      239.8
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      614.9,
+      215.6,
+      660.5,
+      249.6
+     ]
+    }
+   ],
+   "pairs": [
+    {
+     "person": 0,
+     "hazard": 8,
+     "nearer": "person"
+    },
+    {
+     "person": 0,
+     "hazard": 11,
+     "nearer": "person"
+    },
+    {
+     "person": 0,
+     "hazard": 16,
+     "nearer": "person"
+    },
+    {
+     "person": 0,
+     "hazard": 18,
+     "nearer": "person"
+    }
+   ]
+  },
+  {
+   "source": "examples",
+   "file": "night_intersection.jpg",
+   "persons": [
+    {
+     "box": [
+      1091.1,
+      553.5,
+      1158.3,
+      734.2
+     ],
+     "dangerous": true
+    },
+    {
+     "box": [
+      1005.5,
+      537.7,
+      1061.6,
+      663.1
+     ],
+     "dangerous": true
+    },
+    {
+     "box": [
+      1227.7,
+      544.5,
+      1276.8,
+      680.1
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      757.2,
+      551.2,
+      841.0,
+      720.1
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      896.9,
+      548.4,
+      938.6,
+      655.8
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      675.6,
+      543.9,
+      701.2,
+      611.7
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      693.0,
+      545.8,
+      753.5,
+      639.3
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      844.8,
+      539.5,
+      874.9,
+      608.6
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      1262.3,
+      543.8,
+      1279.5,
+      684.2
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "car",
+     "box": [
+      0.2,
+      566.4,
+      543.0,
+      813.2
+     ]
+    },
+    {
+     "class": "motorcycle",
+     "box": [
+      670.4,
+      606.5,
+      915.4,
+      749.6
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      321.6,
+      555.1,
+      529.2,
+      643.5
+     ]
+    }
+   ],
+   "pairs": [
+    {
+     "person": 3,
+     "hazard": 1,
+     "nearer": "unclear"
+    },
+    {
+     "person": 4,
+     "hazard": 1,
+     "nearer": "hazard"
+    },
+    {
+     "person": 5,
+     "hazard": 1,
+     "nearer": "hazard"
+    },
+    {
+     "person": 6,
+     "hazard": 1,
+     "nearer": "unclear"
+    },
+    {
+     "person": 7,
+     "hazard": 1,
+     "nearer": "hazard"
+    }
+   ]
+  },
+  {
+   "source": "examples",
+   "file": "women_in_front_of_parked_van.jpg",
+   "persons": [
+    {
+     "box": [
+      509.8,
+      175.9,
+      710.4,
+      660.5
+     ],
+     "dangerous": false
+    },
+    {
+     "box": [
+      671.9,
+      165.6,
+      897.4,
+      687.0
+     ],
+     "dangerous": false
+    }
+   ],
+   "hazards": [
+    {
+     "class": "car",
+     "box": [
+      56.0,
+      99.3,
+      942.8,
+      541.7
+     ]
+    }
+   ],
+   "pairs": [
+    {
+     "person": 0,
+     "hazard": 0,
+     "nearer": "person"
+    },
+    {
+     "person": 1,
+     "hazard": 0,
+     "nearer": "person"
+    }
+   ]
+  },
+  {
+   "source": "examples",
+   "file": "empty_street.jpg",
+   "persons": [],
+   "hazards": [
+    {
+     "class": "car",
+     "box": [
+      1005.7,
+      592.3,
+      1069.0,
+      630.2
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      890.1,
+      589.6,
+      926.7,
+      617.3
+     ]
+    },
+    {
+     "class": "car",
+     "box": [
+      847.8,
+      595.4,
+      869.0,
+      612.6
+     ]
+    }
+   ],
+   "pairs": []
+  }
+ ]
+}
