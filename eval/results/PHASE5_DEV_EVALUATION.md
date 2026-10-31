@@ -1,6 +1,6 @@
-# Phase 5: Dev Evaluation and Rule Variants
+# Phase 5: Evaluation and Rule Variants
 
-Status: **dev complete; test not run.** Every number below comes from the 192-image dev set (`eval/annotations_dev.json`, guidelines v1.2). The test set has not been scored by any variant. The choice of variant and the decision to stop tuning were made by Claude on the author's behalf on 2026-10-31, and the author can overrule either.
+Status: **complete.** The variants were compared on the 192-image dev set (`eval/annotations_dev.json`, guidelines v1.2). The chosen variant, V5, and the baseline were then run once on the 295-image test set (see [Test set](#test-set)). Every section before that one uses dev only. Claude made the choice of variant and the decision to stop tuning on the author's behalf on 2026-10-31, and the author can overrule either.
 
 | | |
 |---|---|
@@ -99,10 +99,83 @@ What V5 still gets wrong:
 
 - **V5 is the candidate for the test set.** It gives the best precision and F1 on `dangerous` and `alert`, and the same `hidden` figures as V3, at about 10 s per image.
 - **The dev numbers for V3, V4 and V5 are optimistic.** The rider thresholds in `relations.riders()` were set on the dev ground truth, and V5's vehicle condition was picked from three simulated on dev. Dev therefore measures fit, not generalization, and only the test run will give an honest figure.
-- **The test set is run once, with V5 and the baseline side by side,** and only after the author agrees. No further variant is tried on test.
+- **The test set is run once, with V5 and the baseline side by side,** and only after the author agrees. No further variant is tried on test. The author asked for the run on 2026-10-31.
+
+## Test set
+
+The test set was run on 2026-10-31, once, with the baseline and V5 side by side as decided above. The runs are `test_typed` and `test_v5_road_vehicle_riders`. Neither the rules nor the thresholds were changed afterwards.
+
+The test set has 295 images and 16 dangerous people in 10 images:
+
+| Stratum | Images |
+|---|---|
+| val2017 front | 70 |
+| val2017 behind | 12 |
+| val2017 apart | 13 |
+| train2017 front | 200 |
+
+| Run | `dangerous` TP / FP / FN | Precision | Recall | F1 | `alert` TP / FP / FN | `alert` precision | Images with a dangerous person found |
+|---|---|---|---|---|---|---|---|
+| baseline | 11 / 224 / 5 | 0.047 | 0.688 | 0.088 | 10 / 194 / 6 | 0.049 | 7/10 |
+| **V5** | **8 / 67 / 8** | **0.107** | 0.500 | **0.176** | 7 / 58 / 9 | **0.108** | 6/10 |
+
+| Run | `hidden` TP / FP / FN | Precision | Recall |
+|---|---|---|---|
+| baseline | 40 / 157 / 57 | 0.203 | 0.412 |
+| V5 | 38 / 124 / 59 | 0.235 | 0.392 |
+
+`dangerous` TP / FP / FN by stratum:
+
+| Stratum | Baseline | V5 |
+|---|---|---|
+| val2017 front | 1 / 64 / 2 | 0 / 25 / 3 |
+| val2017 behind | 0 / 2 / 0 | 0 / 1 / 0 |
+| val2017 apart | 0 / 0 / 0 | 0 / 0 / 0 |
+| train2017 front | 10 / 158 / 3 | 8 / 41 / 5 |
+
+**What held up on test:**
+- **The FP cut held.** V5 removes 70% of the baseline's FPs on test (224 to 67), against 74% on dev.
+- **Precision and F1 doubled.** Both still roughly double: precision 0.047 to 0.107, F1 0.088 to 0.176.
+- **The depth cue behaved the same.** `infrontof` is right on 729 of 1182 annotated pairs (62%), against 56% on dev.
+
+**What did not hold:**
+- **Recall fell from 11 to 8 of 16.** On dev V5 lost no TP; on test it loses 3.
+- **All three are missing facts (`3a`).** The person is annotated on the road, but SegFormer found neither road nor sidewalk under their feet, so `onroad(x)` was never asserted:
+  - a rainy Mumbai street seen from a taxi;
+  - a bus-crash scene with police among stopped cars;
+  - a New York crosswalk in manhole steam.
+
+  In the Mumbai street the truck had no `onroad(y)` either. Dev had no scene like these: wet, steamy or cluttered roads that a dash-camera model was not trained on.
+
+**Which filter costs what on test.** This table is a diagnostic only, not a choice: it was made after the test run and is not used to pick a variant. Each combination of V5's three premises is recomputed from V5's recorded facts and statements. The recomputation reproduces every real run exactly: all five dev variants, the test baseline and test V5.
+
+| Danger rule premises besides `infrontof`, `isa` | Dev TP / FP / FN | Test TP / FP / FN | Test F1 |
+|---|---|---|---|
+| none (baseline) | 6 / 102 / 13 | 11 / 224 / 5 | 0.088 |
+| `onroad(x)` (V2) | 6 / 51 / 13 | 8 / 122 / 8 | 0.110 |
+| `pedestrian(x)` (V3) | 6 / 90 / 13 | 11 / 193 / 5 | 0.100 |
+| `onroad(x)`, `pedestrian(x)` (V4) | 6 / 43 / 13 | 8 / 102 / 8 | 0.127 |
+| `onroad(y)` | 6 / 47 / 13 | 10 / 119 / 6 | 0.138 |
+| `onroad(y)`, `pedestrian(x)` | 6 / 41 / 13 | 10 / 99 / 6 | 0.160 |
+| all three (V5) | 6 / 27 / 13 | 8 / 67 / 8 | 0.176 |
+
+What each premise does on test:
+- **`onroad(x)` (the person on the road)** costs all 3 lost TPs and still pays for itself: with it, F1 is higher than without.
+- **`onroad(y)` (the vehicle on the road)** costs 1 TP, in the Mumbai street.
+- **`pedestrian(x)` (the rider check)** costs nothing.
+
+**Remaining errors on test.**
+- **FNs:**
+  - the 3 missing road facts above;
+  - 2 people YOLO boxed badly (`1d`);
+  - 1 missed motorcycle (`1b`);
+  - 1 depth order wrong (`2a`);
+  - 1 missed person (`1a`).
+- **FPs:** of V5's 67, 39 fire on a vehicle the annotator judged outside the traffic area and 36 on a person judged off the road. One FP can carry both reasons; `eval/fp_breakdown.py` gives the counts.
 
 ## Next steps (dev only)
 
 1. **Recall.** A larger detector or a higher image size for the bus in `000000353180` would recover 7 of the 13 FNs. `eval/results/models.md` holds earlier model comparisons.
 2. **People at the kerb.** Many of V5's remaining off-road FPs stand on the kerb beside a vehicle on the road. Two changes may separate them: a tighter ground band under the feet, or requiring most of the person's band to be road, not just its most common class.
 3. **Attribute `near`.** Extend `analyze_errors.py` to `near` triggers only if `near` comes back into a rule.
+4. **When no ground is found.** On test every lost TP had no ground class at all under the person. A variant could block only people found on a sidewalk and leave people with no ground unblocked. That would be tuned on dev, but the test set has now been seen: its result here should be quoted as V5's held-out figure, and any later variant needs a new held-out set.

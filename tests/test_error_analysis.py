@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "eval"))
 
-from analyze_errors import ReconciliationError, analyze, hazard_classes, report  # noqa: E402
+from analyze_errors import ReconciliationError, analyze, danger_premises, hazard_classes, report  # noqa: E402
 from audit_baseline_v2 import (blocking_pairs, check_detections, check_evidence,  # noqa: E402
                                check_false_negatives, check_matcher, check_reconciliation)
 from evaluate import score  # noqa: E402
@@ -146,6 +146,16 @@ class FalseNegativeTest(unittest.TestCase):
                         [("bus", BUS)], [(0, 0, "person")])
         self.assertEqual(e["root_cause"], "4d_chained")
         self.assertTrue(e["requires_manual_review"])
+
+    def test_missing_road_premise_is_a_missing_fact(self):
+        record = scene([("person_1", "person", IN_FRONT, 0.8), ("bus_1", "bus", BUS, 0.9)], [(IN_FRONT, True)],
+                       [("bus", BUS)], [(0, 0, "person")])
+        record["statements"] = ["onroad(bus_1)", "pedestrian(person_1)"]
+        premises = danger_premises(ROOT / "kb" / "danger_road_vehicle_riders.snepslog")
+        [e], _ = analyze([record], HAZARDS, premises=premises)
+        self.assertEqual(e["root_cause"], "3a_missing_fact")
+        self.assertIn("onroad(person_1)", e["explanation"])
+        self.assertNotIn("pedestrian(person_1)", e["explanation"])
 
 
 class ReconciliationTest(unittest.TestCase):

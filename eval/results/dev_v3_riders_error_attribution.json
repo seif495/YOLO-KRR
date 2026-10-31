@@ -17,6 +17,9 @@
   "truck",
   "zebra"
  ],
+ "danger_premises": [
+  "pedestrian(x)"
+ ],
  "summary": {
   "counts": {
    "TP": 6,
