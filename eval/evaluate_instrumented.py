@@ -26,6 +26,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "eval"))
 
+from analyze_errors import hazard_classes  # noqa: E402
 from evaluate import QUERIES, QUESTIONS, cue, image_path, match, prf, ratio, score  # noqa: E402
 from yolo_sneps.backends import AllegroBatchBackend, SnepspacyBackend  # noqa: E402
 from yolo_sneps.pipeline import describe  # noqa: E402
@@ -110,6 +111,8 @@ def main():
     parser.add_argument("--rules", help="default: kb/danger.snepslog, danger_road.snepslog with --road, "
                                         "danger_english.snepslog with --route english")
     parser.add_argument("--road", action="store_true", help="assert onroad/onsidewalk from road segmentation")
+    parser.add_argument("--road-hazards", action="store_true",
+                        help="with --road, also assert onroad/onsidewalk for the rules' hazard classes")
     parser.add_argument("--riders", action="store_true", help="assert rides(p, v) and pedestrian(p) (for the rider rules)")
     parser.add_argument("--route", choices=["typed", "english"], default="typed")
     parser.add_argument("--backend", choices=["allegro", "snepspacy"],
@@ -122,6 +125,8 @@ def main():
     args = parser.parse_args()
     if args.road and args.route == "english":
         parser.error("--road is not available on the English route")
+    if args.road_hazards and not args.road:
+        parser.error("--road-hazards needs --road")
 
     from ultralytics import YOLO
     from ultralytics.utils import SETTINGS
@@ -136,6 +141,7 @@ def main():
         "rules": str(args.rules) if args.rules else None,
         "road": args.road,
         "riders": args.riders,
+        "road_hazards": args.road_hazards,
         "route": args.route,
         "backend": args.backend,
         "annotations_file": args.annotations,
@@ -158,6 +164,7 @@ def main():
     rules = load_rules(rules_path)
     config["rules_path"] = str(rules_path)
     config["rules_count"] = len(rules)
+    focus = ("person",) + (tuple(sorted(hazard_classes(rules_path))) if args.road_hazards else ())
     
     road_model = translator = None
     if args.road:
@@ -203,7 +210,7 @@ def main():
             totals["yolo_seconds"] += yolo_time
             
             detections, facts, scene = describe(result, conf=args.conf, pair_filter=focus_pairs({"person"}),
-                                                road_model=road_model, find_riders=args.riders)
+                                                road_model=road_model, focus=focus, find_riders=args.riders)
             
             # Match ground truth to detections
             matched_persons = match_ground_truth_to_detections(item["persons"], detections)
@@ -322,7 +329,7 @@ def main():
     summary = {
         "model": Path(args.model).name, "imgsz": args.imgsz, "conf": args.conf,
         "rules": rules_path.name,
-        "route": args.route, "road": args.road, "riders": args.riders, "backend": args.backend, "images": n,
+        "route": args.route, "road": args.road, "road_hazards": args.road_hazards, "riders": args.riders, "backend": args.backend, "images": n,
         "person_recall_coco128": ratio(t["found"], t["gt_persons"]),
         "infrontof_accuracy": ratio(t["pairs_correct"], t["pairs"]),
         "infrontof_no_answer": ratio(t["pairs_none"], t["pairs"]),
