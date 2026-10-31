@@ -1,0 +1,20 @@
+{
+  "model": "yolo11n-seg.pt",
+  "imgsz": 640,
+  "conf": 0.25,
+  "rules": null,
+  "road": false,
+  "route": "typed",
+  "backend": "allegro",
+  "annotations_file": "eval/annotations.json",
+  "environment": {
+    "platform": "Windows-11-10.0.22621-SP0",
+    "python_version": "3.12.3 (tags/v3.12.3:f6650f9, Apr  9 2024, 14:05:25) [MSC v.1938 64 bit (AMD64)]",
+    "pytorch_version": "2.6.0+cu124",
+    "cuda_available": true,
+    "cuda_version": "12.4"
+  },
+  "timestamp": "2026-10-23 18:52:06",
+  "rules_path": "C:\\Users\\DELL\\PycharmProjects\\YOLO-KRR\\kb\\danger.snepslog",
+  "rules_count": 24
+}

@@ -1,0 +1,144 @@
+{
+  "results_file": "eval/results/v1_frozen/baseline_instrumented_detailed.jsonl",
+  "annotations_file": "eval/results/v1_frozen/annotations.json",
+  "total_errors": 12,
+  "summary_counts": {
+    "TP": 2,
+    "FP": 8,
+    "FN": 4
+  },
+  "errors": [
+    {
+      "type": "FP",
+      "image": "000000000257.jpg",
+      "person_idx": 0,
+      "person_label": "person_4",
+      "category": "4b_rule_broad",
+      "explanation": "Rule fired on person_4, likely parked vehicle scenario"
+    },
+    {
+      "type": "FP",
+      "image": "000000000257.jpg",
+      "person_idx": 4,
+      "person_label": "person_9",
+      "category": "4b_rule_broad",
+      "explanation": "person_9 correctly detected in front of truck_1, but scenario is safe (likely parked/stopped vehicle)"
+    },
+    {
+      "type": "FP",
+      "image": "000000000257.jpg",
+      "person_idx": 7,
+      "person_label": "person_10",
+      "category": "4b_rule_broad",
+      "explanation": "person_10 correctly detected in front of truck_1, but scenario is safe (likely parked/stopped vehicle)"
+    },
+    {
+      "type": "FP",
+      "image": "000000000257.jpg",
+      "person_idx": 8,
+      "person_label": "person_2",
+      "category": "4b_rule_broad",
+      "explanation": "Rule fired on person_2, likely parked vehicle scenario"
+    },
+    {
+      "type": "FP",
+      "image": "000000000260.jpg",
+      "person_idx": 0,
+      "person_label": "person_1",
+      "category": "4b_rule_broad",
+      "explanation": "person_1 correctly detected in front of car_1, but scenario is safe (likely parked/stopped vehicle)"
+    },
+    {
+      "type": "FN",
+      "image": "women_crossing_in_front_of_wagon.jpg",
+      "person_idx": 0,
+      "person_label": "person_2",
+      "category": "unknown",
+      "explanation": "person_2 marked dangerous but no vehicle pairs annotated"
+    },
+    {
+      "type": "FN",
+      "image": "women_crossing_in_front_of_wagon.jpg",
+      "person_idx": 2,
+      "person_label": "person_1",
+      "category": "unknown",
+      "explanation": "person_1 marked dangerous but no vehicle pairs annotated"
+    },
+    {
+      "type": "FN",
+      "image": "night_intersection.jpg",
+      "person_idx": 0,
+      "person_label": "person_7",
+      "category": "unknown",
+      "explanation": "person_7 marked dangerous but no vehicle pairs annotated"
+    },
+    {
+      "type": "FN",
+      "image": "night_intersection.jpg",
+      "person_idx": 1,
+      "person_label": "person_6",
+      "category": "unknown",
+      "explanation": "person_6 marked dangerous but no vehicle pairs annotated"
+    },
+    {
+      "type": "FP",
+      "image": "women_in_front_of_parked_van.jpg",
+      "person_idx": 0,
+      "person_label": "person_1",
+      "category": "4b_rule_broad",
+      "explanation": "person_1 correctly detected in front of car_1, but scenario is safe (likely parked/stopped vehicle)"
+    },
+    {
+      "type": "FP",
+      "image": "women_in_front_of_parked_van.jpg",
+      "person_idx": 1,
+      "person_label": "person_2",
+      "category": "4b_rule_broad",
+      "explanation": "person_2 correctly detected in front of car_1, but scenario is safe (likely parked/stopped vehicle)"
+    },
+    {
+      "type": "FP",
+      "image": "women_in_front_of_parked_van.jpg",
+      "person_idx": null,
+      "person_label": "person_3",
+      "category": "unmatched_detection",
+      "explanation": "Unmatched detection person_3 (no GT person), conf=0.663, 2 infrontof facts",
+      "facts": [
+        [
+          "overlaps",
+          "car_1",
+          "person_3"
+        ],
+        [
+          "infrontof",
+          "person_3",
+          "car_1"
+        ],
+        [
+          "overlaps",
+          "person_3",
+          "truck_1"
+        ],
+        [
+          "infrontof",
+          "person_3",
+          "truck_1"
+        ]
+      ]
+    }
+  ],
+  "summary": {
+    "by_type": {
+      "FP": 8,
+      "FN": 4
+    },
+    "by_category": {
+      "4b_rule_broad": 7,
+      "unknown": 4,
+      "unmatched_detection": 1
+    },
+    "matched_fp": 7,
+    "unmatched_fp": 1
+  },
+  "reconciliation_verified": true
+}
