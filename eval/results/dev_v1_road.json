@@ -1,0 +1,4554 @@
+{
+ "summary": {
+  "model": "yolo11n-seg.pt",
+  "imgsz": 640,
+  "conf": 0.25,
+  "rules": "danger_road.snepslog",
+  "route": "typed",
+  "road": true,
+  "riders": false,
+  "backend": "allegro",
+  "images": 192,
+  "person_recall_coco128": "0/0",
+  "infrontof_accuracy": "427/765 = 56%",
+  "infrontof_no_answer": "315/765 = 41%",
+  "danger_tp_fp_fn": [
+   6,
+   137,
+   13
+  ],
+  "danger_precision": 0.042,
+  "danger_recall": 0.316,
+  "danger_f1": 0.074,
+  "alert_tp_fp_fn": [
+   6,
+   110,
+   13
+  ],
+  "alert_precision": 0.052,
+  "alert_recall": 0.316,
+  "alert_f1": 0.089,
+  "hidden_flagged": 139,
+  "hidden_tp_fp_fn": [
+   34,
+   101,
+   25
+  ],
+  "hidden_precision": 0.252,
+  "hidden_recall": 0.576,
+  "hidden_f1": 0.351,
+  "image_recall_dangerous": "5/11 = 45%",
+  "images_with_sneps_errors": 0,
+  "yolo_seconds_per_image": 0.437,
+  "sneps_seconds_per_image": 15.864,
+  "by_stratum": {
+   "val2017 front": {
+    "images": 142,
+    "danger_tp_fp_fn": [
+     6,
+     115,
+     13
+    ],
+    "images_dangerous": 11,
+    "images_dangerous_found": 5,
+    "danger_precision": 0.05,
+    "danger_recall": 0.316,
+    "danger_f1": 0.086
+   },
+   "val2017 behind": {
+    "images": 24,
+    "danger_tp_fp_fn": [
+     0,
+     17,
+     0
+    ],
+    "images_dangerous": 0,
+    "images_dangerous_found": 0,
+    "danger_precision": 0.0,
+    "danger_recall": 0.0,
+    "danger_f1": 0.0
+   },
+   "val2017 apart": {
+    "images": 26,
+    "danger_tp_fp_fn": [
+     0,
+     5,
+     0
+    ],
+    "images_dangerous": 0,
+    "images_dangerous_found": 0,
+    "danger_precision": 0.0,
+    "danger_recall": 0.0,
+    "danger_f1": 0.0
+   }
+  }
+ },
+ "images": [
+  {
+   "image": "000000278848.jpg",
+   "persons": 4,
+   "detected": 4,
+   "dangerous": 0,
+   "flagged": [
+    "person_4"
+   ],
+   "alert": [
+    "person_4"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000033221.jpg",
+   "persons": 10,
+   "detected": 7,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000082812.jpg",
+   "persons": 11,
+   "detected": 9,
+   "dangerous": 0,
+   "flagged": [
+    "person_5",
+    "person_6",
+    "person_7",
+    "person_9"
+   ],
+   "alert": [
+    "person_9"
+   ],
+   "hidden": [
+    "person_3",
+    "person_5",
+    "person_6",
+    "person_7",
+    "person_8"
+   ],
+   "tp_fp_fn": [
+    0,
+    4,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000153011.jpg",
+   "persons": 9,
+   "detected": 6,
+   "dangerous": 0,
+   "flagged": [
+    "person_7",
+    "person_8"
+   ],
+   "alert": [
+    "person_7",
+    "person_8"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000144333.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [
+    "person_1"
+   ],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000155341.jpg",
+   "persons": 6,
+   "detected": 4,
+   "dangerous": 3,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_2",
+    "person_3",
+    "person_4",
+    "person_5",
+    "person_6"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    3
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    3
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000414510.jpg",
+   "persons": 3,
+   "detected": 3,
+   "dangerous": 1,
+   "flagged": [
+    "person_2",
+    "person_3"
+   ],
+   "alert": [
+    "person_2",
+    "person_3"
+   ],
+   "hidden": [
+    "person_2"
+   ],
+   "tp_fp_fn": [
+    1,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    1,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000032334.jpg",
+   "persons": 5,
+   "detected": 5,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000398742.jpg",
+   "persons": 5,
+   "detected": 3,
+   "dangerous": 0,
+   "flagged": [
+    "person_3"
+   ],
+   "alert": [
+    "person_3"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000143556.jpg",
+   "persons": 7,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [
+    "person_1",
+    "person_2"
+   ],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000392722.jpg",
+   "persons": 6,
+   "detected": 4,
+   "dangerous": 1,
+   "flagged": [
+    "person_1",
+    "person_2",
+    "person_5"
+   ],
+   "alert": [
+    "person_1",
+    "person_2",
+    "person_5"
+   ],
+   "hidden": [
+    "person_2"
+   ],
+   "tp_fp_fn": [
+    0,
+    2,
+    1
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    2,
+    1
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000011149.jpg",
+   "persons": 2,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_2"
+   ],
+   "alert": [
+    "person_2"
+   ],
+   "hidden": [
+    "person_1"
+   ],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000135410.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_2"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [
+    "person_1"
+   ],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000278705.jpg",
+   "persons": 2,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_2"
+   ],
+   "alert": [
+    "person_1",
+    "person_2"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000212573.jpg",
+   "persons": 2,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000299887.jpg",
+   "persons": 2,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000568147.jpg",
+   "persons": 4,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000397351.jpg",
+   "persons": 2,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000269632.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000312421.jpg",
+   "persons": 6,
+   "detected": 5,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_2"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000280710.jpg",
+   "persons": 11,
+   "detected": 6,
+   "dangerous": 0,
+   "flagged": [
+    "person_2",
+    "person_5",
+    "person_7"
+   ],
+   "alert": [
+    "person_2",
+    "person_5",
+    "person_7"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    3,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    3,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000449432.jpg",
+   "persons": 12,
+   "detected": 12,
+   "dangerous": 0,
+   "flagged": [
+    "person_3",
+    "person_4"
+   ],
+   "alert": [
+    "person_3"
+   ],
+   "hidden": [
+    "person_10",
+    "person_11"
+   ],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000067213.jpg",
+   "persons": 8,
+   "detected": 5,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_1"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000040083.jpg",
+   "persons": 3,
+   "detected": 3,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000192670.jpg",
+   "persons": 9,
+   "detected": 5,
+   "dangerous": 0,
+   "flagged": [
+    "person_3"
+   ],
+   "alert": [
+    "person_3"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000142472.jpg",
+   "persons": 6,
+   "detected": 1,
+   "dangerous": 1,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    1
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    1
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000052007.jpg",
+   "persons": 6,
+   "detected": 4,
+   "dangerous": 0,
+   "flagged": [
+    "person_4"
+   ],
+   "alert": [
+    "person_4"
+   ],
+   "hidden": [
+    "person_1",
+    "person_2"
+   ],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000144300.jpg",
+   "persons": 2,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_2"
+   ],
+   "alert": [
+    "person_1",
+    "person_2"
+   ],
+   "hidden": [
+    "person_1"
+   ],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000393226.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 1,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    1,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    1,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000281759.jpg",
+   "persons": 6,
+   "detected": 5,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000545100.jpg",
+   "persons": 3,
+   "detected": 3,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000130699.jpg",
+   "persons": 7,
+   "detected": 7,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000579902.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_1"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000044590.jpg",
+   "persons": 12,
+   "detected": 9,
+   "dangerous": 0,
+   "flagged": [
+    "person_3"
+   ],
+   "alert": [],
+   "hidden": [
+    "person_1",
+    "person_4",
+    "person_8"
+   ],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000515025.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000245320.jpg",
+   "persons": 2,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000526728.jpg",
+   "persons": 2,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000369442.jpg",
+   "persons": 12,
+   "detected": 11,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000334006.jpg",
+   "persons": 1,
+   "detected": 0,
+   "dangerous": 1,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    1
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    1
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000514586.jpg",
+   "persons": 4,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000260261.jpg",
+   "persons": 2,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000025393.jpg",
+   "persons": 3,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_2"
+   ],
+   "alert": [
+    "person_1",
+    "person_2"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000461751.jpg",
+   "persons": 3,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_1",
+    "person_2",
+    "person_3",
+    "person_4"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000577932.jpg",
+   "persons": 11,
+   "detected": 7,
+   "dangerous": 0,
+   "flagged": [
+    "person_3",
+    "person_4"
+   ],
+   "alert": [
+    "person_3",
+    "person_4"
+   ],
+   "hidden": [
+    "person_4"
+   ],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000142585.jpg",
+   "persons": 2,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000054593.jpg",
+   "persons": 6,
+   "detected": 6,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000214192.jpg",
+   "persons": 2,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_1",
+    "person_2"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000506707.jpg",
+   "persons": 8,
+   "detected": 6,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000507667.jpg",
+   "persons": 12,
+   "detected": 6,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_4",
+    "person_5",
+    "person_6"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000017207.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [
+    "person_1",
+    "person_2"
+   ],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000394275.jpg",
+   "persons": 9,
+   "detected": 4,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_1",
+    "person_2",
+    "person_3",
+    "person_4",
+    "person_5"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000203294.jpg",
+   "persons": 3,
+   "detected": 3,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_2"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [
+    "person_3"
+   ],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000458109.jpg",
+   "persons": 4,
+   "detected": 0,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000260925.jpg",
+   "persons": 1,
+   "detected": 0,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000569030.jpg",
+   "persons": 12,
+   "detected": 8,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_10"
+   ],
+   "alert": [
+    "person_10"
+   ],
+   "hidden": [
+    "person_11"
+   ],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000109900.jpg",
+   "persons": 10,
+   "detected": 7,
+   "dangerous": 0,
+   "flagged": [
+    "person_4",
+    "person_5",
+    "person_6",
+    "person_7",
+    "person_8"
+   ],
+   "alert": [
+    "person_4",
+    "person_5",
+    "person_8"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    5,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    3,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000319534.jpg",
+   "persons": 7,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_1"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000102331.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_2"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000555597.jpg",
+   "persons": 1,
+   "detected": 0,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000505638.jpg",
+   "persons": 4,
+   "detected": 0,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000098392.jpg",
+   "persons": 3,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_2"
+   ],
+   "alert": [],
+   "hidden": [
+    "person_3"
+   ],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000448410.jpg",
+   "persons": 11,
+   "detected": 5,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_3",
+    "person_4"
+   ],
+   "alert": [
+    "person_1",
+    "person_4"
+   ],
+   "hidden": [
+    "person_10",
+    "person_11",
+    "person_12",
+    "person_13",
+    "person_7",
+    "person_8",
+    "person_9"
+   ],
+   "tp_fp_fn": [
+    0,
+    3,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000436883.jpg",
+   "persons": 6,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_1",
+    "person_2"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000551794.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_1"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000562448.jpg",
+   "persons": 2,
+   "detected": 0,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000243867.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_1"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000026204.jpg",
+   "persons": 4,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000111086.jpg",
+   "persons": 4,
+   "detected": 0,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000534605.jpg",
+   "persons": 3,
+   "detected": 3,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [
+    "person_2",
+    "person_3"
+   ],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000217400.jpg",
+   "persons": 2,
+   "detected": 0,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000566524.jpg",
+   "persons": 6,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_2"
+   ],
+   "alert": [
+    "person_1",
+    "person_2"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000323751.jpg",
+   "persons": 2,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_1"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000460967.jpg",
+   "persons": 1,
+   "detected": 0,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000415536.jpg",
+   "persons": 1,
+   "detected": 0,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000564336.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000578093.jpg",
+   "persons": 4,
+   "detected": 0,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000304365.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000119516.jpg",
+   "persons": 2,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000198510.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000057672.jpg",
+   "persons": 11,
+   "detected": 8,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000146831.jpg",
+   "persons": 2,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000011511.jpg",
+   "persons": 4,
+   "detected": 4,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000297562.jpg",
+   "persons": 10,
+   "detected": 7,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000313588.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000119911.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000361506.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000045596.jpg",
+   "persons": 2,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000099054.jpg",
+   "persons": 3,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000084492.jpg",
+   "persons": 2,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000253835.jpg",
+   "persons": 2,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_2"
+   ],
+   "alert": [
+    "person_2"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000105923.jpg",
+   "persons": 7,
+   "detected": 0,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000504415.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000064523.jpg",
+   "persons": 11,
+   "detected": 10,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000033759.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000038048.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000198928.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000361551.jpg",
+   "persons": 5,
+   "detected": 5,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000464476.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000436738.jpg",
+   "persons": 2,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000365655.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000454798.jpg",
+   "persons": 3,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000338905.jpg",
+   "persons": 11,
+   "detected": 8,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000169996.jpg",
+   "persons": 5,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [
+    "person_1",
+    "person_2"
+   ],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000382111.jpg",
+   "persons": 2,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [
+    "person_2"
+   ],
+   "alert": [
+    "person_2"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000140203.jpg",
+   "persons": 6,
+   "detected": 3,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_1",
+    "person_3",
+    "person_4"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000457848.jpg",
+   "persons": 5,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_1",
+    "person_2"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000476119.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000297578.jpg",
+   "persons": 3,
+   "detected": 3,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000186624.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_1"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000176606.jpg",
+   "persons": 1,
+   "detected": 0,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000255749.jpg",
+   "persons": 4,
+   "detected": 3,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_1",
+    "person_2",
+    "person_3",
+    "person_4"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000383289.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_1"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000146667.jpg",
+   "persons": 12,
+   "detected": 9,
+   "dangerous": 0,
+   "flagged": [
+    "person_10",
+    "person_11",
+    "person_12"
+   ],
+   "alert": [
+    "person_12"
+   ],
+   "hidden": [
+    "person_1",
+    "person_10",
+    "person_2",
+    "person_3",
+    "person_4",
+    "person_5",
+    "person_6",
+    "person_7",
+    "person_8",
+    "person_9"
+   ],
+   "tp_fp_fn": [
+    0,
+    3,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000181816.jpg",
+   "persons": 3,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000353180.jpg",
+   "persons": 10,
+   "detected": 9,
+   "dangerous": 6,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    6
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    6
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000210789.jpg",
+   "persons": 2,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [
+    "person_2"
+   ],
+   "alert": [
+    "person_2"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000468332.jpg",
+   "persons": 10,
+   "detected": 8,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000011197.jpg",
+   "persons": 5,
+   "detected": 3,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000128372.jpg",
+   "persons": 9,
+   "detected": 8,
+   "dangerous": 0,
+   "flagged": [
+    "person_10",
+    "person_5",
+    "person_7",
+    "person_8",
+    "person_9"
+   ],
+   "alert": [
+    "person_5",
+    "person_7",
+    "person_8",
+    "person_9"
+   ],
+   "hidden": [
+    "person_1",
+    "person_2"
+   ],
+   "tp_fp_fn": [
+    0,
+    5,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    4,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000133567.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000162858.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000329614.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000521141.jpg",
+   "persons": 3,
+   "detected": 3,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000545219.jpg",
+   "persons": 5,
+   "detected": 4,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_2"
+   ],
+   "alert": [
+    "person_1",
+    "person_2"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000233771.jpg",
+   "persons": 10,
+   "detected": 6,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000563604.jpg",
+   "persons": 10,
+   "detected": 8,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000135902.jpg",
+   "persons": 1,
+   "detected": 0,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000245448.jpg",
+   "persons": 5,
+   "detected": 5,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_2",
+    "person_4",
+    "person_5"
+   ],
+   "alert": [
+    "person_1",
+    "person_2",
+    "person_4",
+    "person_5"
+   ],
+   "hidden": [
+    "person_3",
+    "person_4",
+    "person_5"
+   ],
+   "tp_fp_fn": [
+    0,
+    3,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    3,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000196141.jpg",
+   "persons": 5,
+   "detected": 5,
+   "dangerous": 0,
+   "flagged": [
+    "person_2"
+   ],
+   "alert": [
+    "person_2"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000122166.jpg",
+   "persons": 6,
+   "detected": 3,
+   "dangerous": 0,
+   "flagged": [
+    "person_2"
+   ],
+   "alert": [
+    "person_2"
+   ],
+   "hidden": [
+    "person_1",
+    "person_2",
+    "person_3"
+   ],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000427655.jpg",
+   "persons": 7,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [
+    "person_2"
+   ],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000480985.jpg",
+   "persons": 8,
+   "detected": 4,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_1",
+    "person_2",
+    "person_3",
+    "person_4"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000250127.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000574702.jpg",
+   "persons": 12,
+   "detected": 6,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [
+    "person_2",
+    "person_3",
+    "person_4",
+    "person_5",
+    "person_6"
+   ],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000492937.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_1"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000115946.jpg",
+   "persons": 1,
+   "detected": 0,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000350148.jpg",
+   "persons": 4,
+   "detected": 4,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000446651.jpg",
+   "persons": 3,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_2"
+   ],
+   "alert": [
+    "person_1",
+    "person_2"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000308328.jpg",
+   "persons": 4,
+   "detected": 4,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_2",
+    "person_4"
+   ],
+   "alert": [
+    "person_1",
+    "person_2",
+    "person_4"
+   ],
+   "hidden": [
+    "person_3"
+   ],
+   "tp_fp_fn": [
+    0,
+    3,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    3,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000567640.jpg",
+   "persons": 7,
+   "detected": 7,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000038829.jpg",
+   "persons": 6,
+   "detected": 5,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_2"
+   ],
+   "alert": [
+    "person_1",
+    "person_2"
+   ],
+   "hidden": [
+    "person_1",
+    "person_2",
+    "person_3",
+    "person_4",
+    "person_5"
+   ],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000127263.jpg",
+   "persons": 2,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [
+    "person_2"
+   ],
+   "alert": [
+    "person_2"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000558213.jpg",
+   "persons": 2,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000377946.jpg",
+   "persons": 8,
+   "detected": 5,
+   "dangerous": 0,
+   "flagged": [
+    "person_4",
+    "person_5"
+   ],
+   "alert": [],
+   "hidden": [
+    "person_1",
+    "person_2"
+   ],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000346232.jpg",
+   "persons": 11,
+   "detected": 8,
+   "dangerous": 0,
+   "flagged": [
+    "person_3",
+    "person_8",
+    "person_9"
+   ],
+   "alert": [
+    "person_3",
+    "person_8",
+    "person_9"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    3,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    3,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000553511.jpg",
+   "persons": 2,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000380706.jpg",
+   "persons": 3,
+   "detected": 3,
+   "dangerous": 0,
+   "flagged": [
+    "person_3"
+   ],
+   "alert": [
+    "person_3"
+   ],
+   "hidden": [
+    "person_3"
+   ],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000491464.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000363875.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_1"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000424162.jpg",
+   "persons": 3,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_2"
+   ],
+   "alert": [
+    "person_1",
+    "person_2"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000357816.jpg",
+   "persons": 4,
+   "detected": 4,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000394510.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000291634.jpg",
+   "persons": 10,
+   "detected": 7,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [],
+   "hidden": [
+    "person_2",
+    "person_3",
+    "person_4",
+    "person_5",
+    "person_6",
+    "person_7",
+    "person_8"
+   ],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000069213.jpg",
+   "persons": 7,
+   "detected": 5,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000333745.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 1,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    1
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    1
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000273198.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000014473.jpg",
+   "persons": 7,
+   "detected": 7,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_1",
+    "person_2",
+    "person_3",
+    "person_4"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000226417.jpg",
+   "persons": 10,
+   "detected": 8,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_2",
+    "person_3",
+    "person_6",
+    "person_7",
+    "person_8"
+   ],
+   "alert": [
+    "person_1",
+    "person_2",
+    "person_3",
+    "person_6",
+    "person_7"
+   ],
+   "hidden": [
+    "person_6",
+    "person_7",
+    "person_8",
+    "person_9"
+   ],
+   "tp_fp_fn": [
+    0,
+    6,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    5,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000132544.jpg",
+   "persons": 10,
+   "detected": 5,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000333402.jpg",
+   "persons": 3,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [
+    "person_2"
+   ],
+   "alert": [
+    "person_2"
+   ],
+   "hidden": [
+    "person_1"
+   ],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000202339.jpg",
+   "persons": 2,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000391290.jpg",
+   "persons": 3,
+   "detected": 3,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_2"
+   ],
+   "alert": [
+    "person_1",
+    "person_2"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000068093.jpg",
+   "persons": 2,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [
+    "person_1",
+    "person_2"
+   ],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000255536.jpg",
+   "persons": 2,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000449312.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000568290.jpg",
+   "persons": 3,
+   "detected": 0,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000261982.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000259640.jpg",
+   "persons": 9,
+   "detected": 6,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_2"
+   ],
+   "alert": [
+    "person_2"
+   ],
+   "hidden": [
+    "person_6"
+   ],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000287291.jpg",
+   "persons": 6,
+   "detected": 3,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000160012.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000480021.jpg",
+   "persons": 4,
+   "detected": 4,
+   "dangerous": 0,
+   "flagged": [
+    "person_2",
+    "person_3"
+   ],
+   "alert": [
+    "person_2"
+   ],
+   "hidden": [
+    "person_1",
+    "person_2",
+    "person_4"
+   ],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000537506.jpg",
+   "persons": 4,
+   "detected": 4,
+   "dangerous": 2,
+   "flagged": [
+    "person_1",
+    "person_2",
+    "person_3"
+   ],
+   "alert": [
+    "person_1",
+    "person_2",
+    "person_3"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    2,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    2,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000009891.jpg",
+   "persons": 4,
+   "detected": 2,
+   "dangerous": 1,
+   "flagged": [
+    "person_2"
+   ],
+   "alert": [
+    "person_2"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    1,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    1,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000326541.jpg",
+   "persons": 6,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000200961.jpg",
+   "persons": 2,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000085376.jpg",
+   "persons": 1,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000433204.jpg",
+   "persons": 5,
+   "detected": 4,
+   "dangerous": 0,
+   "flagged": [
+    "person_2",
+    "person_3",
+    "person_4"
+   ],
+   "alert": [
+    "person_2",
+    "person_3"
+   ],
+   "hidden": [
+    "person_1"
+   ],
+   "tp_fp_fn": [
+    0,
+    3,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000005037.jpg",
+   "persons": 7,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [
+    "person_1"
+   ],
+   "alert": [
+    "person_1"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000316054.jpg",
+   "persons": 1,
+   "detected": 0,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000411938.jpg",
+   "persons": 7,
+   "detected": 7,
+   "dangerous": 0,
+   "flagged": [
+    "person_2",
+    "person_5",
+    "person_6",
+    "person_8"
+   ],
+   "alert": [
+    "person_5",
+    "person_6",
+    "person_8"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    4,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    3,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000356424.jpg",
+   "persons": 3,
+   "detected": 3,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_4"
+   ],
+   "alert": [
+    "person_1",
+    "person_4"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000538364.jpg",
+   "persons": 10,
+   "detected": 4,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_2",
+    "person_3"
+   ],
+   "alert": [
+    "person_1",
+    "person_2",
+    "person_3"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    3,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    3,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000394206.jpg",
+   "persons": 10,
+   "detected": 8,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000399205.jpg",
+   "persons": 12,
+   "detected": 9,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_4",
+    "person_5",
+    "person_6"
+   ],
+   "alert": [
+    "person_1",
+    "person_4",
+    "person_5",
+    "person_6"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    4,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    4,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000301135.jpg",
+   "persons": 11,
+   "detected": 9,
+   "dangerous": 0,
+   "flagged": [
+    "person_1",
+    "person_7"
+   ],
+   "alert": [
+    "person_1",
+    "person_7"
+   ],
+   "hidden": [
+    "person_9"
+   ],
+   "tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    2,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000396200.jpg",
+   "persons": 2,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [
+    "person_2"
+   ],
+   "alert": [
+    "person_2"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000419408.jpg",
+   "persons": 2,
+   "detected": 2,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000172648.jpg",
+   "persons": 2,
+   "detected": 2,
+   "dangerous": 1,
+   "flagged": [
+    "person_1",
+    "person_2"
+   ],
+   "alert": [
+    "person_1",
+    "person_2"
+   ],
+   "hidden": [],
+   "tp_fp_fn": [
+    1,
+    1,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    1,
+    1,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000453841.jpg",
+   "persons": 2,
+   "detected": 0,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000369812.jpg",
+   "persons": 7,
+   "detected": 1,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000233727.jpg",
+   "persons": 9,
+   "detected": 4,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  },
+  {
+   "image": "000000100624.jpg",
+   "persons": 4,
+   "detected": 4,
+   "dangerous": 0,
+   "flagged": [],
+   "alert": [],
+   "hidden": [],
+   "tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "alert_tp_fp_fn": [
+    0,
+    0,
+    0
+   ],
+   "errors": 0
+  }
+ ]
+}

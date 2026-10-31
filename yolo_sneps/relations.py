@@ -17,7 +17,11 @@ Each direction comes from the geometry, never from the order YOLO reported the o
                      not hold for objects off the ground (a sign on a pole, a person on a bus),
                      and no depth fact is emitted when the two bases are within
                      `depth_margin` (a fraction of the image height) of each other.
+
+riders() is separate and opt-in: rides(p, v) when person p sits on a bicycle, motorcycle or horse v.
 """
+
+RIDDEN = {"bicycle", "motorcycle", "horse"}
 
 
 def relations(detections, image_height, depth_margin=0.02, pair_filter=None):
@@ -28,6 +32,29 @@ def relations(detections, image_height, depth_margin=0.02, pair_filter=None):
         for b in detections[i + 1:]:
             if pair_filter is None or pair_filter(a, b):
                 facts.extend(_pair_relations(a, b, margin))
+    return facts
+
+
+def riders(detections):
+    """("rides", person, vehicle) facts: a person who appears to sit on a bicycle, motorcycle or horse.
+
+    The person's box overlaps the vehicle's, is at least 0.8 x its height, has its centre over the
+    vehicle, covers it by at least 15% of the person's area, and its base lies between half a vehicle
+    height above and a fifth below the vehicle's base: a rider's feet are near the wheels, a pedestrian
+    in front of the vehicle stands clearly lower. Thresholds set on the Phase 4 dev annotations,
+    where the rule finds 41 of 66 riders and catches 13 non-riders, all standing at their bikes.
+    """
+    facts = []
+    for p in (d for d in detections if d.cls == "person"):
+        px1, py1, px2, py2 = p.box
+        for v in (d for d in detections if d.cls in RIDDEN):
+            vx1, vy1, vx2, vy2 = v.box
+            vw, vh = vx2 - vx1, vy2 - vy1
+            overlap = max(0.0, min(px2, vx2) - max(px1, vx1)) * max(0.0, min(py2, vy2) - max(py1, vy1))
+            area = (px2 - px1) * (py2 - py1)
+            if (vw > 0 and vh > 0 and area > 0 and overlap / area >= 0.15 and (py2 - py1) / vh >= 0.8
+                    and 0 <= ((px1 + px2) / 2 - vx1) / vw <= 1 and -0.5 <= (py2 - vy2) / vh <= 0.2):
+                facts.append(("rides", p.label, v.label))
     return facts
 
 
