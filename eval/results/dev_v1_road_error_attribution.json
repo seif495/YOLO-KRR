@@ -1,0 +1,3612 @@
+{
+ "results_file": "eval/results/dev_v1_road_detailed.jsonl",
+ "summary_file": "eval/results/dev_v1_road.json",
+ "rules_file": "kb/danger_road.snepslog",
+ "hazard_classes": [
+  "bear",
+  "bicycle",
+  "bus",
+  "car",
+  "cow",
+  "elephant",
+  "giraffe",
+  "horse",
+  "motorcycle",
+  "sheep",
+  "train",
+  "truck",
+  "zebra"
+ ],
+ "summary": {
+  "counts": {
+   "TP": 6,
+   "FP": 137,
+   "FN": 13
+  },
+  "by_root_cause": {
+   "FP": {
+    "unknown": 85,
+    "4b_rule_broad": 37,
+    "unmatched_detection": 10,
+    "6b_uncertain": 5
+   },
+   "FN": {
+    "1b_missing_vehicle": 7,
+    "2a_depth_order": 3,
+    "1a_missing_person": 2,
+    "1d_poor_localization": 1
+   }
+  },
+  "by_stage": {
+   "Unknown": 85,
+   "Reasoning (Rules)": 37,
+   "Perception (CV + Geometric)": 13,
+   "Unmatched detection": 10,
+   "Ambiguity": 5
+  },
+  "contributing_factors": {
+   "5b_conf_high": 110,
+   "6b_uncertain": 1,
+   "4c_rule_narrow": 1
+  },
+  "requires_manual_review": 97
+ },
+ "errors": [
+  {
+   "type": "FP",
+   "image": "000000278848.jpg",
+   "person_idx": 3,
+   "person_label": "person_4",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_4 is in front of car_3 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.7407481670379639,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 2,
+      "annotated_class": "car",
+      "detection": "car_3",
+      "detected_class": "car",
+      "hazard_iou": 0.894,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.842
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000082812.jpg",
+   "person_idx": 6,
+   "person_label": "person_5",
+   "root_cause": "unknown",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_5) holds but person_5 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.49358463287353516,
+    "alerted": false,
+    "triggers": [],
+    "match_iou": 0.8
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000082812.jpg",
+   "person_idx": 7,
+   "person_label": "person_6",
+   "root_cause": "unknown",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_6) holds but person_6 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.31374862790107727,
+    "alerted": false,
+    "triggers": [],
+    "match_iou": 0.739
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000082812.jpg",
+   "person_idx": 8,
+   "person_label": "person_7",
+   "root_cause": "unknown",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_7) holds but person_7 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.4118538200855255,
+    "alerted": false,
+    "triggers": [],
+    "match_iou": 0.798
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000082812.jpg",
+   "person_idx": 10,
+   "person_label": "person_9",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_9) holds but person_9 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.7967491745948792,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.861
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000153011.jpg",
+   "person_idx": 6,
+   "person_label": "person_7",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_7) holds but person_7 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.7313974499702454,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.872
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000153011.jpg",
+   "person_idx": 7,
+   "person_label": "person_8",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_8 is in front of car_2 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.7989513278007507,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 3,
+      "annotated_class": "car",
+      "detection": "car_2",
+      "detected_class": "car",
+      "hazard_iou": 0.877,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.82
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000144333.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_1 is in front of car_1 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.8475202322006226,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 1,
+      "annotated_class": "car",
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": 0.955,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     },
+     {
+      "hazard_idx": 4,
+      "annotated_class": "car",
+      "detection": "car_2",
+      "detected_class": "car",
+      "hazard_iou": 0.7,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     },
+     {
+      "hazard_idx": 3,
+      "annotated_class": "car",
+      "detection": "truck_1",
+      "detected_class": "truck",
+      "hazard_iou": 0.632,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.955
+   }
+  },
+  {
+   "type": "FN",
+   "image": "000000155341.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "2a_depth_order",
+   "contributing_factors": [],
+   "requires_manual_review": false,
+   "explanation": "person_2 overlaps truck_1 but no infrontof(person_2, truck_1) was asserted (cue said: behind)",
+   "evidence": {
+    "detected": true,
+    "overlaps_annotated_hazard": true,
+    "confidence": 0.4362759292125702,
+    "gt_pairs_annotated": true,
+    "candidates": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "truck",
+      "detection": "truck_1",
+      "detected_class": "truck",
+      "hazard_iou": 0.88,
+      "nearer": "person",
+      "relation": "behind",
+      "gap_px": 0.0,
+      "facts": [
+       [
+        "infrontof",
+        "truck_1",
+        "person_2"
+       ],
+       [
+        "overlaps",
+        "person_2",
+        "truck_1"
+       ]
+      ],
+      "verdict": "2a_depth_order"
+     }
+    ]
+   }
+  },
+  {
+   "type": "FN",
+   "image": "000000155341.jpg",
+   "person_idx": 4,
+   "person_label": "person_5",
+   "root_cause": "2a_depth_order",
+   "contributing_factors": [
+    "6b_uncertain"
+   ],
+   "requires_manual_review": true,
+   "explanation": "person_5 overlaps truck_1 but no infrontof(person_5, truck_1) was asserted (cue said: behind)",
+   "evidence": {
+    "detected": true,
+    "overlaps_annotated_hazard": true,
+    "confidence": 0.6036731004714966,
+    "gt_pairs_annotated": true,
+    "candidates": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "truck",
+      "detection": "truck_1",
+      "detected_class": "truck",
+      "hazard_iou": 0.88,
+      "nearer": "person",
+      "relation": "behind",
+      "gap_px": 0.0,
+      "facts": [
+       [
+        "infrontof",
+        "truck_1",
+        "person_5"
+       ],
+       [
+        "overlaps",
+        "person_5",
+        "truck_1"
+       ]
+      ],
+      "verdict": "2a_depth_order"
+     },
+     {
+      "hazard_idx": 2,
+      "annotated_class": "truck",
+      "detection": "truck_2",
+      "detected_class": "truck",
+      "hazard_iou": 0.965,
+      "nearer": "unclear",
+      "relation": "apart",
+      "gap_px": 19.4,
+      "facts": [
+       [
+        "leftof",
+        "person_5",
+        "truck_2"
+       ],
+       [
+        "near",
+        "person_5",
+        "truck_2"
+       ]
+      ],
+      "verdict": "6b_uncertain"
+     }
+    ]
+   }
+  },
+  {
+   "type": "FN",
+   "image": "000000155341.jpg",
+   "person_idx": 5,
+   "person_label": null,
+   "root_cause": "1a_missing_person",
+   "contributing_factors": [],
+   "requires_manual_review": false,
+   "explanation": "no detection overlaps the person at [277.4, 271.9, 293.0, 291.2]",
+   "evidence": {
+    "detected": false,
+    "overlaps_annotated_hazard": true,
+    "closest_unmatched_detection": {
+     "label": "person_4",
+     "iou": 0.0
+    }
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000414510.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_2 is in front of car_2 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.6757974028587341,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 4,
+      "annotated_class": "car",
+      "detection": "car_2",
+      "detected_class": "car",
+      "hazard_iou": 0.718,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     },
+     {
+      "hazard_idx": 5,
+      "annotated_class": "truck",
+      "detection": "truck_2",
+      "detected_class": "truck",
+      "hazard_iou": 0.941,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.542
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000398742.jpg",
+   "person_idx": 3,
+   "person_label": "person_3",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_3 is in front of car_2 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.837947428226471,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 1,
+      "annotated_class": "car",
+      "detection": "car_2",
+      "detected_class": "car",
+      "hazard_iou": 0.812,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.917
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000143556.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.7922256588935852,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.752
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000392722.jpg",
+   "person_idx": 1,
+   "person_label": "person_1",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_1 is in front of car_1 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.5986583828926086,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "car",
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": 0.671,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     },
+     {
+      "hazard_idx": 1,
+      "annotated_class": "car",
+      "detection": "car_2",
+      "detected_class": "car",
+      "hazard_iou": 0.613,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     },
+     {
+      "hazard_idx": 2,
+      "annotated_class": "car",
+      "detection": "car_3",
+      "detected_class": "car",
+      "hazard_iou": 0.802,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     },
+     {
+      "hazard_idx": null,
+      "annotated_class": null,
+      "detection": "car_4",
+      "detected_class": "car",
+      "hazard_iou": null,
+      "nearer": null,
+      "verdict": "unannotated_object"
+     }
+    ],
+    "match_iou": 0.815
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000392722.jpg",
+   "person_idx": null,
+   "person_label": "person_2",
+   "root_cause": "unmatched_detection",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "person_2 matches no annotated person: it overlaps no annotated person: a spurious box or a person missing from the annotations; infrontof hazards: car_7 (car)",
+   "evidence": {
+    "confidence": 0.5060132145881653,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 5,
+      "annotated_class": "car",
+      "detection": "car_7",
+      "detected_class": "car",
+      "hazard_iou": 0.917,
+      "nearer": null,
+      "verdict": "no_pair"
+     }
+    ],
+    "closest_person": {
+     "person_idx": 5,
+     "iou": 0.0,
+     "matched_to": "person_5"
+    }
+   }
+  },
+  {
+   "type": "FN",
+   "image": "000000392722.jpg",
+   "person_idx": 2,
+   "person_label": "person_3",
+   "root_cause": "2a_depth_order",
+   "contributing_factors": [
+    "4c_rule_narrow"
+   ],
+   "requires_manual_review": true,
+   "explanation": "person_3 overlaps bus_1 but no infrontof(person_3, bus_1) was asserted (cue said: level)",
+   "evidence": {
+    "detected": true,
+    "overlaps_annotated_hazard": true,
+    "confidence": 0.7894747257232666,
+    "gt_pairs_annotated": true,
+    "candidates": [
+     {
+      "hazard_idx": 5,
+      "annotated_class": "car",
+      "detection": "car_7",
+      "detected_class": "car",
+      "hazard_iou": 0.917,
+      "nearer": "person",
+      "relation": "apart",
+      "gap_px": 23.9,
+      "facts": [
+       [
+        "leftof",
+        "car_7",
+        "person_3"
+       ],
+       [
+        "near",
+        "car_7",
+        "person_3"
+       ]
+      ],
+      "verdict": "4c_rule_narrow"
+     },
+     {
+      "hazard_idx": 6,
+      "annotated_class": "bus",
+      "detection": "bus_1",
+      "detected_class": "bus",
+      "hazard_iou": 0.956,
+      "nearer": "person",
+      "relation": "level",
+      "gap_px": 0.0,
+      "facts": [
+       [
+        "overlaps",
+        "bus_1",
+        "person_3"
+       ]
+      ],
+      "verdict": "2a_depth_order"
+     }
+    ]
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000011149.jpg",
+   "person_idx": null,
+   "person_label": "person_1",
+   "root_cause": "unmatched_detection",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "person_1 matches no annotated person: its closest annotated person (0) overlaps it only at IoU 0.37; infrontof hazards: none",
+   "evidence": {
+    "confidence": 0.2842031419277191,
+    "alerted": false,
+    "triggers": [],
+    "closest_person": {
+     "person_idx": 0,
+     "iou": 0.366,
+     "matched_to": null
+    }
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000011149.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_2 is in front of bicycle_2 (bicycle), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.8763837814331055,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 2,
+      "annotated_class": "bicycle",
+      "detection": "bicycle_2",
+      "detected_class": "bicycle",
+      "hazard_iou": 0.968,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.944
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000135410.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.6947020292282104,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.712
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000135410.jpg",
+   "person_idx": null,
+   "person_label": "person_2",
+   "root_cause": "unmatched_detection",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "person_2 matches no annotated person: its closest annotated person (0) overlaps it only at IoU 0.13; infrontof hazards: car_3 (car), motorcycle_1 (motorcycle)",
+   "evidence": {
+    "confidence": 0.2535954713821411,
+    "alerted": false,
+    "triggers": [
+     {
+      "hazard_idx": 6,
+      "annotated_class": "car",
+      "detection": "car_3",
+      "detected_class": "car",
+      "hazard_iou": 0.934,
+      "nearer": null,
+      "verdict": "no_pair"
+     },
+     {
+      "hazard_idx": 5,
+      "annotated_class": "motorcycle",
+      "detection": "motorcycle_1",
+      "detected_class": "motorcycle",
+      "hazard_iou": 0.708,
+      "nearer": null,
+      "verdict": "no_pair"
+     }
+    ],
+    "closest_person": {
+     "person_idx": 0,
+     "iou": 0.133,
+     "matched_to": "person_1"
+    }
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000278705.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_1 is in front of car_1 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.9079093933105469,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "car",
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": 0.744,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.957
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000278705.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_2 is in front of car_3 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.8902456760406494,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": null,
+      "annotated_class": null,
+      "detection": "car_2",
+      "detected_class": "car",
+      "hazard_iou": null,
+      "nearer": null,
+      "verdict": "unannotated_object"
+     },
+     {
+      "hazard_idx": 1,
+      "annotated_class": "car",
+      "detection": "car_3",
+      "detected_class": "car",
+      "hazard_iou": 0.873,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.985
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000269632.jpg",
+   "person_idx": null,
+   "person_label": "person_1",
+   "root_cause": "unmatched_detection",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "person_1 matches no annotated person: it overlaps no annotated person: a spurious box or a person missing from the annotations; infrontof hazards: none",
+   "evidence": {
+    "confidence": 0.6631101369857788,
+    "alerted": true,
+    "triggers": [],
+    "closest_person": {
+     "person_idx": 0,
+     "iou": 0.0,
+     "matched_to": null
+    }
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000280710.jpg",
+   "person_idx": 3,
+   "person_label": "person_2",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_2 is in front of bus_2 (bus), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.9004961848258972,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 2,
+      "annotated_class": "bus",
+      "detection": "bus_2",
+      "detected_class": "bus",
+      "hazard_iou": 0.912,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.948
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000280710.jpg",
+   "person_idx": 5,
+   "person_label": "person_5",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_5 is in front of bus_2 (bus), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.8802099823951721,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 2,
+      "annotated_class": "bus",
+      "detection": "bus_2",
+      "detected_class": "bus",
+      "hazard_iou": 0.912,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.896
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000280710.jpg",
+   "person_idx": 9,
+   "person_label": "person_7",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_7 is in front of bus_2 (bus), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.8840358257293701,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 2,
+      "annotated_class": "bus",
+      "detection": "bus_2",
+      "detected_class": "bus",
+      "hazard_iou": 0.912,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.945
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000449432.jpg",
+   "person_idx": 2,
+   "person_label": "person_3",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_3 is in front of bus_1 (bus), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.6561877727508545,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "bus",
+      "detection": "bus_1",
+      "detected_class": "bus",
+      "hazard_iou": 0.858,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.912
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000449432.jpg",
+   "person_idx": 3,
+   "person_label": "person_4",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [],
+   "requires_manual_review": false,
+   "explanation": "person_4 is in front of bus_1 (bus), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.4237123131752014,
+    "alerted": false,
+    "triggers": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "bus",
+      "detection": "bus_1",
+      "detected_class": "bus",
+      "hazard_iou": 0.858,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.63
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000040083.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_1 is in front of car_1 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.8879797458648682,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 1,
+      "annotated_class": "car",
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": 0.948,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.962
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000192670.jpg",
+   "person_idx": 3,
+   "person_label": "person_3",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_3 is in front of car_2 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.9257513880729675,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 3,
+      "annotated_class": "car",
+      "detection": "car_2",
+      "detected_class": "car",
+      "hazard_iou": 0.761,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.987
+   }
+  },
+  {
+   "type": "FN",
+   "image": "000000142472.jpg",
+   "person_idx": 2,
+   "person_label": null,
+   "root_cause": "1d_poor_localization",
+   "contributing_factors": [],
+   "requires_manual_review": false,
+   "explanation": "YOLO's closest box, person_2, overlaps the person only at IoU 0.47",
+   "evidence": {
+    "detected": false,
+    "overlaps_annotated_hazard": true,
+    "closest_unmatched_detection": {
+     "label": "person_2",
+     "iou": 0.469
+    }
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000052007.jpg",
+   "person_idx": 5,
+   "person_label": "person_4",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_4) holds but person_4 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8453797101974487,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.859
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000144300.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_1 is in front of car_1 (car, annotated truck), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.5653930902481079,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 6,
+      "annotated_class": "truck",
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": 0.66,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.582
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000144300.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_2 is in front of car_1 (car, annotated truck), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.7891798615455627,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 6,
+      "annotated_class": "truck",
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": 0.66,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.859
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000044590.jpg",
+   "person_idx": 3,
+   "person_label": "person_3",
+   "root_cause": "6b_uncertain",
+   "contributing_factors": [],
+   "requires_manual_review": false,
+   "explanation": "infrontof(person_3, motorcycle_4) fired the rule but the annotation leaves the depth order unclear",
+   "evidence": {
+    "confidence": 0.4726128578186035,
+    "alerted": false,
+    "triggers": [
+     {
+      "hazard_idx": 6,
+      "annotated_class": "motorcycle",
+      "detection": "motorcycle_4",
+      "detected_class": "motorcycle",
+      "hazard_iou": 0.604,
+      "nearer": "unclear",
+      "verdict": "6b_uncertain"
+     },
+     {
+      "hazard_idx": 8,
+      "annotated_class": "motorcycle",
+      "detection": "motorcycle_6",
+      "detected_class": "motorcycle",
+      "hazard_iou": 0.851,
+      "nearer": "unclear",
+      "verdict": "6b_uncertain"
+     }
+    ],
+    "match_iou": 0.797
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000526728.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_1 is in front of car_1 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.8997092843055725,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 1,
+      "annotated_class": "car",
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": 0.769,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.86
+   }
+  },
+  {
+   "type": "FN",
+   "image": "000000334006.jpg",
+   "person_idx": 0,
+   "person_label": null,
+   "root_cause": "1a_missing_person",
+   "contributing_factors": [],
+   "requires_manual_review": false,
+   "explanation": "no detection overlaps the person at [547.2, 219.2, 569.9, 266.3]",
+   "evidence": {
+    "detected": false,
+    "overlaps_annotated_hazard": true,
+    "closest_unmatched_detection": {
+     "label": null,
+     "iou": 0.0
+    }
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000025393.jpg",
+   "person_idx": 1,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8967831134796143,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.969
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000025393.jpg",
+   "person_idx": 2,
+   "person_label": "person_2",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_2) holds but person_2 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.9188365936279297,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.976
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000577932.jpg",
+   "person_idx": 5,
+   "person_label": "person_4",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_4) holds but person_4 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8423332571983337,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.898
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000142585.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "person_1 is infrontof car_1 (car), car_3 (car), but no annotated pair confirms or refutes the depth order (verdicts: unannotated_object, unannotated_object)",
+   "evidence": {
+    "confidence": 0.7026675343513489,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": null,
+      "annotated_class": null,
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": null,
+      "nearer": null,
+      "verdict": "unannotated_object"
+     },
+     {
+      "hazard_idx": null,
+      "annotated_class": null,
+      "detection": "car_3",
+      "detected_class": "car",
+      "hazard_iou": null,
+      "nearer": null,
+      "verdict": "unannotated_object"
+     }
+    ],
+    "match_iou": 0.809
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000017207.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "6b_uncertain",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "infrontof(person_1, car_1) fired the rule but the annotation leaves the depth order unclear",
+   "evidence": {
+    "confidence": 0.6323525309562683,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 1,
+      "annotated_class": "car",
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": 0.882,
+      "nearer": "unclear",
+      "verdict": "6b_uncertain"
+     }
+    ],
+    "match_iou": 0.725
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000203294.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.684814989566803,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.911
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000203294.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "unknown",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_2) holds but person_2 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.3301428556442261,
+    "alerted": false,
+    "triggers": [],
+    "match_iou": 0.52
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000569030.jpg",
+   "person_idx": null,
+   "person_label": "person_1",
+   "root_cause": "unmatched_detection",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "person_1 matches no annotated person: its closest annotated person (0) overlaps it only at IoU 0.30; infrontof hazards: bus_1 (bus), car_1 (car)",
+   "evidence": {
+    "confidence": 0.33554452657699585,
+    "alerted": false,
+    "triggers": [
+     {
+      "hazard_idx": null,
+      "annotated_class": null,
+      "detection": "bus_1",
+      "detected_class": "bus",
+      "hazard_iou": null,
+      "nearer": null,
+      "verdict": "unannotated_object"
+     },
+     {
+      "hazard_idx": null,
+      "annotated_class": null,
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": null,
+      "nearer": null,
+      "verdict": "unannotated_object"
+     }
+    ],
+    "closest_person": {
+     "person_idx": 0,
+     "iou": 0.302,
+     "matched_to": null
+    }
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000569030.jpg",
+   "person_idx": 10,
+   "person_label": "person_10",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_10) holds but person_10 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.7014095783233643,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.931
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000109900.jpg",
+   "person_idx": 3,
+   "person_label": "person_4",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_4) holds but person_4 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8284685015678406,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.899
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000109900.jpg",
+   "person_idx": 5,
+   "person_label": "person_5",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_5) holds but person_5 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8493339419364929,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.788
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000109900.jpg",
+   "person_idx": 7,
+   "person_label": "person_6",
+   "root_cause": "unknown",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_6) holds but person_6 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.2667234539985657,
+    "alerted": false,
+    "triggers": [],
+    "match_iou": 0.655
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000109900.jpg",
+   "person_idx": null,
+   "person_label": "person_7",
+   "root_cause": "unmatched_detection",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "person_7 matches no annotated person: a second box on annotated person 7 (IoU 0.60), who is matched to person_6; infrontof hazards: none",
+   "evidence": {
+    "confidence": 0.4321676790714264,
+    "alerted": false,
+    "triggers": [],
+    "closest_person": {
+     "person_idx": 7,
+     "iou": 0.598,
+     "matched_to": "person_6"
+    }
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000109900.jpg",
+   "person_idx": 8,
+   "person_label": "person_8",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_8) holds but person_8 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.7462202310562134,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.926
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000098392.jpg",
+   "person_idx": null,
+   "person_label": "person_1",
+   "root_cause": "unmatched_detection",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "person_1 matches no annotated person: its closest annotated person (0) overlaps it only at IoU 0.04; infrontof hazards: none",
+   "evidence": {
+    "confidence": 0.43876534700393677,
+    "alerted": false,
+    "triggers": [],
+    "closest_person": {
+     "person_idx": 0,
+     "iou": 0.042,
+     "matched_to": "person_2"
+    }
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000098392.jpg",
+   "person_idx": 0,
+   "person_label": "person_2",
+   "root_cause": "unknown",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_2) holds but person_2 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.38302549719810486,
+    "alerted": false,
+    "triggers": [],
+    "match_iou": 0.806
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000448410.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.7295305728912354,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.843
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000448410.jpg",
+   "person_idx": 1,
+   "person_label": "person_3",
+   "root_cause": "unknown",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_3) holds but person_3 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.2934172451496124,
+    "alerted": false,
+    "triggers": [],
+    "match_iou": 0.647
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000448410.jpg",
+   "person_idx": 4,
+   "person_label": "person_4",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_4) holds but person_4 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.6986919641494751,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.837
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000534605.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.908437967300415,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.971
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000566524.jpg",
+   "person_idx": 4,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.5711036324501038,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.811
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000566524.jpg",
+   "person_idx": 5,
+   "person_label": "person_2",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_2) holds but person_2 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.7259823083877563,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.895
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000304365.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.6538867950439453,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.898
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000119516.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8779282569885254,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.931
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000253835.jpg",
+   "person_idx": null,
+   "person_label": "person_1",
+   "root_cause": "unmatched_detection",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "person_1 matches no annotated person: its closest annotated person (0) overlaps it only at IoU 0.17; infrontof hazards: none",
+   "evidence": {
+    "confidence": 0.41143620014190674,
+    "alerted": false,
+    "triggers": [],
+    "closest_person": {
+     "person_idx": 0,
+     "iou": 0.172,
+     "matched_to": null
+    }
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000253835.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_2) holds but person_2 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8208338022232056,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.925
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000436738.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.7932645678520203,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.941
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000169996.jpg",
+   "person_idx": 1,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8376272916793823,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.907
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000382111.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_2) holds but person_2 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8475592732429504,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.687
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000476119.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_1 is in front of car_2 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.9220514297485352,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 1,
+      "annotated_class": "car",
+      "detection": "car_2",
+      "detected_class": "car",
+      "hazard_iou": 0.914,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     },
+     {
+      "hazard_idx": 2,
+      "annotated_class": "truck",
+      "detection": "car_3",
+      "detected_class": "car",
+      "hazard_iou": 0.887,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     },
+     {
+      "hazard_idx": null,
+      "annotated_class": null,
+      "detection": "car_4",
+      "detected_class": "car",
+      "hazard_iou": null,
+      "nearer": null,
+      "verdict": "unannotated_object"
+     }
+    ],
+    "match_iou": 0.906
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000146667.jpg",
+   "person_idx": 9,
+   "person_label": "person_10",
+   "root_cause": "unknown",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_10) holds but person_10 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.3657171130180359,
+    "alerted": false,
+    "triggers": [],
+    "match_iou": 0.826
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000146667.jpg",
+   "person_idx": 10,
+   "person_label": "person_11",
+   "root_cause": "unknown",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_11) holds but person_11 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.35239848494529724,
+    "alerted": false,
+    "triggers": [],
+    "match_iou": 0.802
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000146667.jpg",
+   "person_idx": 11,
+   "person_label": "person_12",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_12 is in front of car_1 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.6729317903518677,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 2,
+      "annotated_class": "car",
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": 0.949,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.962
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000181816.jpg",
+   "person_idx": 2,
+   "person_label": "person_1",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_1 is in front of car_1 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.8897101283073425,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 1,
+      "annotated_class": "car",
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": 0.959,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.977
+   }
+  },
+  {
+   "type": "FN",
+   "image": "000000353180.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "1b_missing_vehicle",
+   "contributing_factors": [],
+   "requires_manual_review": false,
+   "explanation": "the annotated bus was not detected",
+   "evidence": {
+    "detected": true,
+    "overlaps_annotated_hazard": true,
+    "confidence": 0.6379357576370239,
+    "gt_pairs_annotated": true,
+    "candidates": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "bus",
+      "detection": null,
+      "detected_class": null,
+      "hazard_iou": null,
+      "nearer": "person",
+      "relation": null,
+      "gap_px": null,
+      "facts": [],
+      "verdict": "1b_missing_vehicle"
+     }
+    ]
+   }
+  },
+  {
+   "type": "FN",
+   "image": "000000353180.jpg",
+   "person_idx": 3,
+   "person_label": "person_3",
+   "root_cause": "1b_missing_vehicle",
+   "contributing_factors": [],
+   "requires_manual_review": false,
+   "explanation": "the annotated bus was not detected",
+   "evidence": {
+    "detected": true,
+    "overlaps_annotated_hazard": true,
+    "confidence": 0.6770534515380859,
+    "gt_pairs_annotated": true,
+    "candidates": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "bus",
+      "detection": null,
+      "detected_class": null,
+      "hazard_iou": null,
+      "nearer": "person",
+      "relation": null,
+      "gap_px": null,
+      "facts": [],
+      "verdict": "1b_missing_vehicle"
+     }
+    ]
+   }
+  },
+  {
+   "type": "FN",
+   "image": "000000353180.jpg",
+   "person_idx": 4,
+   "person_label": "person_4",
+   "root_cause": "1b_missing_vehicle",
+   "contributing_factors": [],
+   "requires_manual_review": false,
+   "explanation": "the annotated bus was not detected",
+   "evidence": {
+    "detected": true,
+    "overlaps_annotated_hazard": true,
+    "confidence": 0.6873728036880493,
+    "gt_pairs_annotated": true,
+    "candidates": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "bus",
+      "detection": null,
+      "detected_class": null,
+      "hazard_iou": null,
+      "nearer": "person",
+      "relation": null,
+      "gap_px": null,
+      "facts": [],
+      "verdict": "1b_missing_vehicle"
+     }
+    ]
+   }
+  },
+  {
+   "type": "FN",
+   "image": "000000353180.jpg",
+   "person_idx": 5,
+   "person_label": "person_5",
+   "root_cause": "1b_missing_vehicle",
+   "contributing_factors": [],
+   "requires_manual_review": false,
+   "explanation": "the annotated bus was not detected",
+   "evidence": {
+    "detected": true,
+    "overlaps_annotated_hazard": true,
+    "confidence": 0.6519191861152649,
+    "gt_pairs_annotated": true,
+    "candidates": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "bus",
+      "detection": null,
+      "detected_class": null,
+      "hazard_iou": null,
+      "nearer": "person",
+      "relation": null,
+      "gap_px": null,
+      "facts": [],
+      "verdict": "1b_missing_vehicle"
+     }
+    ]
+   }
+  },
+  {
+   "type": "FN",
+   "image": "000000353180.jpg",
+   "person_idx": 6,
+   "person_label": "person_6",
+   "root_cause": "1b_missing_vehicle",
+   "contributing_factors": [],
+   "requires_manual_review": false,
+   "explanation": "the annotated bus was not detected",
+   "evidence": {
+    "detected": true,
+    "overlaps_annotated_hazard": true,
+    "confidence": 0.532910168170929,
+    "gt_pairs_annotated": true,
+    "candidates": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "bus",
+      "detection": null,
+      "detected_class": null,
+      "hazard_iou": null,
+      "nearer": "person",
+      "relation": null,
+      "gap_px": null,
+      "facts": [],
+      "verdict": "1b_missing_vehicle"
+     }
+    ]
+   }
+  },
+  {
+   "type": "FN",
+   "image": "000000353180.jpg",
+   "person_idx": 7,
+   "person_label": "person_7",
+   "root_cause": "1b_missing_vehicle",
+   "contributing_factors": [],
+   "requires_manual_review": false,
+   "explanation": "the annotated bus was not detected",
+   "evidence": {
+    "detected": true,
+    "overlaps_annotated_hazard": true,
+    "confidence": 0.64307701587677,
+    "gt_pairs_annotated": true,
+    "candidates": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "bus",
+      "detection": null,
+      "detected_class": null,
+      "hazard_iou": null,
+      "nearer": "person",
+      "relation": null,
+      "gap_px": null,
+      "facts": [],
+      "verdict": "1b_missing_vehicle"
+     }
+    ]
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000210789.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_2 is in front of car_1 (car, annotated truck), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.8622251152992249,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 1,
+      "annotated_class": "truck",
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": 0.949,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.91
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000128372.jpg",
+   "person_idx": 3,
+   "person_label": "person_5",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_5) holds but person_5 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8051239252090454,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.9
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000128372.jpg",
+   "person_idx": 5,
+   "person_label": "person_7",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_7) holds but person_7 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.784942090511322,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.897
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000128372.jpg",
+   "person_idx": 6,
+   "person_label": "person_8",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_8) holds but person_8 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.831214964389801,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.897
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000128372.jpg",
+   "person_idx": 7,
+   "person_label": "person_9",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_9) holds but person_9 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8001534342765808,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.934
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000128372.jpg",
+   "person_idx": 8,
+   "person_label": "person_10",
+   "root_cause": "unknown",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_10) holds but person_10 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.35488149523735046,
+    "alerted": false,
+    "triggers": [],
+    "match_iou": 0.743
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000162858.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "6b_uncertain",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "infrontof(person_1, car_1) fired the rule but the annotation leaves the depth order unclear",
+   "evidence": {
+    "confidence": 0.6509497761726379,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 2,
+      "annotated_class": "car",
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": 0.791,
+      "nearer": "unclear",
+      "verdict": "6b_uncertain"
+     }
+    ],
+    "match_iou": 0.799
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000545219.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.6839954853057861,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.772
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000245448.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "person_1 is infrontof truck_1 (truck), but no annotated pair confirms or refutes the depth order (verdicts: unannotated_object)",
+   "evidence": {
+    "confidence": 0.8783323764801025,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": null,
+      "annotated_class": null,
+      "detection": "truck_1",
+      "detected_class": "truck",
+      "hazard_iou": null,
+      "nearer": null,
+      "verdict": "unannotated_object"
+     }
+    ],
+    "match_iou": 0.971
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000245448.jpg",
+   "person_idx": 3,
+   "person_label": "person_4",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_4) holds but person_4 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8668455481529236,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.918
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000245448.jpg",
+   "person_idx": 4,
+   "person_label": "person_5",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_5) holds but person_5 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.7162196040153503,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.85
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000196141.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "person_2 is infrontof car_2 (car), but no annotated pair confirms or refutes the depth order (verdicts: unannotated_object)",
+   "evidence": {
+    "confidence": 0.9038407206535339,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": null,
+      "annotated_class": null,
+      "detection": "car_2",
+      "detected_class": "car",
+      "hazard_iou": null,
+      "nearer": null,
+      "verdict": "unannotated_object"
+     }
+    ],
+    "match_iou": 0.957
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000122166.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "6b_uncertain",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "infrontof(person_2, motorcycle_1) fired the rule but the annotation leaves the depth order unclear",
+   "evidence": {
+    "confidence": 0.7830931544303894,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "motorcycle",
+      "detection": "motorcycle_1",
+      "detected_class": "motorcycle",
+      "hazard_iou": 0.877,
+      "nearer": "unclear",
+      "verdict": "6b_uncertain"
+     }
+    ],
+    "match_iou": 0.853
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000427655.jpg",
+   "person_idx": null,
+   "person_label": "person_2",
+   "root_cause": "unmatched_detection",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "person_2 matches no annotated person: its closest annotated person (1) overlaps it only at IoU 0.08; infrontof hazards: none",
+   "evidence": {
+    "confidence": 0.3212405741214752,
+    "alerted": false,
+    "triggers": [],
+    "closest_person": {
+     "person_idx": 1,
+     "iou": 0.084,
+     "matched_to": null
+    }
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000574702.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.5294185280799866,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.711
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000350148.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.7296087145805359,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.914
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000446651.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_1 is in front of car_1 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.5227458477020264,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "car",
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": 0.951,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.738
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000446651.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_2) holds but person_2 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8696328401565552,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.866
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000308328.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "person_1 is infrontof truck_1 (truck), but no annotated pair confirms or refutes the depth order (verdicts: unannotated_object)",
+   "evidence": {
+    "confidence": 0.9008945822715759,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": null,
+      "annotated_class": null,
+      "detection": "truck_1",
+      "detected_class": "truck",
+      "hazard_iou": null,
+      "nearer": null,
+      "verdict": "unannotated_object"
+     }
+    ],
+    "match_iou": 0.973
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000308328.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "person_2 is infrontof truck_1 (truck), but no annotated pair confirms or refutes the depth order (verdicts: unannotated_object)",
+   "evidence": {
+    "confidence": 0.826063334941864,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": null,
+      "annotated_class": null,
+      "detection": "truck_1",
+      "detected_class": "truck",
+      "hazard_iou": null,
+      "nearer": null,
+      "verdict": "unannotated_object"
+     }
+    ],
+    "match_iou": 0.915
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000308328.jpg",
+   "person_idx": 3,
+   "person_label": "person_4",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "person_4 is infrontof truck_1 (truck), but no annotated pair confirms or refutes the depth order (verdicts: unannotated_object)",
+   "evidence": {
+    "confidence": 0.8328765630722046,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": null,
+      "annotated_class": null,
+      "detection": "truck_1",
+      "detected_class": "truck",
+      "hazard_iou": null,
+      "nearer": null,
+      "verdict": "unannotated_object"
+     }
+    ],
+    "match_iou": 0.942
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000038829.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8613533973693848,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.968
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000038829.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_2) holds but person_2 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8409103751182556,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.905
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000127263.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_2) holds but person_2 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.9048452973365784,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.959
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000377946.jpg",
+   "person_idx": 5,
+   "person_label": "person_4",
+   "root_cause": "unknown",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_4) holds but person_4 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.2937992811203003,
+    "alerted": false,
+    "triggers": [],
+    "match_iou": 0.662
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000377946.jpg",
+   "person_idx": 6,
+   "person_label": "person_5",
+   "root_cause": "unknown",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_5) holds but person_5 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.4707065224647522,
+    "alerted": false,
+    "triggers": [],
+    "match_iou": 0.912
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000346232.jpg",
+   "person_idx": 2,
+   "person_label": "person_3",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_3) holds but person_3 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.9026466608047485,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.978
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000346232.jpg",
+   "person_idx": 9,
+   "person_label": "person_8",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_8) holds but person_8 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.5534800887107849,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.797
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000346232.jpg",
+   "person_idx": 10,
+   "person_label": "person_9",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_9 is in front of truck_1 (truck), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.8191489577293396,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 1,
+      "annotated_class": "truck",
+      "detection": "truck_1",
+      "detected_class": "truck",
+      "hazard_iou": 0.945,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.974
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000380706.jpg",
+   "person_idx": 2,
+   "person_label": "person_3",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_3 is in front of bus_1 (bus), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.8488210439682007,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 3,
+      "annotated_class": "bus",
+      "detection": "bus_1",
+      "detected_class": "bus",
+      "hazard_iou": 0.866,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.936
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000424162.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8174054026603699,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.934
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000424162.jpg",
+   "person_idx": 2,
+   "person_label": "person_2",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_2) holds but person_2 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.893243134021759,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.942
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000394510.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_1 is in front of bicycle_1 (bicycle), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.8650984764099121,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 1,
+      "annotated_class": "bicycle",
+      "detection": "bicycle_1",
+      "detected_class": "bicycle",
+      "hazard_iou": 0.899,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     },
+     {
+      "hazard_idx": 0,
+      "annotated_class": "car",
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": 0.98,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     },
+     {
+      "hazard_idx": 2,
+      "annotated_class": "car",
+      "detection": "car_2",
+      "detected_class": "car",
+      "hazard_iou": 0.633,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.951
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000291634.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.33499541878700256,
+    "alerted": false,
+    "triggers": [],
+    "match_iou": 0.832
+   }
+  },
+  {
+   "type": "FN",
+   "image": "000000333745.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "1b_missing_vehicle",
+   "contributing_factors": [],
+   "requires_manual_review": false,
+   "explanation": "the annotated bus was not detected",
+   "evidence": {
+    "detected": true,
+    "overlaps_annotated_hazard": true,
+    "confidence": 0.8334646224975586,
+    "gt_pairs_annotated": true,
+    "candidates": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "bus",
+      "detection": null,
+      "detected_class": null,
+      "hazard_iou": null,
+      "nearer": "person",
+      "relation": null,
+      "gap_px": null,
+      "facts": [],
+      "verdict": "1b_missing_vehicle"
+     }
+    ]
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000226417.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.9067584872245789,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.956
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000226417.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_2) holds but person_2 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8517811894416809,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.911
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000226417.jpg",
+   "person_idx": 3,
+   "person_label": "person_3",
+   "root_cause": "6b_uncertain",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "infrontof(person_3, car_1) fired the rule but the annotation leaves the depth order unclear",
+   "evidence": {
+    "confidence": 0.7790228128433228,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 1,
+      "annotated_class": "car",
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": 0.867,
+      "nearer": "unclear",
+      "verdict": "6b_uncertain"
+     }
+    ],
+    "match_iou": 0.911
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000226417.jpg",
+   "person_idx": 6,
+   "person_label": "person_6",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_6) holds but person_6 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.5923351049423218,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.922
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000226417.jpg",
+   "person_idx": null,
+   "person_label": "person_7",
+   "root_cause": "unmatched_detection",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "person_7 matches no annotated person: a second box on annotated person 7 (IoU 0.64), who is matched to person_8; infrontof hazards: none",
+   "evidence": {
+    "confidence": 0.6756003499031067,
+    "alerted": true,
+    "triggers": [],
+    "closest_person": {
+     "person_idx": 7,
+     "iou": 0.643,
+     "matched_to": "person_8"
+    }
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000226417.jpg",
+   "person_idx": 7,
+   "person_label": "person_8",
+   "root_cause": "unknown",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_8) holds but person_8 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.4236394166946411,
+    "alerted": false,
+    "triggers": [],
+    "match_iou": 0.677
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000333402.jpg",
+   "person_idx": 2,
+   "person_label": "person_2",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_2 is in front of bus_1 (bus), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.897280216217041,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "bus",
+      "detection": "bus_1",
+      "detected_class": "bus",
+      "hazard_iou": 0.968,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.961
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000202339.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_1 is in front of bus_2 (bus), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.9035285115242004,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 1,
+      "annotated_class": "bus",
+      "detection": "bus_2",
+      "detected_class": "bus",
+      "hazard_iou": 0.872,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.959
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000391290.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_1 is in front of car_1 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.5200075507164001,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "car",
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": 0.888,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.862
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000391290.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_2 is in front of car_1 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.6326562166213989,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "car",
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": 0.888,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.922
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000261982.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_1 is in front of car_1 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.7743104100227356,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "car",
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": 0.539,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     },
+     {
+      "hazard_idx": null,
+      "annotated_class": null,
+      "detection": "car_2",
+      "detected_class": "car",
+      "hazard_iou": null,
+      "nearer": null,
+      "verdict": "unannotated_object"
+     }
+    ],
+    "match_iou": 0.91
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000259640.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.3556681275367737,
+    "alerted": false,
+    "triggers": [],
+    "match_iou": 0.621
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000259640.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_2) holds but person_2 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.5790174603462219,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.823
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000480021.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_2) holds but person_2 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.7888838052749634,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.913
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000480021.jpg",
+   "person_idx": 2,
+   "person_label": "person_3",
+   "root_cause": "unknown",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_3) holds but person_3 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.4416040778160095,
+    "alerted": false,
+    "triggers": [],
+    "match_iou": 0.624
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000537506.jpg",
+   "person_idx": 2,
+   "person_label": "person_3",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_3) holds but person_3 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.57905513048172,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.571
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000433204.jpg",
+   "person_idx": 2,
+   "person_label": "person_2",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_2 is in front of car_1 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.7044074535369873,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 1,
+      "annotated_class": "car",
+      "detection": "car_1",
+      "detected_class": "car",
+      "hazard_iou": 0.758,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.849
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000433204.jpg",
+   "person_idx": 3,
+   "person_label": "person_3",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_3) holds but person_3 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.6201964616775513,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.856
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000433204.jpg",
+   "person_idx": 4,
+   "person_label": "person_4",
+   "root_cause": "unknown",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_4) holds but person_4 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.439010888338089,
+    "alerted": false,
+    "triggers": [],
+    "match_iou": 0.528
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000005037.jpg",
+   "person_idx": 6,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.6335377097129822,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.936
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000411938.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "unknown",
+   "contributing_factors": [],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_2) holds but person_2 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.49116677045822144,
+    "alerted": false,
+    "triggers": [],
+    "match_iou": 0.7
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000411938.jpg",
+   "person_idx": 3,
+   "person_label": "person_5",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_5) holds but person_5 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.7757662534713745,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.943
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000411938.jpg",
+   "person_idx": 4,
+   "person_label": "person_6",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_6) holds but person_6 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.6040276288986206,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.896
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000411938.jpg",
+   "person_idx": 6,
+   "person_label": "person_8",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_8) holds but person_8 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8132594227790833,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.988
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000356424.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_1 is in front of car_2 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.8879994750022888,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "car",
+      "detection": "car_2",
+      "detected_class": "car",
+      "hazard_iou": 0.846,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.983
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000356424.jpg",
+   "person_idx": 2,
+   "person_label": "person_4",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_4 is in front of car_2 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.6096158623695374,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "car",
+      "detection": "car_2",
+      "detected_class": "car",
+      "hazard_iou": 0.846,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.648
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000538364.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8103266358375549,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.909
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000538364.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_2) holds but person_2 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8448026180267334,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.827
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000538364.jpg",
+   "person_idx": 6,
+   "person_label": "person_3",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_3 is in front of car_2 (car), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.8457150459289551,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 0,
+      "annotated_class": "car",
+      "detection": "car_2",
+      "detected_class": "car",
+      "hazard_iou": 0.71,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.927
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000399205.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.518316388130188,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.867
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000399205.jpg",
+   "person_idx": 2,
+   "person_label": "person_4",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_4) holds but person_4 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8511471748352051,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.907
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000399205.jpg",
+   "person_idx": 3,
+   "person_label": "person_5",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_5) holds but person_5 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.855631947517395,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.918
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000399205.jpg",
+   "person_idx": 5,
+   "person_label": "person_6",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_6) holds but person_6 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.8837392926216125,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.973
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000301135.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.7445218563079834,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.9
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000301135.jpg",
+   "person_idx": 7,
+   "person_label": "person_7",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_7) holds but person_7 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.7019906640052795,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.776
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000396200.jpg",
+   "person_idx": 1,
+   "person_label": "person_2",
+   "root_cause": "4b_rule_broad",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": false,
+   "explanation": "person_2 is in front of car_2 (car, annotated truck), which the annotated pair confirms, yet annotated safe: the rule's premise is true here and its conclusion is not",
+   "evidence": {
+    "confidence": 0.8807507157325745,
+    "alerted": true,
+    "triggers": [
+     {
+      "hazard_idx": 1,
+      "annotated_class": "truck",
+      "detection": "car_2",
+      "detected_class": "car",
+      "hazard_iou": 0.928,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     },
+     {
+      "hazard_idx": 2,
+      "annotated_class": "car",
+      "detection": "car_3",
+      "detected_class": "car",
+      "hazard_iou": 0.755,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     },
+     {
+      "hazard_idx": 3,
+      "annotated_class": "car",
+      "detection": "car_4",
+      "detected_class": "car",
+      "hazard_iou": 0.954,
+      "nearer": "person",
+      "verdict": "4b_rule_broad"
+     }
+    ],
+    "match_iou": 0.896
+   }
+  },
+  {
+   "type": "FP",
+   "image": "000000172648.jpg",
+   "person_idx": 0,
+   "person_label": "person_1",
+   "root_cause": "unknown",
+   "contributing_factors": [
+    "5b_conf_high"
+   ],
+   "requires_manual_review": true,
+   "explanation": "dangerous(person_1) holds but person_1 is infrontof no hazard; check the SNePS output",
+   "evidence": {
+    "confidence": 0.5370090007781982,
+    "alerted": true,
+    "triggers": [],
+    "match_iou": 0.642
+   }
+  }
+ ]
+}

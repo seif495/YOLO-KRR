@@ -13,6 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from yolo_sneps import (atom, build_detections, check_statement, focus_pairs, load_rules,
                         parse_answers, relations, scene_statements)
+from yolo_sneps.relations import riders
 from yolo_sneps.backends import _driver_markers, lisp_string, transcript
 
 RULES = Path(__file__).resolve().parent.parent / "kb" / "danger.snepslog"
@@ -104,6 +105,15 @@ class RelationTest(unittest.TestCase):
         self.assertEqual(len(facts), 4)
         for _, x, y in facts:
             self.assertEqual(sorted(label.split("_")[0] for label in (x, y)), ["car", "person"])
+
+    def test_rider_sits_on_the_bike_a_pedestrian_stands_in_front(self):
+        bike = ("bicycle", (0, 50, 60, 100), 0.9)
+        rider = ("person", (10, 10, 50, 95), 0.9)        # base near the wheels
+        walker = ("person", (100, 40, 130, 140), 0.9)    # beside the bike, no overlap
+        crossing = ("person", (20, 40, 50, 140), 0.9)    # in front of it, base far lower
+        self.assertEqual(riders(build_detections([bike, rider])), [("rides", "person_1", "bicycle_1")])
+        self.assertEqual(riders(build_detections([bike, walker])), [])
+        self.assertEqual(riders(build_detections([bike, crossing])), [])
 
 
 class RoadTest(unittest.TestCase):
