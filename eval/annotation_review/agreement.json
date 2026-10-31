@@ -1,0 +1,11 @@
+{
+ "people": 91,
+ "observed_agreement": 0.9560439560439561,
+ "cohen_kappa": 0.840909090909091,
+ "confusion_sonnet_vs_lead": {
+  "FF": 74,
+  "NF": 4,
+  "NN": 13
+ },
+ "note": "dangerous label per person on the 20-image random sample; T true, F false, N null"
+}

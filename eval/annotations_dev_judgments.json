@@ -1,0 +1,5585 @@
+{
+ "000000278848.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "rain",
+  "nearer": {
+   "P3-H1": "person",
+   "P3-H2": "person"
+  },
+  "traffic_area": {
+   "H2": "yes"
+  },
+  "person_area": {
+   "P3": "off_road"
+  },
+  "motion": {
+   "H0": "stopped"
+  },
+  "notes": {
+   "image": "people at a bus stop on the pavement beside a stopped bus; cars far down the road"
+  }
+ },
+ "000000033221.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P0-H2": "person",
+   "P1-H2": "person",
+   "P2-H2": "person"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no",
+   "H2": "no"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H2": "parked"
+  },
+  "notes": {
+   "image": "beach; vehicles parked at a lifeguard station far behind"
+  }
+ },
+ "000000082812.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P2-H0": "unclear",
+   "P3-H0": "unclear"
+  },
+  "traffic_area": {
+   "H0": "yes"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road"
+  },
+  "motion": {
+   "H0": "stopped"
+  },
+  "notes": {
+   "image": "station platform beside a stopped train; the platform edge separates people from the track"
+  }
+ },
+ "000000153011.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P2-H0": "person",
+   "P3-H0": "person",
+   "P4-H0": "person",
+   "P5-H0": "person",
+   "P6-H0": "person",
+   "P7-H1": "person",
+   "P7-H2": "person",
+   "P7-H3": "person",
+   "P7-H4": "person",
+   "P7-H5": "person",
+   "P7-H6": "person",
+   "P8-H1": "person",
+   "P8-H2": "person",
+   "P8-H3": "person",
+   "P8-H4": "person",
+   "P8-H5": "person",
+   "P8-H6": "person"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H3": "yes",
+   "H4": "yes"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road",
+   "P2": "off_road",
+   "P3": "off_road",
+   "P4": "off_road",
+   "P5": "off_road",
+   "P6": "off_road",
+   "P7": "off_road",
+   "P8": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H5": "parked",
+   "H6": "parked"
+  },
+  "notes": {
+   "image": "food trucks parked at a lot set out with tables; cars on a street behind"
+  }
+ },
+ "000000144333.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H1": "person",
+   "P0-H2": "unclear",
+   "P0-H3": "person",
+   "P0-H4": "person"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H2"
+   ]
+  },
+  "traffic_area": {
+   "H1": "yes",
+   "H3": "yes",
+   "H4": "yes"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "notes": {
+   "image": "girl sitting on her bicycle on the pavement; cars on the road behind a planter"
+  }
+ },
+ "000000155341.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P1-H0": "person",
+   "P1-H1": "hazard",
+   "P2-H0": "unclear",
+   "P2-H1": "hazard",
+   "P2-H2": "unclear",
+   "P3-H0": "person",
+   "P3-H1": "hazard",
+   "P3-H2": "person",
+   "P4-H0": "person",
+   "P4-H1": "hazard",
+   "P4-H2": "unclear",
+   "P5-H0": "unclear",
+   "P5-H1": "hazard",
+   "P5-H2": "person"
+  },
+  "roles": {
+   "P3": [
+    "occupant",
+    "H1"
+   ]
+  },
+  "traffic_area": {
+   "H0": "yes",
+   "H1": "yes",
+   "H2": "yes"
+  },
+  "person_area": {
+   "P1": "road",
+   "P2": "road",
+   "P4": "road",
+   "P5": "road"
+  },
+  "confidence": {
+   "P1": "medium",
+   "P4": "medium",
+   "P5": "medium"
+  },
+  "notes": {
+   "image": "junction: a traffic-police crane beside a lorry, people on the road around them, a car passing in front; P3 drives the car"
+  }
+ },
+ "000000414510.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H1": "person",
+   "P0-H2": "hazard",
+   "P0-H3": "person",
+   "P1-H1": "person",
+   "P1-H2": "hazard",
+   "P1-H3": "person",
+   "P1-H4": "person",
+   "P1-H5": "person",
+   "P2-H3": "person",
+   "P2-H4": "unclear",
+   "P2-H5": "person"
+  },
+  "traffic_area": {
+   "H3": "yes",
+   "H4": "yes",
+   "H5": "yes"
+  },
+  "person_area": {
+   "P1": "off_road",
+   "P2": "road"
+  },
+  "motion": {
+   "H4": "stopped"
+  },
+  "confidence": {
+   "P2": "medium"
+  },
+  "notes": {
+   "P2": "standing in the road at the open door of a stopped car, with the traffic lane behind him",
+   "image": "two people sitting on the pavement by a fallen bicycle; a man at a car door in the road"
+  }
+ },
+ "000000032334.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P4-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "unclear"
+  },
+  "person_area": {
+   "P4": "off_road"
+  },
+  "barrier": [
+   "P4-H0"
+  ],
+  "notes": {
+   "image": "indoors; a car seen through the window"
+  }
+ },
+ "000000398742.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P1-H0": "person",
+   "P2-H0": "person",
+   "P2-H1": "person",
+   "P3-H1": "person",
+   "P4-H1": "person"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P2": "off_road",
+   "P3": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked"
+  },
+  "notes": {
+   "image": "rugby pitch; cars parked beyond it"
+  }
+ },
+ "000000143556.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P1-H0": "hazard",
+   "P2-H1": "unclear",
+   "P2-H2": "unclear",
+   "P3-H1": "unclear",
+   "P3-H2": "unclear",
+   "P4-H1": "unclear",
+   "P4-H2": "unclear",
+   "P5-H1": "unclear",
+   "P5-H2": "unclear",
+   "P6-H1": "unclear",
+   "P6-H2": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H0"
+   ],
+   "P1": [
+    "rider",
+    null
+   ],
+   "P2": [
+    "rider",
+    "H1"
+   ],
+   "P3": [
+    "rider",
+    null
+   ],
+   "P4": [
+    "rider",
+    null
+   ],
+   "P5": [
+    "rider",
+    null
+   ],
+   "P6": [
+    "rider",
+    "H2"
+   ]
+  },
+  "notes": {
+   "image": "motorcyclists riding in a group"
+  }
+ },
+ "000000392722.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "unclear",
+   "P0-H2": "unclear",
+   "P1-H0": "person",
+   "P1-H1": "person",
+   "P1-H2": "person",
+   "P1-H3": "person",
+   "P1-H4": "person",
+   "P2-H5": "person",
+   "P2-H6": "person",
+   "P3-H6": "hazard",
+   "P4-H6": "person",
+   "P5-H6": "person"
+  },
+  "roles": {
+   "P3": [
+    "occupant",
+    "H6"
+   ]
+  },
+  "traffic_area": {
+   "H0": "yes",
+   "H1": "yes",
+   "H2": "yes",
+   "H6": "yes"
+  },
+  "person_area": {
+   "P1": "off_road",
+   "P2": "road",
+   "P4": "unclear",
+   "P5": "unclear"
+  },
+  "motion": {
+   "H6": "stopped"
+  },
+  "confidence": {
+   "P2": "medium"
+  },
+  "notes": {
+   "P2": "conductor standing on the road at the door of a bus stopped on the carriageway",
+   "P4": "beside the stopped bus at the edge of the grass verge; on the verge or the road",
+   "P5": "as P4",
+   "image": "village road; heritage bus stopped at the roadside, people boarding"
+  }
+ },
+ "000000011149.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "person",
+   "P1-H2": "person"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H0"
+   ]
+  },
+  "traffic_area": {
+   "H2": "no"
+  },
+  "person_area": {
+   "P1": "off_road"
+  },
+  "motion": {
+   "H1": "parked",
+   "H2": "parked"
+  },
+  "notes": {
+   "image": "bicycles parked by a path; a motorcyclist passing"
+  }
+ },
+ "000000135410.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H3": "person",
+   "P0-H4": "person",
+   "P0-H5": "unclear",
+   "P0-H6": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H5"
+   ]
+  },
+  "notes": {
+   "image": "street seen from a parklet on the pavement; a motorcyclist in the road"
+  }
+ },
+ "000000278705.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P1-H1": "person"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no"
+  },
+  "person_area": {
+   "P0": "road",
+   "P1": "road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked"
+  },
+  "notes": {
+   "image": "two skateboarders on the road in front of cars parked at the kerb (loading bay)"
+  }
+ },
+ "000000212573.jpg": {
+  "scene": "crossing",
+  "lighting": "day",
+  "weather": "rain",
+  "nearer": {
+   "P0-H2": "person",
+   "P0-H3": "person",
+   "P0-H4": "person",
+   "P0-H5": "person",
+   "P0-H6": "person",
+   "P1-H6": "person",
+   "P1-H7": "person",
+   "P1-H8": "person"
+  },
+  "traffic_area": {
+   "H2": "yes",
+   "H4": "yes",
+   "H5": "yes",
+   "H6": "yes",
+   "H7": "yes"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road"
+  },
+  "notes": {
+   "image": "two people waiting on the kerb at a crossing in the rain; cars on the road beyond"
+  }
+ },
+ "000000299887.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H1": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H1"
+   ]
+  },
+  "motion": {
+   "H1": "parked"
+  },
+  "notes": {
+   "image": "couple posing; the man sits on a parked motorcycle"
+  }
+ },
+ "000000568147.jpg": {
+  "scene": "small_distant",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P3-H0": "unclear",
+   "P3-H1": "person"
+  },
+  "traffic_area": {
+   "H1": "yes"
+  },
+  "person_area": {
+   "P3": "off_road"
+  },
+  "confidence": {
+   "P3": "medium"
+  },
+  "notes": {
+   "image": "close-up of a parking meter; small people on the far pavement"
+  }
+ },
+ "000000397351.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P1-H1": "hazard"
+  },
+  "roles": {
+   "P1": [
+    "occupant",
+    "H1"
+   ]
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked"
+  },
+  "notes": {
+   "image": "market stall; vehicles parked behind it"
+  }
+ },
+ "000000269632.jpg": {
+  "scene": "safe",
+  "lighting": "night",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "hazard"
+  },
+  "traffic_area": {
+   "H0": "yes"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "notes": {
+   "image": "night street; a person on the pavement by a bus stop, the bus in the road"
+  }
+ },
+ "000000312421.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "hazard"
+  },
+  "traffic_area": {
+   "H0": "unclear"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "confidence": {
+   "P1": "low"
+  },
+  "notes": {
+   "P1": "blurred; standing behind the motorcycle, or possibly sitting on it",
+   "image": "market; suitcase on a table in front, a motorcycle behind"
+  }
+ },
+ "000000280710.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P1-H0": "unclear",
+   "P1-H1": "unclear",
+   "P2-H0": "unclear",
+   "P2-H1": "unclear",
+   "P3-H1": "person",
+   "P3-H2": "person",
+   "P4-H2": "person",
+   "P5-H2": "person",
+   "P6-H2": "hazard",
+   "P7-H2": "person",
+   "P8-H2": "hazard",
+   "P8-H3": "unclear",
+   "P9-H2": "person",
+   "P9-H3": "person"
+  },
+  "roles": {
+   "P6": [
+    "occupant",
+    "H2"
+   ],
+   "P8": [
+    "occupant",
+    "H2"
+   ]
+  },
+  "traffic_area": {
+   "H0": "yes",
+   "H1": "yes",
+   "H2": "yes",
+   "H3": "yes"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road",
+   "P3": "off_road",
+   "P4": "off_road",
+   "P5": "off_road",
+   "P7": "unclear",
+   "P9": "off_road"
+  },
+  "barrier": [
+   "P3-H2",
+   "P4-H2",
+   "P5-H2"
+  ],
+  "confidence": {
+   "P6": "medium",
+   "P8": "medium"
+  },
+  "notes": {
+   "P6": "small figure at the bus's lower-deck windows, taken for a passenger",
+   "P8": "as P6",
+   "P7": "by the bus near the railing; this side of it or in the road",
+   "image": "wide pavement; a sightseeing bus in the road behind railings"
+  }
+ },
+ "000000449432.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P2-H0": "person",
+   "P3-H0": "person",
+   "P4-H0": "person",
+   "P5-H0": "person",
+   "P6-H0": "person",
+   "P7-H0": "person",
+   "P8-H0": "person",
+   "P9-H0": "person",
+   "P10-H0": "person",
+   "P11-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "no"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road",
+   "P2": "off_road",
+   "P3": "off_road",
+   "P4": "off_road",
+   "P5": "off_road",
+   "P6": "off_road",
+   "P7": "off_road",
+   "P8": "off_road",
+   "P9": "off_road",
+   "P10": "off_road",
+   "P11": "off_road"
+  },
+  "motion": {
+   "H0": "parked"
+  },
+  "notes": {
+   "image": "sailors queuing to board a bus parked on a quay"
+  }
+ },
+ "000000067213.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P2-H0": "unclear",
+   "P3-H1": "unclear",
+   "P3-H2": "unclear",
+   "P3-H3": "hazard",
+   "P4-H2": "unclear",
+   "P4-H3": "hazard",
+   "P4-H4": "unclear",
+   "P5-H3": "person",
+   "P5-H4": "person",
+   "P6-H3": "person",
+   "P6-H4": "person",
+   "P7-H4": "person"
+  },
+  "roles": {
+   "P3": [
+    "occupant",
+    "H3"
+   ],
+   "P4": [
+    "occupant",
+    "H3"
+   ]
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H3": "no",
+   "H4": "no"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road",
+   "P2": "unclear",
+   "P5": "off_road",
+   "P6": "off_road",
+   "P7": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H3": "parked",
+   "H4": "parked"
+  },
+  "notes": {
+   "image": "dog-diving event; spectators in front of parked cars, two people sitting in a car"
+  }
+ },
+ "000000040083.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P0-H2": "person",
+   "P1-H1": "person",
+   "P1-H2": "person",
+   "P1-H3": "person",
+   "P1-H4": "person",
+   "P2-H1": "unclear",
+   "P2-H2": "unclear",
+   "P2-H3": "unclear",
+   "P2-H4": "hazard"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no",
+   "H2": "no",
+   "H3": "no",
+   "H4": "no"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road",
+   "P2": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H2": "parked",
+   "H3": "parked",
+   "H4": "parked"
+  },
+  "notes": {
+   "image": "street cobblers under an umbrella on the pavement; cars and bicycles parked"
+  }
+ },
+ "000000192670.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P1-H0": "person",
+   "P1-H1": "person",
+   "P2-H0": "person",
+   "P3-H3": "person",
+   "P3-H4": "person",
+   "P3-H5": "person",
+   "P4-H4": "person",
+   "P4-H5": "person",
+   "P5-H4": "unclear",
+   "P5-H5": "person",
+   "P6-H4": "unclear",
+   "P6-H5": "person",
+   "P7-H5": "person",
+   "P8-H5": "person"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no",
+   "H3": "no",
+   "H4": "no",
+   "H5": "no"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road",
+   "P3": "off_road",
+   "P4": "off_road",
+   "P7": "off_road"
+  },
+  "barrier": [
+   "P3-H3",
+   "P3-H4"
+  ],
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H3": "parked",
+   "H4": "parked",
+   "H5": "parked"
+  },
+  "notes": {
+   "image": "baseball game; cars parked behind the fence"
+  }
+ },
+ "000000142472.jpg": {
+  "scene": "crossing",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P0-H1": "unclear",
+   "P1-H0": "unclear",
+   "P1-H1": "person",
+   "P1-H2": "unclear",
+   "P2-H1": "unclear",
+   "P2-H2": "person",
+   "P2-H3": "unclear",
+   "P2-H4": "unclear",
+   "P3-H3": "unclear",
+   "P3-H4": "unclear",
+   "P3-H5": "unclear",
+   "P4-H3": "unclear",
+   "P4-H4": "unclear",
+   "P4-H5": "unclear",
+   "P5-H3": "unclear",
+   "P5-H4": "unclear",
+   "P5-H5": "unclear"
+  },
+  "traffic_area": {
+   "H1": "yes",
+   "H2": "yes"
+  },
+  "person_area": {
+   "P1": "unclear",
+   "P2": "road"
+  },
+  "confidence": {
+   "P2": "medium"
+  },
+  "notes": {
+   "P1": "at a refuge island by a bollard; on the island or in the road",
+   "P2": "crossing the road in front of a car by the island",
+   "image": "high street; people crossing at a refuge island"
+  }
+ },
+ "000000052007.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P1-H0": "hazard",
+   "P2-H0": "hazard",
+   "P3-H0": "hazard",
+   "P4-H0": "person",
+   "P5-H0": "person"
+  },
+  "roles": {
+   "P2": [
+    "occupant",
+    "H0"
+   ],
+   "P3": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "traffic_area": {
+   "H0": "yes"
+  },
+  "person_area": {
+   "P4": "off_road"
+  },
+  "motion": {
+   "H0": "stopped"
+  },
+  "notes": {
+   "image": "bus at a stop; a man boarding from the kerb, another at the shelter"
+  }
+ },
+ "000000144300.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H2": "hazard",
+   "P0-H4": "unclear",
+   "P0-H5": "person",
+   "P0-H6": "person",
+   "P1-H2": "hazard",
+   "P1-H6": "person"
+  },
+  "traffic_area": {
+   "H2": "no",
+   "H6": "no"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road"
+  },
+  "motion": {
+   "H2": "parked",
+   "H6": "parked"
+  },
+  "notes": {
+   "P0": "standing behind a motorcycle on a stand, which hides his legs",
+   "image": "motorcycle show; vans and a caravan parked behind"
+  }
+ },
+ "000000393226.jpg": {
+  "scene": "crossing",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H1": "person",
+   "P0-H2": "person"
+  },
+  "traffic_area": {
+   "H1": "no",
+   "H2": "yes"
+  },
+  "person_area": {
+   "P0": "road"
+  },
+  "confidence": {
+   "P0": "medium"
+  },
+  "notes": {
+   "P0": "walking on the crossing past the rear of an ice-cream truck in the road",
+   "image": "junction with a zebra crossing"
+  }
+ },
+ "000000281759.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "no"
+  },
+  "person_area": {
+   "P0": "road"
+  },
+  "motion": {
+   "H0": "parked"
+  },
+  "notes": {
+   "image": "five women posing with umbrellas on a quiet residential road; a pickup parked far off"
+  }
+ },
+ "000000545100.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P2-H3": "person"
+  },
+  "traffic_area": {
+   "H3": "yes"
+  },
+  "person_area": {
+   "P2": "off_road"
+  },
+  "barrier": [
+   "P2-H3"
+  ],
+  "notes": {
+   "image": "man photographing from an elevated walkway; cars on streets far below"
+  }
+ },
+ "000000130699.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H2": "person",
+   "P2-H3": "person",
+   "P2-H4": "person",
+   "P2-H5": "person",
+   "P3-H3": "person",
+   "P3-H4": "person",
+   "P3-H5": "person",
+   "P3-H6": "person",
+   "P5-H4": "unclear",
+   "P5-H5": "person",
+   "P5-H6": "person",
+   "P5-H7": "person",
+   "P6-H6": "person",
+   "P6-H7": "person"
+  },
+  "traffic_area": {
+   "H3": "no",
+   "H5": "no"
+  },
+  "person_area": {
+   "P2": "off_road",
+   "P3": "off_road",
+   "P5": "off_road"
+  },
+  "barrier": [
+   "P2-H3",
+   "P3-H5",
+   "P5-H5"
+  ],
+  "motion": {
+   "H3": "parked",
+   "H5": "parked"
+  },
+  "notes": {
+   "image": "frisbee game on a field; cars parked beyond a padded fence"
+  }
+ },
+ "000000579902.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "unclear",
+   "P0-H2": "unclear",
+   "P0-H3": "person",
+   "P0-H4": "hazard"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H2"
+   ]
+  },
+  "notes": {
+   "image": "motorcyclist riding between cars on a freeway"
+  }
+ },
+ "000000044590.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P0-H1": "unclear",
+   "P0-H2": "unclear",
+   "P1-H0": "unclear",
+   "P1-H1": "unclear",
+   "P1-H2": "unclear",
+   "P2-H4": "unclear",
+   "P2-H5": "unclear",
+   "P2-H6": "hazard",
+   "P2-H7": "unclear",
+   "P2-H8": "unclear",
+   "P3-H5": "unclear",
+   "P3-H6": "unclear",
+   "P3-H7": "unclear",
+   "P3-H8": "unclear",
+   "P3-H9": "unclear",
+   "P4-H8": "unclear",
+   "P4-H9": "hazard",
+   "P4-H10": "unclear",
+   "P5-H8": "unclear",
+   "P5-H9": "unclear",
+   "P5-H10": "unclear",
+   "P6-H9": "unclear",
+   "P6-H10": "hazard",
+   "P6-H11": "unclear",
+   "P7-H9": "unclear",
+   "P7-H10": "unclear",
+   "P7-H11": "unclear",
+   "P8-H10": "unclear",
+   "P8-H11": "unclear",
+   "P8-H12": "unclear",
+   "P9-H10": "unclear",
+   "P9-H11": "unclear",
+   "P9-H12": "person",
+   "P10-H11": "unclear",
+   "P10-H12": "person",
+   "P11-H11": "unclear",
+   "P11-H12": "person"
+  },
+  "roles": {
+   "P1": [
+    "rider",
+    "H1"
+   ],
+   "P3": [
+    "rider",
+    "H7"
+   ],
+   "P8": [
+    "rider",
+    "H11"
+   ]
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no",
+   "H2": "no",
+   "H3": "no",
+   "H4": "no",
+   "H5": "no",
+   "H6": "no",
+   "H7": "no",
+   "H8": "no",
+   "H9": "no",
+   "H10": "no",
+   "H11": "no",
+   "H12": "no"
+  },
+  "person_area": {
+   "P2": "off_road",
+   "P7": "off_road",
+   "P9": "off_road",
+   "P10": "off_road",
+   "P11": "off_road"
+  },
+  "confidence": {
+   "P0": "medium",
+   "P2": "medium",
+   "P4": "medium",
+   "P6": "medium"
+  },
+  "notes": {
+   "image": "motorcyclists stopped at a gravel pull-off beside the road; small low-resolution figures"
+  }
+ },
+ "000000515025.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P0-H2": "person"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no",
+   "H2": "no"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H2": "parked"
+  },
+  "notes": {
+   "image": "picnic table with a cat; vehicles parked on the grass behind"
+  }
+ },
+ "000000245320.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "unclear"
+  },
+  "traffic_area": {
+   "H0": "no"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "unclear"
+  },
+  "barrier": [
+   "P0-H0"
+  ],
+  "motion": {
+   "H0": "parked"
+  },
+  "notes": {
+   "image": "skate park; a car parked in a lot beyond the fence"
+  }
+ },
+ "000000526728.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P1-H1": "person"
+  },
+  "traffic_area": {
+   "H1": "no"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "notes": {
+   "image": "couple with luggage on a pavement; the cars are reflections in the shop windows"
+  }
+ },
+ "000000369442.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P1-H0": "hazard",
+   "P1-H1": "hazard",
+   "P2-H0": "hazard",
+   "P2-H1": "hazard",
+   "P3-H1": "hazard",
+   "P3-H2": "hazard",
+   "P3-H3": "hazard",
+   "P4-H2": "hazard",
+   "P4-H3": "hazard",
+   "P4-H4": "hazard",
+   "P5-H2": "hazard",
+   "P5-H3": "hazard",
+   "P5-H4": "hazard",
+   "P5-H5": "hazard",
+   "P5-H6": "hazard",
+   "P6-H2": "hazard",
+   "P6-H3": "hazard",
+   "P6-H4": "hazard",
+   "P6-H5": "hazard",
+   "P6-H6": "hazard",
+   "P6-H7": "hazard",
+   "P7-H4": "hazard",
+   "P7-H5": "hazard",
+   "P7-H6": "hazard",
+   "P7-H7": "hazard",
+   "P7-H8": "hazard",
+   "P8-H4": "hazard",
+   "P8-H5": "hazard",
+   "P8-H6": "hazard",
+   "P8-H7": "hazard",
+   "P8-H8": "hazard",
+   "P8-H9": "hazard",
+   "P9-H6": "hazard",
+   "P9-H7": "hazard",
+   "P9-H8": "hazard",
+   "P9-H9": "hazard",
+   "P9-H10": "unclear",
+   "P10-H9": "person",
+   "P10-H10": "person",
+   "P11-H10": "person"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H10": "unclear"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P10": "road"
+  },
+  "notes": {
+   "P10": "walking on the road edge in front of a mostly hidden car; whether it is parked cannot be seen",
+   "image": "sheep market on a roadside verge; herders among the sheep"
+  }
+ },
+ "000000334006.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H1": "hazard",
+   "P0-H2": "person"
+  },
+  "traffic_area": {
+   "H2": "yes"
+  },
+  "person_area": {
+   "P0": "road"
+  },
+  "confidence": {
+   "P0": "medium"
+  },
+  "motion": {
+   "H0": "parked"
+  },
+  "notes": {
+   "P0": "sanitation worker in the street at the rear of a garbage truck",
+   "image": "two garbage trucks in a street; a police car parked"
+  }
+ },
+ "000000514586.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P1-H0": "person",
+   "P1-H1": "person",
+   "P2-H0": "person",
+   "P2-H1": "person",
+   "P3-H0": "unclear"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no"
+  },
+  "person_area": {
+   "P1": "off_road",
+   "P2": "off_road"
+  },
+  "barrier": [
+   "P1-H0",
+   "P2-H0",
+   "P2-H1"
+  ],
+  "motion": {
+   "H0": "parked",
+   "H1": "parked"
+  },
+  "notes": {
+   "image": "little league batter; spectators behind a fence, vehicles parked beyond"
+  }
+ },
+ "000000260261.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "hazard"
+  },
+  "traffic_area": {
+   "H0": "no"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "motion": {
+   "H0": "parked"
+  },
+  "notes": {
+   "image": "coconut vendor on the pavement at the tailgate of a pickup parked at the kerb"
+  }
+ },
+ "000000025393.jpg": {
+  "scene": "crossing",
+  "lighting": "night",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "unclear",
+   "P0-H2": "unclear",
+   "P0-H3": "unclear",
+   "P1-H3": "person"
+  },
+  "traffic_area": {
+   "H2": "unclear",
+   "H3": "unclear"
+  },
+  "person_area": {
+   "P0": "unclear"
+  },
+  "notes": {
+   "P0": "tiny distant figure among cars",
+   "image": "two men stepping off a zebra crossing at night"
+  }
+ },
+ "000000461751.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "person",
+   "P1-H0": "hazard",
+   "P1-H1": "hazard",
+   "P2-H0": "unclear",
+   "P2-H1": "person"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H0"
+   ],
+   "P1": [
+    "occupant",
+    "H1"
+   ],
+   "P2": [
+    "rider",
+    null
+   ]
+  },
+  "notes": {
+   "image": "motorcyclists riding past a car with its driver inside"
+  }
+ },
+ "000000577932.jpg": {
+  "scene": "crossing",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H1": "unclear",
+   "P1-H1": "unclear",
+   "P1-H2": "unclear",
+   "P2-H1": "unclear",
+   "P2-H2": "unclear",
+   "P3-H2": "unclear",
+   "P4-H2": "person",
+   "P4-H3": "person",
+   "P5-H2": "person",
+   "P5-H3": "hazard",
+   "P6-H2": "unclear",
+   "P10-H4": "hazard"
+  },
+  "traffic_area": {
+   "H2": "yes",
+   "H3": "no"
+  },
+  "person_area": {
+   "P4": "road"
+  },
+  "confidence": {
+   "P4": "medium"
+  },
+  "motion": {
+   "H4": "parked"
+  },
+  "notes": {
+   "P4": "walking in a cobbled street; the car she overlaps is far ahead (overlap in the picture only)",
+   "P5": "walking beside the bicycle he pushes",
+   "image": "cobbled high street; a couple walking in the road, one pushing a bicycle (H3, counted outside the traffic area)"
+  },
+  "distant": [
+   "P4-H2"
+  ]
+ },
+ "000000142585.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P0-H1": "unclear",
+   "P0-H2": "unclear",
+   "P0-H3": "unclear",
+   "P0-H4": "unclear",
+   "P0-H5": "unclear",
+   "P1-H0": "hazard",
+   "P1-H1": "unclear",
+   "P1-H2": "unclear",
+   "P1-H3": "unclear",
+   "P1-H4": "unclear",
+   "P1-H5": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H1"
+   ],
+   "P1": [
+    "rider",
+    "H1"
+   ]
+  },
+  "notes": {
+   "image": "traffic stopped at a red light; a rider and pillion passenger on a motorcycle beside a bus"
+  }
+ },
+ "000000054593.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P0-H2": "person",
+   "P1-H0": "person",
+   "P1-H1": "person",
+   "P1-H2": "person",
+   "P2-H2": "person",
+   "P2-H3": "person",
+   "P3-H2": "person",
+   "P3-H3": "person",
+   "P4-H3": "person",
+   "P5-H3": "person"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no",
+   "H2": "no",
+   "H3": "no"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road",
+   "P2": "off_road",
+   "P4": "off_road",
+   "P5": "off_road"
+  },
+  "barrier": [
+   "P0-H0",
+   "P0-H1",
+   "P0-H2",
+   "P1-H2",
+   "P2-H3"
+  ],
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H2": "parked",
+   "H3": "parked"
+  },
+  "notes": {
+   "image": "baseball game; spectators and parked vehicles behind the fence"
+  }
+ },
+ "000000214192.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "person",
+   "P1-H1": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H0"
+   ],
+   "P1": [
+    "rider",
+    "H1"
+   ]
+  },
+  "notes": {
+   "image": "speedway race"
+  }
+ },
+ "000000506707.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P1-H1": "person",
+   "P2-H1": "person",
+   "P2-H2": "person",
+   "P3-H2": "person",
+   "P4-H2": "person"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no",
+   "H2": "no"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road",
+   "P3": "off_road",
+   "P4": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H2": "parked"
+  },
+  "notes": {
+   "image": "baseball game; vehicles parked behind the fence"
+  }
+ },
+ "000000507667.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P3-H0": "unclear",
+   "P4-H0": "unclear",
+   "P5-H0": "unclear",
+   "P6-H0": "unclear",
+   "P7-H0": "unclear",
+   "P8-H0": "person",
+   "P8-H1": "hazard",
+   "P9-H0": "person",
+   "P9-H1": "hazard",
+   "P10-H1": "hazard",
+   "P11-H1": "unclear"
+  },
+  "traffic_area": {
+   "H0": "unclear",
+   "H1": "no"
+  },
+  "person_area": {
+   "P7": "off_road",
+   "P8": "off_road",
+   "P9": "off_road",
+   "P11": "off_road"
+  },
+  "motion": {
+   "H1": "parked"
+  },
+  "notes": {
+   "P10": "police officer standing behind his parked motorcycle",
+   "P11": "at the right edge behind the motorcycle",
+   "image": "plaza with a painted cow statue; a car at the plaza edge, a police motorcycle parked"
+  }
+ },
+ "000000017207.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "unclear",
+   "P0-H2": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H0"
+   ]
+  },
+  "notes": {
+   "image": "traffic seen from behind a bus; a motorcyclist at the left edge"
+  }
+ },
+ "000000394275.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P1-H0": "hazard",
+   "P2-H0": "hazard",
+   "P3-H0": "hazard",
+   "P4-H0": "hazard",
+   "P5-H0": "hazard",
+   "P6-H0": "hazard",
+   "P7-H0": "hazard",
+   "P8-H0": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H0"
+   ],
+   "P1": [
+    "occupant",
+    "H0"
+   ],
+   "P2": [
+    "occupant",
+    "H0"
+   ],
+   "P3": [
+    "occupant",
+    "H0"
+   ],
+   "P4": [
+    "occupant",
+    "H0"
+   ],
+   "P5": [
+    "occupant",
+    "H0"
+   ],
+   "P6": [
+    "occupant",
+    "H0"
+   ],
+   "P7": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "notes": {
+   "image": "bus on a road with its driver and passengers inside"
+  }
+ },
+ "000000203294.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P2-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "no"
+  },
+  "person_area": {
+   "P2": "unclear"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked"
+  },
+  "notes": {
+   "image": "women beside a decorated bus parked in a car park"
+  }
+ },
+ "000000458109.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P1-H0": "hazard",
+   "P2-H0": "hazard",
+   "P3-H0": "hazard"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H0"
+   ],
+   "P1": [
+    "occupant",
+    "H0"
+   ],
+   "P2": [
+    "occupant",
+    "H0"
+   ],
+   "P3": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "notes": {
+   "image": "train at a platform, passengers seen through its windows"
+  }
+ },
+ "000000260925.jpg": {
+  "scene": "safe",
+  "lighting": "night",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "hazard"
+  },
+  "confidence": {
+   "P0": "medium"
+  },
+  "notes": {
+   "P0": "distant figure beyond the car, partly hidden by its roof",
+   "image": "cat on a car bonnet in a garage at night"
+  }
+ },
+ "000000569030.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P10-H2": "unclear",
+   "P11-H2": "unclear",
+   "P11-H3": "hazard"
+  },
+  "traffic_area": {
+   "H0": "yes"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "notes": {
+   "image": "street corner by a crossing; people waiting on the far pavement, a fire truck down the street"
+  }
+ },
+ "000000109900.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P8-H0": "unclear",
+   "P9-H0": "hazard"
+  },
+  "roles": {
+   "P9": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "motion": {
+   "H0": "parked"
+  },
+  "notes": {
+   "image": "airstrip; people by a small plane, a UN vehicle parked with its driver inside"
+  }
+ },
+ "000000319534.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P1-H0": "hazard",
+   "P2-H0": "hazard",
+   "P3-H0": "hazard",
+   "P4-H0": "hazard",
+   "P5-H0": "unclear",
+   "P6-H0": "hazard"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H0"
+   ],
+   "P1": [
+    "occupant",
+    "H0"
+   ],
+   "P2": [
+    "occupant",
+    "H0"
+   ],
+   "P3": [
+    "occupant",
+    "H0"
+   ],
+   "P4": [
+    "occupant",
+    "H0"
+   ],
+   "P5": [
+    "occupant",
+    "H0"
+   ],
+   "P6": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "notes": {
+   "P5": "standing in the bus doorway",
+   "image": "crowded bus; passengers at the windows and door"
+  }
+ },
+ "000000102331.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H0"
+   ]
+  },
+  "notes": {
+   "image": "young motocross rider in the air"
+  }
+ },
+ "000000555597.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H3": "hazard",
+   "P0-H4": "unclear",
+   "P0-H5": "hazard"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H3"
+   ]
+  },
+  "notes": {
+   "image": "historic photo of a city square full of cars; a delivery-van driver in his cab"
+  }
+ },
+ "000000505638.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P1-H0": "hazard",
+   "P2-H0": "hazard",
+   "P3-H0": "hazard"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H0"
+   ],
+   "P1": [
+    "occupant",
+    "H0"
+   ],
+   "P2": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "confidence": {
+   "P3": "medium"
+  },
+  "notes": {
+   "P3": "head visible above the boiler: someone on the far side of the locomotive",
+   "P2": "standing on the coach's end platform",
+   "image": "steam locomotive with a coach; passengers in the coach"
+  }
+ },
+ "000000098392.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "unclear",
+   "P0-H2": "unclear",
+   "P1-H3": "hazard",
+   "P1-H4": "hazard",
+   "P1-H5": "hazard",
+   "P2-H4": "hazard"
+  },
+  "roles": {
+   "P1": [
+    "occupant",
+    "H4"
+   ],
+   "P2": [
+    "occupant",
+    "H4"
+   ]
+  },
+  "traffic_area": {
+   "H0": "unclear"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "notes": {
+   "image": "clock tower by a road; a double-decker with its driver and a passenger, a car in front"
+  }
+ },
+ "000000448410.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P7-H1": "unclear",
+   "P8-H1": "unclear",
+   "P9-H1": "person",
+   "P10-H1": "hazard",
+   "P10-H2": "unclear"
+  },
+  "roles": {
+   "P10": [
+    "occupant",
+    "H1"
+   ]
+  },
+  "traffic_area": {
+   "H1": "yes"
+  },
+  "person_area": {
+   "P9": "off_road"
+  },
+  "notes": {
+   "image": "heritage railway platform; a diesel locomotive alongside, its driver in the cab"
+  }
+ },
+ "000000436883.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H2": "hazard",
+   "P1-H2": "hazard",
+   "P1-H3": "hazard",
+   "P1-H4": "hazard",
+   "P2-H2": "hazard",
+   "P2-H3": "hazard",
+   "P2-H4": "hazard",
+   "P3-H2": "hazard",
+   "P3-H3": "hazard",
+   "P3-H4": "hazard",
+   "P4-H2": "hazard",
+   "P4-H3": "hazard",
+   "P4-H4": "hazard",
+   "P5-H2": "hazard",
+   "P5-H3": "hazard",
+   "P5-H4": "hazard"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H2"
+   ]
+  },
+  "confidence": {
+   "P1": "medium",
+   "P2": "medium",
+   "P3": "medium",
+   "P4": "medium",
+   "P5": "medium"
+  },
+  "notes": {
+   "image": "minibus in a street; people at a bus stop behind a van parked at the kerb"
+  }
+ },
+ "000000551794.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H0"
+   ]
+  },
+  "notes": {
+   "image": "man sitting on his motorcycle at the side of a hill road"
+  }
+ },
+ "000000562448.jpg": {
+  "scene": "safe",
+  "lighting": "night",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P1-H0": "hazard"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H0"
+   ],
+   "P1": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "notes": {
+   "image": "motion-blurred bus at night with people inside"
+  }
+ },
+ "000000243867.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P0-H1": "person"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "motion": {
+   "H1": "parked"
+  },
+  "notes": {
+   "image": "coach parked at the kerb; a car with its driver passing"
+  }
+ },
+ "000000026204.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P3-H2": "hazard",
+   "P3-H3": "hazard",
+   "P3-H4": "unclear"
+  },
+  "roles": {
+   "P3": [
+    "occupant",
+    "H2"
+   ]
+  },
+  "notes": {
+   "image": "city junction; people on the far pavement, a bus with its driver in the road"
+  }
+ },
+ "000000111086.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "unclear",
+   "P0-H2": "unclear",
+   "P0-H3": "unclear",
+   "P0-H4": "unclear",
+   "P0-H5": "unclear",
+   "P1-H7": "unclear",
+   "P1-H8": "unclear",
+   "P1-H9": "unclear",
+   "P1-H10": "unclear",
+   "P2-H10": "hazard",
+   "P3-H10": "hazard"
+  },
+  "roles": {
+   "P1": [
+    "occupant",
+    "H9"
+   ]
+  },
+  "notes": {
+   "P1": "sitting in the open driver's door of his car",
+   "image": "cars queuing on a ferry quay; two people on the quay by the ship"
+  }
+ },
+ "000000534605.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P1-H0": "hazard",
+   "P1-H1": "unclear",
+   "P2-H0": "hazard",
+   "P2-H1": "unclear",
+   "P2-H2": "hazard"
+  },
+  "roles": {
+   "P2": [
+    "rider",
+    "H1"
+   ]
+  },
+  "motion": {
+   "H0": "parked",
+   "H2": "parked",
+   "H3": "parked"
+  },
+  "notes": {
+   "P1": "standing behind a parked motorcycle",
+   "image": "bikers in a car park with their motorcycles"
+  }
+ },
+ "000000217400.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P1-H0": "hazard"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H0"
+   ],
+   "P1": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "notes": {
+   "image": "train at a platform; two passengers inside"
+  }
+ },
+ "000000566524.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P1-H0": "unclear",
+   "P2-H0": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "notes": {
+   "image": "coastal railway; the train driver in the cab, walkers on the sea wall beside the line"
+  }
+ },
+ "000000323751.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "notes": {
+   "image": "train arriving at a station; driver in the cab, a man on the platform"
+  }
+ },
+ "000000460967.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "notes": {
+   "image": "bus in a car park with a passenger inside"
+  }
+ },
+ "000000415536.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "rain",
+  "nearer": {
+   "P0-H0": "hazard"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "notes": {
+   "image": "bus on a forest road; its driver in the cab"
+  }
+ },
+ "000000564336.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {},
+  "notes": {
+   "image": "man in a cafe; cars outside the window"
+  }
+ },
+ "000000578093.jpg": {
+  "scene": "small_distant",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P1-H0": "unclear",
+   "P2-H0": "unclear",
+   "P3-H0": "unclear"
+  },
+  "traffic_area": {
+   "H0": "yes"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "notes": {
+   "image": "station hall; a train at a platform, tiny people on a far platform"
+  }
+ },
+ "000000304365.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "hazard"
+  },
+  "notes": {
+   "image": "freight locomotive passing a station; a worker in hi-vis on the platform"
+  }
+ },
+ "000000119516.jpg": {
+  "scene": "safe",
+  "lighting": "night",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H1": "unclear"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked"
+  },
+  "notes": {
+   "image": "woman standing on a wide pavement at night; a bicycle and a motorcycle parked"
+  }
+ },
+ "000000198510.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person"
+  },
+  "confidence": {
+   "P0": "medium"
+  },
+  "notes": {
+   "P0": "walking between the rails of a track beside a standing train; no box overlap, so FALSE under v1.1 (beside a vehicle)",
+   "image": "staged photo: a man on a railway track next to a train"
+  }
+ },
+ "000000057672.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {},
+  "notes": {
+   "image": "dragon boat on a river; cars far off on the bank"
+  }
+ },
+ "000000146831.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P1-H1": "person"
+  },
+  "notes": {
+   "image": "skate park ramp; cars beyond the fence"
+  }
+ },
+ "000000011511.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {},
+  "motion": {
+   "H0": "parked"
+  },
+  "notes": {
+   "image": "statue on a bench in a pedestrian street; a motorcycle parked far off"
+  }
+ },
+ "000000297562.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P2-H0": "unclear"
+  },
+  "notes": {
+   "image": "indoor children's hair salon; the 'car' is a toy car seat"
+  },
+  "not_vehicle": [
+   "H0"
+  ]
+ },
+ "000000313588.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "rain",
+  "nearer": {
+   "P0-H1": "person"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked"
+  },
+  "notes": {
+   "image": "woman with an umbrella in a cobbled courtyard; a van and a car parked behind"
+  }
+ },
+ "000000119911.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {},
+  "notes": {
+   "image": "boy skateboarding in a quiet residential road; cars far down it"
+  }
+ },
+ "000000361506.jpg": {
+  "scene": "safe",
+  "lighting": "night",
+  "weather": "unclear",
+  "nearer": {},
+  "notes": {
+   "image": "skateboarder seen from ground level at night; a car far down the street"
+  }
+ },
+ "000000045596.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "rain",
+  "nearer": {},
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H2": "parked",
+   "H3": "parked",
+   "H4": "parked",
+   "H5": "parked",
+   "H6": "parked"
+  },
+  "notes": {
+   "image": "courtyard seen from a window; bicycles parked, two people walking"
+  }
+ },
+ "000000099054.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {},
+  "notes": {
+   "image": "airport apron; ground crew at an aircraft, a service truck beyond"
+  }
+ },
+ "000000084492.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked"
+  },
+  "notes": {
+   "image": "skateboarder jumping a rail in a pedestrian square; cars parked beyond"
+  }
+ },
+ "000000253835.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {},
+  "notes": {
+   "image": "woman and child on a station platform; a train on the far track"
+  }
+ },
+ "000000105923.jpg": {
+  "scene": "small_distant",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P1-H0": "hazard",
+   "P2-H0": "hazard"
+  },
+  "notes": {
+   "image": "street corner; a car driving away, tiny people far down the street; the 'elephant' is a sculpture in a shop window"
+  },
+  "not_vehicle": [
+   "H1"
+  ]
+ },
+ "000000504415.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H1": "person",
+   "P0-H3": "person"
+  },
+  "motion": {
+   "H1": "parked",
+   "H4": "parked"
+  },
+  "notes": {
+   "image": "tennis court; cars parked in the street beyond the fence"
+  }
+ },
+ "000000064523.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P9-H0": "person",
+   "P10-H0": "person"
+  },
+  "notes": {
+   "image": "tennis team photo; a car far off"
+  }
+ },
+ "000000033759.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked"
+  },
+  "notes": {
+   "image": "little league batter; vehicles parked behind the fence"
+  }
+ },
+ "000000038048.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {},
+  "notes": {
+   "image": "fire hydrant on a pavement; a person on the pavement, a car far off"
+  }
+ },
+ "000000198928.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H2": "person"
+  },
+  "notes": {
+   "image": "woman on a wide pavement by a traffic light; vehicles far across a square"
+  }
+ },
+ "000000361551.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "rain",
+  "nearer": {},
+  "notes": {
+   "image": "airport apron seen from aircraft steps; passengers with luggage, service trucks far off"
+  }
+ },
+ "000000464476.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person"
+  },
+  "notes": {
+   "image": "inside a building; a train seen through the open doors"
+  }
+ },
+ "000000436738.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P1-H0": "unclear"
+  },
+  "motion": {
+   "H0": "stopped"
+  },
+  "notes": {
+   "image": "historic street corner; two men on the pavement, a trolleybus and cars in the street"
+  }
+ },
+ "000000365655.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {},
+  "motion": {
+   "H0": "parked"
+  },
+  "notes": {
+   "image": "glacier tour bus parked; a small figure far off"
+  }
+ },
+ "000000454798.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P1-H1": "person",
+   "P1-H2": "unclear",
+   "P1-H3": "unclear",
+   "P2-H2": "unclear",
+   "P2-H3": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H0"
+   ],
+   "P1": [
+    "rider",
+    "H2"
+   ],
+   "P2": [
+    "rider",
+    null
+   ]
+  },
+  "notes": {
+   "image": "riding arena; a boy on a horse, other riders by a horse trailer"
+  }
+ },
+ "000000338905.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P5-H0": "person",
+   "P5-H1": "person",
+   "P8-H0": "unclear",
+   "P9-H0": "person",
+   "P9-H1": "person",
+   "P10-H0": "person",
+   "P10-H1": "person"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no"
+  },
+  "person_area": {
+   "P9": "off_road",
+   "P10": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked"
+  },
+  "notes": {
+   "image": "terrace restaurant; motorcycles parked beyond the tables"
+  }
+ },
+ "000000169996.jpg": {
+  "scene": "crossing",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P0-H1": "unclear",
+   "P0-H2": "unclear",
+   "P1-H0": "unclear",
+   "P1-H1": "unclear",
+   "P1-H2": "person",
+   "P1-H3": "person",
+   "P2-H0": "unclear",
+   "P2-H1": "unclear",
+   "P2-H2": "hazard",
+   "P2-H3": "hazard",
+   "P3-H2": "unclear",
+   "P3-H3": "hazard",
+   "P4-H2": "person",
+   "P4-H3": "person",
+   "P4-H4": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H0"
+   ],
+   "P1": [
+    "rider",
+    "H1"
+   ],
+   "P2": [
+    "occupant",
+    "H2"
+   ],
+   "P3": [
+    "occupant",
+    "H3"
+   ],
+   "P4": [
+    "rider",
+    "H4"
+   ]
+  },
+  "notes": {
+   "image": "junction; two cyclists in the road among a lorry, a car and a van, drivers inside"
+  }
+ },
+ "000000382111.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H5": "unclear",
+   "P0-H6": "unclear",
+   "P0-H7": "unclear",
+   "P1-H5": "unclear",
+   "P1-H6": "unclear",
+   "P1-H7": "person",
+   "P1-H8": "person",
+   "P1-H9": "person"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H5"
+   ],
+   "P1": [
+    "rider",
+    "H6"
+   ]
+  },
+  "notes": {
+   "image": "two young men on horses at a petrol station"
+  }
+ },
+ "000000140203.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P1-H0": "unclear",
+   "P2-H0": "unclear",
+   "P3-H0": "unclear",
+   "P4-H0": "hazard",
+   "P5-H0": "person"
+  },
+  "roles": {
+   "P4": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "traffic_area": {
+   "H0": "no"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road",
+   "P2": "off_road",
+   "P3": "off_road",
+   "P5": "off_road"
+  },
+  "motion": {
+   "H0": "parked"
+  },
+  "notes": {
+   "P0": "at the left edge beside the parked truck",
+   "image": "milk truck parked at a street fair closed to traffic; a woman walking past with a dog"
+  }
+ },
+ "000000457848.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "unclear",
+   "P1-H0": "hazard",
+   "P1-H1": "hazard",
+   "P1-H2": "hazard",
+   "P2-H0": "hazard",
+   "P2-H1": "hazard",
+   "P2-H2": "hazard",
+   "P3-H0": "unclear",
+   "P3-H1": "hazard",
+   "P3-H2": "hazard",
+   "P4-H0": "unclear",
+   "P4-H1": "hazard",
+   "P4-H2": "hazard"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H2": "parked"
+  },
+  "confidence": {
+   "P1": "medium",
+   "P2": "medium",
+   "P3": "medium",
+   "P4": "medium"
+  },
+  "notes": {
+   "image": "row of parked motorcycles in sharp focus; blurred visitors behind them"
+  }
+ },
+ "000000476119.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P0-H2": "person"
+  },
+  "traffic_area": {
+   "H1": "no",
+   "H2": "no"
+  },
+  "person_area": {
+   "P0": "road"
+  },
+  "motion": {
+   "H1": "parked",
+   "H2": "parked"
+  },
+  "notes": {
+   "image": "longboarder on a residential road; cars parked in driveways and at the kerb behind"
+  }
+ },
+ "000000297578.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "unclear",
+   "P0-H2": "unclear",
+   "P1-H1": "person",
+   "P1-H2": "unclear",
+   "P2-H2": "person"
+  },
+  "traffic_area": {
+   "H0": "unclear",
+   "H1": "unclear",
+   "H2": "unclear"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road",
+   "P2": "off_road"
+  },
+  "notes": {
+   "image": "man lighting a cigarette on a pavement; blurred cars behind"
+  }
+ },
+ "000000186624.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "hazard"
+  },
+  "traffic_area": {
+   "H0": "no"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked"
+  },
+  "notes": {
+   "image": "railway museum shed; a visitor beside static locomotives"
+  }
+ },
+ "000000176606.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear"
+  },
+  "notes": {
+   "P0": "a reflection in a window, as is the car",
+   "image": "sheep against a wall; a person and a car seen reflected in a window"
+  },
+  "roles": {
+   "P0": [
+    "depiction",
+    null
+   ]
+  },
+  "not_vehicle": [
+   "H0"
+  ]
+ },
+ "000000255749.jpg": {
+  "scene": "beside_parked",
+  "lighting": "night",
+  "weather": "snow",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P1-H0": "hazard",
+   "P2-H0": "hazard",
+   "P3-H0": "hazard"
+  },
+  "roles": {
+   "P1": [
+    "occupant",
+    "H0"
+   ],
+   "P2": [
+    "occupant",
+    "H0"
+   ],
+   "P3": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "traffic_area": {
+   "H0": "yes"
+  },
+  "person_area": {
+   "P0": "unclear"
+  },
+  "motion": {
+   "H0": "stopped"
+  },
+  "notes": {
+   "P0": "standing beside the front corner of a bus at a snowy stop at night",
+   "image": "bus at a night stop with passengers inside"
+  }
+ },
+ "000000383289.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H1": "person",
+   "P0-H2": "person"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    null
+   ]
+  },
+  "notes": {
+   "image": "security guard on a Segway beside a parked car"
+  }
+ },
+ "000000146667.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P0-H1": "person",
+   "P1-H0": "hazard",
+   "P1-H1": "person",
+   "P2-H0": "hazard",
+   "P2-H1": "person",
+   "P3-H0": "hazard",
+   "P3-H1": "person",
+   "P4-H0": "hazard",
+   "P4-H1": "person",
+   "P5-H0": "hazard",
+   "P5-H1": "person",
+   "P6-H0": "hazard",
+   "P7-H0": "hazard",
+   "P8-H0": "hazard",
+   "P9-H0": "hazard",
+   "P9-H2": "person",
+   "P10-H0": "hazard",
+   "P10-H2": "person",
+   "P11-H0": "hazard",
+   "P11-H2": "person"
+  },
+  "traffic_area": {
+   "H1": "no",
+   "H2": "no"
+  },
+  "person_area": {
+   "P1": "off_road",
+   "P2": "off_road",
+   "P3": "off_road",
+   "P4": "off_road",
+   "P11": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H2": "parked"
+  },
+  "notes": {
+   "P5": "loading the parked scooter's seat compartment",
+   "image": "farmers' market in a car park; a scooter parked in the foreground, shoppers behind it (their boxes overlap the scooter's large box, so the guidelines' box rule makes them hidden)"
+  }
+ },
+ "000000181816.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P2-H0": "person",
+   "P2-H1": "person"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no"
+  },
+  "person_area": {
+   "P2": "off_road"
+  },
+  "motion": {
+   "H1": "parked"
+  },
+  "notes": {
+   "P2": "a statue on a bench, boxed as a person by COCO",
+   "image": "pedestrian street; a statue on a bench, a car parked behind"
+  },
+  "roles": {
+   "P2": [
+    "depiction",
+    null
+   ]
+  }
+ },
+ "000000353180.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P3-H0": "person",
+   "P4-H0": "person",
+   "P5-H0": "person",
+   "P6-H0": "person",
+   "P7-H0": "person",
+   "P8-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "yes"
+  },
+  "person_area": {
+   "P1": "road",
+   "P3": "road",
+   "P4": "road",
+   "P5": "road",
+   "P6": "road",
+   "P7": "road"
+  },
+  "confidence": {
+   "P1": "medium",
+   "P3": "medium",
+   "P4": "medium",
+   "P5": "medium",
+   "P6": "medium",
+   "P7": "medium"
+  },
+  "notes": {
+   "P1": "pushing the front of a bus on a road (a charity bus pull); the frame does not show whether it moves",
+   "image": "archive photo: a team pushing a charter bus along a road"
+  }
+ },
+ "000000210789.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "rain",
+  "nearer": {
+   "P0-H1": "person",
+   "P1-H1": "person"
+  },
+  "traffic_area": {
+   "H1": "no"
+  },
+  "person_area": {
+   "P1": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked"
+  },
+  "notes": {
+   "image": "two children under an umbrella on a driveway; pickups parked across the street"
+  }
+ },
+ "000000468332.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P3-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "unclear"
+  },
+  "person_area": {
+   "P3": "off_road"
+  },
+  "notes": {
+   "image": "family picnic on a field; a car far beyond"
+  }
+ },
+ "000000011197.jpg": {
+  "scene": "crossing",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P3-H1": "person",
+   "P4-H2": "unclear"
+  },
+  "roles": {
+   "P4": [
+    "rider",
+    "H2"
+   ]
+  },
+  "notes": {
+   "image": "street corner; people waiting at the kerb, a cyclist across the road"
+  }
+ },
+ "000000128372.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P1-H0": "person",
+   "P1-H1": "person",
+   "P2-H0": "unclear",
+   "P3-H0": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "traffic_area": {
+   "H0": "yes",
+   "H1": "unclear"
+  },
+  "person_area": {
+   "P1": "off_road"
+  },
+  "motion": {
+   "H0": "stopped"
+  },
+  "notes": {
+   "image": "busway station; a bus at the raised platform, passengers waiting on it"
+  }
+ },
+ "000000133567.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "yes"
+  },
+  "person_area": {
+   "P0": "road"
+  },
+  "distant": [
+   "P0-H0"
+  ],
+  "notes": {
+   "P0": "standing in a street with tracks; the train is on a track well behind him",
+   "image": "street-running Amtrak train"
+  }
+ },
+ "000000162858.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "unclear",
+   "P0-H2": "unclear",
+   "P0-H3": "unclear",
+   "P0-H4": "unclear",
+   "P0-H5": "unclear",
+   "P0-H6": "unclear",
+   "P0-H7": "unclear",
+   "P0-H8": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H3"
+   ]
+  },
+  "notes": {
+   "image": "avenue with traffic; a cyclist at the left edge"
+  }
+ },
+ "000000329614.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P0-H2": "person"
+  },
+  "traffic_area": {
+   "H1": "yes"
+  },
+  "person_area": {
+   "P0": "unclear"
+  },
+  "notes": {
+   "P0": "dark figure walking at the road edge by a car; pavement or road cannot be told",
+   "image": "Dublin junction by the cathedral, overcast"
+  }
+ },
+ "000000521141.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P1-H1": "person",
+   "P1-H2": "person",
+   "P1-H3": "person",
+   "P1-H4": "person",
+   "P2-H0": "person",
+   "P2-H1": "person",
+   "P2-H2": "person",
+   "P2-H3": "person",
+   "P2-H4": "person"
+  },
+  "traffic_area": {
+   "H0": "yes",
+   "H1": "yes"
+  },
+  "person_area": {
+   "P1": "off_road",
+   "P2": "off_road"
+  },
+  "notes": {
+   "image": "people walking on a city pavement; cars on the street"
+  }
+ },
+ "000000545219.jpg": {
+  "scene": "beside_parked",
+  "lighting": "night",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P1-H0": "person",
+   "P2-H0": "person",
+   "P3-H0": "person",
+   "P4-H0": "unclear"
+  },
+  "traffic_area": {
+   "H0": "unclear"
+  },
+  "person_area": {
+   "P1": "unclear",
+   "P2": "unclear",
+   "P3": "unclear",
+   "P4": "unclear"
+  },
+  "notes": {
+   "image": "people standing a few metres in front of a lit coach in a night bus yard; whether it is in a bay or about to move cannot be seen (the guidelines' 2 m from a van example: null)"
+  }
+ },
+ "000000233771.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "rain",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P1-H1": "person",
+   "P2-H1": "person",
+   "P3-H1": "person",
+   "P4-H1": "person",
+   "P5-H1": "person",
+   "P6-H1": "person",
+   "P7-H1": "unclear",
+   "P8-H1": "unclear",
+   "P9-H1": "person"
+  },
+  "traffic_area": {
+   "H1": "yes"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road",
+   "P2": "off_road",
+   "P4": "off_road",
+   "P5": "off_road",
+   "P6": "off_road"
+  },
+  "notes": {
+   "image": "busy London pavement under a Union Jack umbrella; buses in the road behind"
+  }
+ },
+ "000000563604.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "person",
+   "P1-H0": "unclear",
+   "P1-H1": "person",
+   "P2-H0": "unclear",
+   "P2-H1": "person",
+   "P3-H1": "person"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "yes"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road",
+   "P2": "off_road"
+  },
+  "notes": {
+   "image": "Central Park during The Gates; the park drive is closed to traffic, people walk on it; a bus on a street beyond the trees"
+  }
+ },
+ "000000135902.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P0-H1": "person"
+  },
+  "traffic_area": {
+   "H1": "yes"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "notes": {
+   "image": "station; a locomotive at the platform, a worker on a far platform by another train"
+  }
+ },
+ "000000245448.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P1-H1": "person",
+   "P1-H2": "person",
+   "P2-H1": "hazard",
+   "P2-H2": "unclear",
+   "P3-H1": "hazard",
+   "P3-H2": "person",
+   "P4-H1": "hazard",
+   "P4-H3": "unclear"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "unclear",
+   "H2": "no"
+  },
+  "person_area": {
+   "P0": "unclear",
+   "P1": "unclear",
+   "P3": "unclear"
+  },
+  "motion": {
+   "H0": "parked",
+   "H2": "parked"
+  },
+  "notes": {
+   "P1": "rider standing beside his motorcycle on a coned course in a dealer's car park; whether it is about to move cannot be seen",
+   "image": "motorcycle event in a car park; instructors in hi-vis, a pickup parked"
+  }
+ },
+ "000000196141.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H1": "person",
+   "P1-H2": "person",
+   "P1-H3": "person",
+   "P2-H3": "person",
+   "P2-H4": "person",
+   "P4-H4": "person"
+  },
+  "traffic_area": {
+   "H2": "no",
+   "H3": "no",
+   "H4": "no"
+  },
+  "person_area": {
+   "P1": "off_road",
+   "P4": "off_road"
+  },
+  "barrier": [
+   "P1-H2",
+   "P1-H3",
+   "P4-H4"
+  ],
+  "motion": {
+   "H2": "parked",
+   "H3": "parked",
+   "H4": "parked"
+  },
+  "notes": {
+   "image": "little league game; cars parked behind the fence"
+  }
+ },
+ "000000122166.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P1-H0": "unclear",
+   "P1-H1": "unclear",
+   "P1-H2": "unclear",
+   "P1-H3": "unclear",
+   "P2-H1": "unclear",
+   "P2-H2": "hazard",
+   "P2-H3": "hazard",
+   "P3-H6": "unclear",
+   "P3-H7": "unclear",
+   "P3-H8": "unclear",
+   "P3-H9": "unclear",
+   "P3-H10": "unclear",
+   "P3-H11": "unclear",
+   "P3-H12": "unclear",
+   "P4-H8": "unclear",
+   "P4-H9": "unclear",
+   "P4-H10": "unclear",
+   "P4-H11": "unclear",
+   "P4-H12": "unclear",
+   "P4-H13": "unclear",
+   "P5-H8": "unclear",
+   "P5-H9": "unclear",
+   "P5-H10": "unclear",
+   "P5-H11": "unclear",
+   "P5-H12": "unclear",
+   "P5-H13": "unclear"
+  },
+  "roles": {
+   "P1": [
+    "rider",
+    "H1"
+   ],
+   "P2": [
+    "depiction",
+    null
+   ],
+   "P4": [
+    "rider",
+    "H11"
+   ]
+  },
+  "traffic_area": {
+   "H6": "yes",
+   "H7": "yes",
+   "H8": "yes"
+  },
+  "person_area": {
+   "P3": "unclear"
+  },
+  "motion": {
+   "H0": "parked"
+  },
+  "notes": {
+   "P2": "a woman on a poster behind the van",
+   "P3": "small figure far down the street among the traffic",
+   "image": "Stockholm street; a cyclist in the foreground, a woman on the pavement by a parked scooter"
+  }
+ },
+ "000000427655.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P1-H0": "unclear",
+   "P1-H1": "person",
+   "P1-H2": "person",
+   "P2-H0": "unclear",
+   "P2-H1": "unclear",
+   "P2-H2": "unclear",
+   "P3-H0": "unclear",
+   "P3-H1": "unclear",
+   "P3-H2": "unclear",
+   "P4-H1": "unclear",
+   "P4-H2": "unclear",
+   "P5-H0": "unclear",
+   "P5-H1": "person",
+   "P5-H2": "person",
+   "P5-H3": "person",
+   "P5-H4": "person",
+   "P5-H5": "person",
+   "P6-H0": "unclear",
+   "P6-H1": "unclear",
+   "P6-H2": "unclear",
+   "P6-H3": "unclear"
+  },
+  "roles": {
+   "P1": [
+    "occupant",
+    null
+   ],
+   "P5": [
+    "occupant",
+    null
+   ],
+   "P2": [
+    "occupant",
+    "H2"
+   ],
+   "P3": [
+    "occupant",
+    "H2"
+   ],
+   "P4": [
+    "occupant",
+    "H2"
+   ],
+   "P6": [
+    "occupant",
+    "H2"
+   ]
+  },
+  "motion": {
+   "H0": "stopped"
+  },
+  "notes": {
+   "P1": "sitting in the horse cart (no COCO class, so unboxed)",
+   "P5": "as P1",
+   "image": "horse-drawn carriage at a kerb with two women aboard; buses with passengers beyond"
+  }
+ },
+ "000000480985.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "hazard",
+   "P1-H0": "unclear",
+   "P1-H1": "hazard",
+   "P2-H0": "unclear",
+   "P2-H1": "hazard",
+   "P3-H1": "hazard",
+   "P3-H2": "unclear",
+   "P4-H1": "hazard",
+   "P4-H2": "unclear",
+   "P4-H3": "unclear",
+   "P4-H4": "unclear",
+   "P5-H1": "hazard",
+   "P5-H2": "unclear",
+   "P5-H3": "unclear",
+   "P5-H4": "unclear",
+   "P6-H1": "hazard",
+   "P6-H2": "unclear",
+   "P6-H3": "unclear",
+   "P6-H4": "unclear",
+   "P7-H1": "unclear",
+   "P7-H2": "unclear",
+   "P7-H3": "unclear",
+   "P7-H4": "unclear"
+  },
+  "traffic_area": {
+   "H1": "no",
+   "H2": "no",
+   "H3": "no",
+   "H4": "no"
+  },
+  "person_area": {
+   "P3": "off_road",
+   "P4": "off_road",
+   "P5": "off_road",
+   "P6": "off_road",
+   "P7": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H2": "parked",
+   "H3": "parked",
+   "H4": "parked"
+  },
+  "notes": {
+   "image": "motorcycle show hall; visitors among bikes on display (hidden here means behind a display bike, per the box rule)"
+  }
+ },
+ "000000250127.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "rain",
+  "nearer": {
+   "P0-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "yes"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "motion": {
+   "H0": "stopped"
+  },
+  "notes": {
+   "image": "woman with an umbrella on a station platform in front of a stopped train"
+  }
+ },
+ "000000574702.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "unclear",
+   "P1-H0": "unclear",
+   "P1-H2": "unclear",
+   "P2-H0": "unclear",
+   "P2-H1": "unclear",
+   "P2-H2": "hazard",
+   "P2-H3": "unclear",
+   "P3-H0": "unclear",
+   "P3-H1": "unclear",
+   "P3-H2": "hazard",
+   "P3-H3": "hazard",
+   "P3-H4": "unclear",
+   "P4-H2": "unclear",
+   "P4-H3": "unclear",
+   "P5-H2": "unclear",
+   "P5-H3": "unclear",
+   "P6-H1": "unclear",
+   "P6-H2": "unclear",
+   "P6-H3": "hazard",
+   "P6-H4": "unclear",
+   "P6-H5": "unclear",
+   "P7-H2": "unclear",
+   "P7-H3": "unclear",
+   "P7-H5": "unclear",
+   "P8-H2": "unclear",
+   "P8-H3": "unclear",
+   "P8-H5": "unclear",
+   "P10-H3": "unclear",
+   "P10-H5": "unclear",
+   "P11-H1": "unclear",
+   "P11-H3": "unclear",
+   "P11-H4": "hazard",
+   "P11-H5": "hazard"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H2": "parked",
+   "H3": "parked",
+   "H4": "parked",
+   "H5": "parked"
+  },
+  "notes": {
+   "image": "narrow bird-market alley with motorcycles parked along it; people behind them"
+  }
+ },
+ "000000492937.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P0-H1": "person"
+  },
+  "traffic_area": {
+   "H1": "yes"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "notes": {
+   "image": "bicycle on a metro platform close up; a passenger behind it, a train at the platform"
+  }
+ },
+ "000000115946.jpg": {
+  "scene": "small_distant",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "unclear",
+   "P0-H2": "unclear",
+   "P0-H3": "unclear",
+   "P0-H4": "unclear",
+   "P0-H5": "unclear",
+   "P0-H6": "unclear"
+  },
+  "traffic_area": {
+   "H2": "yes",
+   "H3": "yes"
+  },
+  "person_area": {
+   "P0": "unclear"
+  },
+  "notes": {
+   "image": "empty city street at dawn; one tiny figure far away among parked cars"
+  }
+ },
+ "000000350148.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P1-H1": "person",
+   "P2-H1": "person",
+   "P3-H1": "person"
+  },
+  "traffic_area": {
+   "H1": "unclear"
+  },
+  "person_area": {
+   "P1": "off_road",
+   "P2": "off_road"
+  },
+  "barrier": [
+   "P1-H1",
+   "P2-H1"
+  ],
+  "notes": {
+   "image": "man photographing his lunch in a diner; cars seen through the window"
+  }
+ },
+ "000000446651.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P1-H1": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H1"
+   ],
+   "P1": [
+    "rider",
+    "H1"
+   ]
+  },
+  "notes": {
+   "image": "father and daughter riding a scooter in city traffic"
+  }
+ },
+ "000000308328.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P1-H1": "hazard",
+   "P2-H0": "unclear",
+   "P2-H1": "hazard",
+   "P2-H2": "person",
+   "P3-H1": "unclear",
+   "P3-H2": "person"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no",
+   "H2": "no"
+  },
+  "person_area": {
+   "P0": "unclear",
+   "P1": "unclear",
+   "P2": "unclear",
+   "P3": "unclear"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "stopped",
+   "H2": "parked"
+  },
+  "notes": {
+   "image": "airport stand: baggage handlers at unpowered baggage dollies (no tug attached) and a stationary belt loader, counted as a loading position outside the traffic area"
+  }
+ },
+ "000000567640.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P1-H0": "person",
+   "P3-H0": "person",
+   "P3-H1": "person",
+   "P3-H2": "person",
+   "P4-H0": "person",
+   "P4-H1": "person",
+   "P4-H2": "person",
+   "P5-H0": "person",
+   "P6-H0": "person",
+   "P6-H1": "person",
+   "P6-H2": "person"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no",
+   "H2": "no"
+  },
+  "person_area": {
+   "P3": "off_road",
+   "P4": "off_road",
+   "P6": "off_road"
+  },
+  "barrier": [
+   "P3-H0",
+   "P3-H1",
+   "P3-H2",
+   "P4-H0",
+   "P6-H0",
+   "P6-H1",
+   "P6-H2"
+  ],
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H2": "parked"
+  },
+  "notes": {
+   "image": "soccer match; vehicles parked beyond the fence"
+  }
+ },
+ "000000038829.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H1": "unclear",
+   "P0-H2": "unclear",
+   "P0-H3": "person",
+   "P1-H1": "unclear",
+   "P1-H2": "unclear",
+   "P1-H3": "person",
+   "P3-H2": "unclear",
+   "P3-H3": "unclear",
+   "P4-H2": "hazard",
+   "P4-H3": "unclear",
+   "P4-H4": "person",
+   "P5-H3": "hazard",
+   "P5-H4": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H1"
+   ],
+   "P1": [
+    "rider",
+    "H2"
+   ],
+   "P3": [
+    "rider",
+    null
+   ],
+   "P4": [
+    "rider",
+    "H3"
+   ],
+   "P5": [
+    "rider",
+    "H4"
+   ]
+  },
+  "notes": {
+   "P5": "sitting on a parked motorcycle",
+   "image": "Saigon street; two boys on a bicycle, women on scooters"
+  }
+ },
+ "000000127263.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P1-H1": "person",
+   "P1-H2": "person"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road"
+  },
+  "barrier": [
+   "P0-H0",
+   "P0-H1",
+   "P1-H1"
+  ],
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H2": "parked"
+  },
+  "notes": {
+   "image": "ultimate frisbee players jumping; cars parked beyond the fence"
+  }
+ },
+ "000000558213.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P1-H1": "person"
+  },
+  "traffic_area": {
+   "H0": "no"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked"
+  },
+  "notes": {
+   "image": "DIY skate spot on concrete by a rail yard; a bicycle lying by a skater, tank wagons beyond the fence"
+  }
+ },
+ "000000377946.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H3": "person",
+   "P0-H4": "unclear",
+   "P1-H3": "person",
+   "P1-H4": "unclear",
+   "P2-H4": "unclear",
+   "P3-H4": "unclear",
+   "P4-H3": "person",
+   "P4-H4": "unclear",
+   "P5-H3": "person",
+   "P5-H4": "unclear",
+   "P6-H3": "person",
+   "P6-H4": "unclear",
+   "P7-H4": "unclear"
+  },
+  "traffic_area": {
+   "H4": "yes"
+  },
+  "person_area": {
+   "P4": "off_road",
+   "P5": "off_road",
+   "P6": "off_road"
+  },
+  "motion": {
+   "H2": "parked"
+  },
+  "notes": {
+   "image": "food truck parked at a Manhattan kerb; small people waiting on the far corner"
+  }
+ },
+ "000000346232.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P7-H0": "person",
+   "P9-H0": "person",
+   "P10-H0": "person",
+   "P10-H1": "person",
+   "P10-H2": "person"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no",
+   "H2": "no"
+  },
+  "person_area": {
+   "P7": "off_road",
+   "P9": "off_road",
+   "P10": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H2": "parked"
+  },
+  "notes": {
+   "image": "festival-goers walking on a dirt track; vehicles parked far off"
+  }
+ },
+ "000000553511.jpg": {
+  "scene": "crossing",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P1-H4": "person"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "traffic_area": {
+   "H4": "no"
+  },
+  "person_area": {
+   "P1": "off_road"
+  },
+  "notes": {
+   "P1": "walking on the pavement at the corner; the car she overlaps is in a car park behind a hedge",
+   "image": "Orlando junction with crossings; an SUV turning with its driver"
+  }
+ },
+ "000000380706.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P1-H1": "person",
+   "P2-H3": "person",
+   "P2-H4": "unclear"
+  },
+  "roles": {
+   "P2": [
+    "rider",
+    "H4"
+   ]
+  },
+  "traffic_area": {
+   "H0": "unclear"
+  },
+  "person_area": {
+   "P1": "off_road"
+  },
+  "notes": {
+   "image": "Los Angeles corner; a man on an e-bike at the kerb, people on the pavement, a bus far off"
+  }
+ },
+ "000000491464.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P0-H2": "person"
+  },
+  "traffic_area": {
+   "H1": "no",
+   "H2": "no"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "barrier": [
+   "P0-H1",
+   "P0-H2"
+  ],
+  "motion": {
+   "H1": "parked",
+   "H2": "parked"
+  },
+  "notes": {
+   "image": "boy with a baseball bat on a field; cars parked beyond the fence"
+  }
+ },
+ "000000363875.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H1"
+   ]
+  },
+  "notes": {
+   "image": "man riding a scooter loaded with cardboard past a bus"
+  }
+ },
+ "000000424162.jpg": {
+  "scene": "crossing",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H1": "person",
+   "P0-H2": "unclear",
+   "P0-H3": "unclear",
+   "P0-H4": "person",
+   "P0-H5": "unclear",
+   "P1-H1": "person",
+   "P1-H2": "hazard",
+   "P1-H3": "unclear",
+   "P1-H4": "person",
+   "P1-H5": "unclear",
+   "P2-H2": "unclear",
+   "P2-H3": "unclear",
+   "P2-H4": "person",
+   "P2-H5": "unclear",
+   "P2-H6": "person",
+   "P2-H7": "person"
+  },
+  "traffic_area": {
+   "H1": "yes",
+   "H2": "no",
+   "H3": "no",
+   "H4": "yes",
+   "H5": "no",
+   "H6": "unclear",
+   "H7": "yes"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road",
+   "P2": "off_road"
+  },
+  "notes": {
+   "P0": "pedestrian holding her bicycle and a dog on a lead at the kerb of a crossing; not riding",
+   "image": "three people standing with their bicycles on the pavement at a zebra crossing; a truck and cars across the street"
+  }
+ },
+ "000000357816.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P2-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "no"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road",
+   "P2": "off_road"
+  },
+  "barrier": [
+   "P1-H0"
+  ],
+  "motion": {
+   "H0": "parked"
+  },
+  "notes": {
+   "image": "youth baseball batter; spectators and players behind the fence, a car parked beyond"
+  }
+ },
+ "000000394510.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P0-H2": "person"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no",
+   "H2": "no"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H2": "parked",
+   "H3": "parked"
+  },
+  "notes": {
+   "image": "boy on a skateboard on the pavement beside a car parked at the kerb and locked bicycles"
+  }
+ },
+ "000000291634.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "unclear",
+   "P0-H2": "unclear",
+   "P0-H3": "unclear",
+   "P0-H4": "unclear",
+   "P0-H5": "unclear",
+   "P0-H6": "unclear",
+   "P1-H0": "hazard",
+   "P1-H1": "hazard",
+   "P1-H2": "hazard",
+   "P1-H3": "person",
+   "P1-H4": "person",
+   "P1-H5": "hazard",
+   "P1-H6": "hazard",
+   "P2-H0": "hazard",
+   "P2-H1": "hazard",
+   "P2-H6": "hazard",
+   "P3-H0": "hazard",
+   "P3-H1": "hazard",
+   "P3-H6": "hazard",
+   "P4-H0": "hazard",
+   "P4-H1": "hazard",
+   "P4-H6": "hazard",
+   "P5-H0": "hazard",
+   "P5-H1": "hazard",
+   "P5-H6": "hazard",
+   "P6-H0": "hazard",
+   "P6-H1": "hazard",
+   "P6-H6": "hazard",
+   "P7-H5": "hazard",
+   "P7-H6": "hazard",
+   "P8-H5": "hazard",
+   "P8-H6": "hazard",
+   "P9-H5": "hazard",
+   "P9-H6": "hazard"
+  },
+  "traffic_area": {
+   "H3": "no",
+   "H4": "no"
+  },
+  "person_area": {
+   "P1": "unclear"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H2": "parked",
+   "H3": "parked",
+   "H4": "parked",
+   "H5": "parked",
+   "H6": "parked"
+  },
+  "notes": {
+   "image": "downtown street with motorcycles and a bicycle parked at the kerb; people on the pavement behind them (hidden by the box rule)"
+  }
+ },
+ "000000069213.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P2-H0": "person",
+   "P3-H0": "hazard",
+   "P4-H0": "unclear",
+   "P5-H0": "unclear",
+   "P6-H0": "unclear"
+  },
+  "traffic_area": {
+   "H0": "no"
+  },
+  "person_area": {
+   "P2": "unclear"
+  },
+  "motion": {
+   "H0": "parked"
+  },
+  "notes": {
+   "image": "two men in hats in a dusty village street; a motorcycle parked behind them"
+  }
+ },
+ "000000333745.jpg": {
+  "scene": "crossing",
+  "lighting": "day",
+  "weather": "rain",
+  "nearer": {
+   "P0-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "yes"
+  },
+  "person_area": {
+   "P0": "road"
+  },
+  "confidence": {
+   "P0": "medium"
+  },
+  "notes": {
+   "P0": "walking on the wet carriageway (yellow lines) right beside a bus in the road",
+   "image": "woman with an umbrella walking in a rainy street past a bus"
+  }
+ },
+ "000000273198.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person"
+  },
+  "traffic_area": {
+   "H0": "unclear"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "notes": {
+   "image": "worker flushing a fire hydrant on the pavement; cars at the kerb behind"
+  }
+ },
+ "000000014473.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P2-H0": "person",
+   "P3-H0": "person",
+   "P4-H0": "person",
+   "P5-H0": "person",
+   "P6-H0": "person"
+  },
+  "roles": {
+   "P0": [
+    "depiction",
+    null
+   ],
+   "P1": [
+    "depiction",
+    null
+   ],
+   "P2": [
+    "depiction",
+    null
+   ],
+   "P3": [
+    "depiction",
+    null
+   ],
+   "P4": [
+    "depiction",
+    null
+   ],
+   "P5": [
+    "depiction",
+    null
+   ],
+   "P6": [
+    "depiction",
+    null
+   ]
+  },
+  "notes": {
+   "image": "model railway: a model train passing miniature track workers"
+  },
+  "not_vehicle": [
+   "H0"
+  ]
+ },
+ "000000226417.jpg": {
+  "scene": "crossing",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P1-H0": "unclear",
+   "P1-H1": "unclear",
+   "P1-H2": "unclear",
+   "P2-H0": "unclear",
+   "P2-H1": "hazard",
+   "P2-H2": "unclear",
+   "P3-H0": "unclear",
+   "P3-H1": "unclear",
+   "P3-H2": "unclear",
+   "P3-H3": "unclear",
+   "P3-H4": "unclear",
+   "P4-H2": "unclear",
+   "P4-H3": "unclear",
+   "P4-H4": "unclear",
+   "P4-H5": "unclear",
+   "P5-H2": "unclear",
+   "P5-H3": "unclear",
+   "P5-H4": "unclear",
+   "P5-H5": "unclear",
+   "P6-H2": "unclear",
+   "P6-H3": "unclear",
+   "P6-H4": "unclear",
+   "P6-H5": "unclear",
+   "P7-H3": "unclear",
+   "P7-H4": "unclear",
+   "P7-H5": "unclear",
+   "P7-H6": "unclear",
+   "P8-H5": "unclear",
+   "P8-H6": "unclear",
+   "P9-H7": "unclear"
+  },
+  "roles": {
+   "P1": [
+    "rider",
+    "H0"
+   ],
+   "P3": [
+    "rider",
+    "H2"
+   ],
+   "P4": [
+    "rider",
+    "H3"
+   ],
+   "P5": [
+    "rider",
+    "H4"
+   ],
+   "P6": [
+    "rider",
+    "H4"
+   ],
+   "P7": [
+    "rider",
+    "H5"
+   ],
+   "P8": [
+    "rider",
+    "H6"
+   ],
+   "P9": [
+    "rider",
+    "H7"
+   ]
+  },
+  "notes": {
+   "P0": "pedestrian on the zebra crossing at the left edge, clear of the riders",
+   "image": "Shanghai street: scooters and bicycles riding across a zebra crossing"
+  }
+ },
+ "000000132544.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P2-H0": "person",
+   "P3-H0": "person",
+   "P4-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "no"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road",
+   "P2": "off_road",
+   "P3": "off_road"
+  },
+  "barrier": [
+   "P0-H0"
+  ],
+  "motion": {
+   "H0": "parked"
+  },
+  "notes": {
+   "image": "softball game; a car parked behind the fence"
+  }
+ },
+ "000000333402.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P1-H0": "hazard",
+   "P2-H0": "person"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H0"
+   ],
+   "P1": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "traffic_area": {
+   "H0": "yes"
+  },
+  "person_area": {
+   "P2": "off_road"
+  },
+  "motion": {
+   "H0": "stopped"
+  },
+  "notes": {
+   "image": "bus at a bus-station stand with its doors open; a man walking on the platform past it"
+  }
+ },
+ "000000202339.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "rain",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person"
+  },
+  "traffic_area": {
+   "H1": "yes"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "motion": {
+   "H0": "stopped",
+   "H1": "stopped"
+  },
+  "notes": {
+   "image": "airport bus terminal; a tour guide walking on the kerbside, coaches in the bays beyond the tactile strip"
+  }
+ },
+ "000000391290.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "no"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road"
+  },
+  "barrier": [
+   "P0-H0",
+   "P1-H0"
+  ],
+  "motion": {
+   "H0": "parked"
+  },
+  "notes": {
+   "image": "ultimate frisbee on a field; a car parked beyond the fence"
+  }
+ },
+ "000000068093.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P0-H1": "person",
+   "P0-H2": "person",
+   "P1-H0": "unclear",
+   "P1-H1": "person",
+   "P1-H2": "person"
+  },
+  "roles": {
+   "P1": [
+    "rider",
+    "H0"
+   ]
+  },
+  "traffic_area": {
+   "H1": "no",
+   "H2": "no"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H2": "parked"
+  },
+  "notes": {
+   "image": "couple with a parked motorcycle in a front yard; she sits on it, he stands behind it"
+  }
+ },
+ "000000255536.jpg": {
+  "scene": "small_distant",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P1-H0": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H0"
+   ],
+   "P1": [
+    "rider",
+    "H0"
+   ]
+  },
+  "notes": {
+   "image": "old chairs by a fence; two people riding a motorcycle on an embankment road far behind"
+  }
+ },
+ "000000449312.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "unclear"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "barrier": [
+   "P0-H0"
+  ],
+  "notes": {
+   "image": "woman at a cafe counter; a car seen through the window behind"
+  }
+ },
+ "000000568290.jpg": {
+  "scene": "small_distant",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P1-H2": "unclear",
+   "P1-H3": "unclear",
+   "P1-H4": "unclear",
+   "P1-H5": "unclear",
+   "P1-H6": "unclear",
+   "P2-H4": "unclear",
+   "P2-H6": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "traffic_area": {
+   "H3": "yes",
+   "H4": "yes",
+   "H5": "unclear"
+  },
+  "person_area": {
+   "P1": "unclear"
+  },
+  "notes": {
+   "P1": "tiny figure among motorcycles at the far kerb; standing or riding cannot be told",
+   "image": "articulated bus on a brick-paved street in the Netherlands; its driver in the cab"
+  }
+ },
+ "000000261982.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P0-H2": "person"
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no"
+  },
+  "person_area": {
+   "P0": "unclear"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H2": "parked"
+  },
+  "notes": {
+   "image": "skateboarder's legs mid-trick on asphalt; cars parked in bays beyond a kerb and grass"
+  }
+ },
+ "000000259640.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "unclear",
+   "P0-H2": "unclear",
+   "P1-H0": "unclear",
+   "P1-H1": "person",
+   "P1-H2": "unclear",
+   "P2-H0": "unclear",
+   "P2-H1": "unclear",
+   "P2-H2": "unclear",
+   "P2-H3": "unclear",
+   "P2-H4": "unclear",
+   "P3-H1": "unclear",
+   "P4-H2": "unclear",
+   "P4-H3": "unclear",
+   "P5-H2": "unclear",
+   "P5-H3": "person",
+   "P5-H4": "unclear",
+   "P6-H2": "unclear",
+   "P6-H3": "person",
+   "P6-H4": "unclear",
+   "P7-H3": "unclear",
+   "P7-H4": "hazard",
+   "P8-H4": "hazard"
+  },
+  "roles": {
+   "P2": [
+    "rider",
+    "H2"
+   ]
+  },
+  "traffic_area": {
+   "H0": "no",
+   "H1": "no",
+   "H3": "no",
+   "H4": "no"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road",
+   "P5": "off_road",
+   "P6": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked",
+   "H3": "parked",
+   "H4": "parked"
+  },
+  "notes": {
+   "image": "street market; a tamale truck parked, a group of cyclists stopped with their bikes"
+  }
+ },
+ "000000287291.jpg": {
+  "scene": "crossing",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "hazard",
+   "P0-H1": "hazard",
+   "P1-H0": "hazard",
+   "P1-H1": "hazard",
+   "P2-H2": "person",
+   "P2-H3": "person",
+   "P3-H2": "unclear",
+   "P3-H3": "unclear",
+   "P3-H4": "unclear",
+   "P3-H5": "unclear",
+   "P4-H3": "unclear",
+   "P4-H4": "person",
+   "P4-H5": "unclear",
+   "P5-H4": "unclear",
+   "P5-H5": "hazard",
+   "P5-H6": "unclear",
+   "P5-H7": "unclear",
+   "P5-H8": "unclear"
+  },
+  "roles": {
+   "P5": [
+    "occupant",
+    "H5"
+   ]
+  },
+  "traffic_area": {
+   "H2": "yes",
+   "H4": "yes"
+  },
+  "person_area": {
+   "P2": "off_road",
+   "P4": "off_road"
+  },
+  "notes": {
+   "image": "San Francisco junction at a don't-walk signal; people waiting on the kerbs, traffic in the junction"
+  }
+ },
+ "000000160012.jpg": {
+  "scene": "safe",
+  "lighting": "night",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "yes"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "notes": {
+   "image": "girl eating pizza at a terrace table at night; a car in the street behind"
+  }
+ },
+ "000000480021.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "unclear",
+   "P1-H0": "unclear",
+   "P1-H1": "unclear",
+   "P1-H2": "unclear",
+   "P2-H2": "unclear",
+   "P2-H3": "unclear",
+   "P3-H2": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "depiction",
+    null
+   ],
+   "P1": [
+    "depiction",
+    null
+   ],
+   "P2": [
+    "depiction",
+    null
+   ],
+   "P3": [
+    "depiction",
+    null
+   ]
+  },
+  "notes": {
+   "image": "vintage Triumph poster painting: motorcyclists at a petrol station"
+  },
+  "not_vehicle": [
+   "H0",
+   "H1",
+   "H2",
+   "H3"
+  ]
+ },
+ "000000537506.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "rain",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P1-H1": "person",
+   "P3-H2": "person"
+  },
+  "traffic_area": {
+   "H0": "yes",
+   "H2": "yes"
+  },
+  "person_area": {
+   "P0": "road",
+   "P1": "road",
+   "P3": "off_road"
+  },
+  "motion": {
+   "H0": "stopped"
+  },
+  "confidence": {
+   "P0": "medium",
+   "P1": "medium"
+  },
+  "notes": {
+   "P0": "standing in the street (yellow edge lines) in front of the wedding car, which faces her",
+   "P1": "the bride, standing on the road edge in front of the wedding car",
+   "image": "wedding in the rain: guests and the bride in the street by a decorated car"
+  }
+ },
+ "000000009891.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P0-H2": "person",
+   "P1-H0": "person",
+   "P1-H1": "person",
+   "P1-H2": "person",
+   "P1-H3": "person",
+   "P2-H3": "hazard",
+   "P3-H3": "hazard"
+  },
+  "roles": {
+   "P2": [
+    "occupant",
+    "H3"
+   ],
+   "P3": [
+    "occupant",
+    "H3"
+   ]
+  },
+  "traffic_area": {
+   "H0": "yes",
+   "H1": "yes",
+   "H2": "yes",
+   "H3": "yes"
+  },
+  "person_area": {
+   "P0": "road",
+   "P1": "road"
+  },
+  "distant": [
+   "P0-H0",
+   "P0-H1",
+   "P1-H0",
+   "P1-H1",
+   "P1-H2"
+  ],
+  "motion": {
+   "H3": "stopped"
+  },
+  "confidence": {
+   "P1": "medium"
+  },
+  "notes": {
+   "P1": "unloading luggage on the crossing stripes of the pickup lane, beside the stopped SUV",
+   "P0": "with a luggage trolley on the pickup lane; the cars he overlaps are far down the garage",
+   "image": "airport garage pickup lane: travellers unloading bags from an SUV stopped with its doors open"
+  }
+ },
+ "000000326541.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P2-H0": "unclear",
+   "P3-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "yes"
+  },
+  "person_area": {
+   "P0": "unclear",
+   "P1": "unclear",
+   "P3": "unclear"
+  },
+  "notes": {
+   "image": "Manhattan crowd filming with phones; a car's tail lights between them; pavement or street cannot be told"
+  }
+ },
+ "000000200961.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P1-H0": "unclear",
+   "P1-H1": "unclear"
+  },
+  "traffic_area": {
+   "H0": "no"
+  },
+  "person_area": {
+   "P1": "off_road"
+  },
+  "motion": {
+   "H0": "parked",
+   "H1": "parked"
+  },
+  "notes": {
+   "image": "man diving for a frisbee on a campground lawn; trucks and RVs parked far off"
+  }
+ },
+ "000000085376.jpg": {
+  "scene": "beside_parked",
+  "lighting": "dawn_dusk",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "person",
+   "P0-H2": "unclear",
+   "P0-H3": "unclear"
+  },
+  "traffic_area": {
+   "H1": "no"
+  },
+  "person_area": {
+   "P0": "unclear"
+  },
+  "motion": {
+   "H1": "parked",
+   "H2": "parked"
+  },
+  "notes": {
+   "image": "car-park pay station at dusk; a sports motorcycle parked, a person at the left edge among parked cars"
+  }
+ },
+ "000000433204.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P1-H0": "unclear",
+   "P2-H1": "person",
+   "P2-H2": "person",
+   "P3-H1": "person",
+   "P3-H2": "person",
+   "P4-H1": "person",
+   "P4-H2": "person"
+  },
+  "roles": {
+   "P0": [
+    "rider",
+    "H0"
+   ],
+   "P1": [
+    "rider",
+    "H0"
+   ]
+  },
+  "traffic_area": {
+   "H1": "no",
+   "H2": "no"
+  },
+  "person_area": {
+   "P2": "road",
+   "P4": "road"
+  },
+  "motion": {
+   "H1": "parked",
+   "H2": "parked"
+  },
+  "notes": {
+   "image": "motorcyclist riding along a business-park road; instructors in hi-vis standing at the road edge by parked cars"
+  }
+ },
+ "000000005037.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P3-H0": "unclear",
+   "P4-H0": "hazard",
+   "P5-H0": "unclear",
+   "P5-H1": "unclear",
+   "P5-H2": "unclear",
+   "P6-H0": "person",
+   "P6-H1": "person",
+   "P6-H2": "person"
+  },
+  "roles": {
+   "P4": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "traffic_area": {
+   "H1": "yes",
+   "H2": "yes"
+  },
+  "person_area": {
+   "P5": "unclear"
+  },
+  "motion": {
+   "H0": "stopped"
+  },
+  "notes": {
+   "P5": "small figure far behind the bus by two cars",
+   "image": "bus pulling into a bus stop lane; its driver in the cab, pedestrians on the pavements"
+  }
+ },
+ "000000316054.jpg": {
+  "scene": "small_distant",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P0-H1": "person",
+   "P0-H2": "unclear"
+  },
+  "traffic_area": {
+   "H1": "unclear"
+  },
+  "person_area": {
+   "P0": "unclear"
+  },
+  "notes": {
+   "P0": "tiny figure by a railcar far off at the station throat",
+   "image": "heritage steam train on a rural line; sidings"
+  }
+ },
+ "000000411938.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P1-H1": "person",
+   "P1-H2": "person",
+   "P2-H0": "unclear",
+   "P2-H1": "unclear",
+   "P2-H2": "person",
+   "P2-H3": "person",
+   "P3-H1": "person",
+   "P3-H2": "person",
+   "P3-H3": "person",
+   "P4-H1": "unclear",
+   "P4-H2": "unclear",
+   "P4-H3": "unclear",
+   "P4-H4": "unclear",
+   "P4-H5": "unclear",
+   "P5-H3": "unclear",
+   "P5-H5": "unclear",
+   "P6-H3": "unclear",
+   "P6-H4": "unclear",
+   "P6-H5": "unclear"
+  },
+  "roles": {
+   "P2": [
+    "rider",
+    "H1"
+   ],
+   "P4": [
+    "rider",
+    "H3"
+   ],
+   "P5": [
+    "rider",
+    null
+   ],
+   "P6": [
+    "rider",
+    "H5"
+   ]
+  },
+  "traffic_area": {
+   "H2": "yes",
+   "H3": "yes"
+  },
+  "person_area": {
+   "P1": "off_road",
+   "P3": "off_road"
+  },
+  "notes": {
+   "image": "Amsterdam street; people at a cafe terrace by the cycle path, cyclists riding past"
+  }
+ },
+ "000000356424.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person",
+   "P2-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "unclear"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P2": "off_road"
+  },
+  "barrier": [
+   "P0-H0",
+   "P2-H0"
+  ],
+  "notes": {
+   "image": "man at a cafe table indoors; a car outside the window"
+  }
+ },
+ "000000538364.jpg": {
+  "scene": "crossing",
+  "lighting": "night",
+  "weather": "clear",
+  "nearer": {
+   "P2-H0": "hazard",
+   "P2-H1": "unclear",
+   "P3-H0": "unclear",
+   "P3-H1": "unclear",
+   "P4-H0": "unclear",
+   "P4-H1": "unclear",
+   "P5-H0": "unclear",
+   "P5-H1": "unclear",
+   "P6-H0": "person",
+   "P6-H1": "unclear",
+   "P6-H2": "unclear",
+   "P6-H3": "unclear",
+   "P6-H4": "unclear",
+   "P7-H0": "unclear",
+   "P7-H1": "unclear",
+   "P8-H0": "unclear",
+   "P8-H1": "unclear",
+   "P9-H1": "person",
+   "P9-H2": "unclear",
+   "P9-H4": "unclear"
+  },
+  "roles": {
+   "P6": [
+    "rider",
+    "H1"
+   ]
+  },
+  "traffic_area": {
+   "H0": "yes"
+  },
+  "person_area": {
+   "P7": "unclear"
+  },
+  "notes": {
+   "P0": "walking across the junction on the far side, clear of all vehicles",
+   "image": "Montreal junction at night; a police motorcyclist stopped by the kerb, pedestrians crossing"
+  }
+ },
+ "000000394206.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H1": "hazard",
+   "P1-H1": "hazard",
+   "P2-H1": "hazard",
+   "P3-H1": "hazard",
+   "P4-H1": "hazard",
+   "P5-H1": "hazard",
+   "P6-H1": "hazard",
+   "P7-H1": "hazard",
+   "P8-H1": "hazard",
+   "P8-H2": "unclear",
+   "P8-H3": "unclear",
+   "P9-H3": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H1"
+   ],
+   "P1": [
+    "occupant",
+    "H1"
+   ],
+   "P2": [
+    "occupant",
+    "H1"
+   ],
+   "P3": [
+    "occupant",
+    "H1"
+   ],
+   "P4": [
+    "occupant",
+    "H1"
+   ],
+   "P5": [
+    "occupant",
+    "H1"
+   ],
+   "P6": [
+    "occupant",
+    "H1"
+   ],
+   "P7": [
+    "occupant",
+    "H1"
+   ],
+   "P8": [
+    "occupant",
+    "H1"
+   ],
+   "P9": [
+    "rider",
+    null
+   ]
+  },
+  "notes": {
+   "image": "Bali procession: men riding on the back of a truck; a motorcyclist at the corner"
+  }
+ },
+ "000000399205.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P1-H0": "person"
+  },
+  "traffic_area": {
+   "H0": "yes"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "barrier": [
+   "P0-H0"
+  ],
+  "notes": {
+   "image": "group on a Barcelona pavement behind crowd barriers; scooters in the road beyond"
+  }
+ },
+ "000000301135.jpg": {
+  "scene": "crowded",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P0-H2": "person",
+   "P1-H0": "person",
+   "P1-H1": "person",
+   "P1-H2": "person",
+   "P1-H3": "person",
+   "P2-H1": "person",
+   "P2-H2": "person",
+   "P2-H3": "person",
+   "P3-H1": "person",
+   "P3-H2": "person",
+   "P3-H3": "person",
+   "P4-H1": "person",
+   "P4-H2": "person",
+   "P4-H3": "person",
+   "P5-H3": "person",
+   "P5-H4": "person",
+   "P6-H4": "person",
+   "P7-H4": "unclear",
+   "P8-H4": "unclear",
+   "P10-H4": "unclear"
+  },
+  "traffic_area": {
+   "H0": "yes",
+   "H1": "no",
+   "H3": "yes",
+   "H4": "yes"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road",
+   "P4": "off_road",
+   "P10": "off_road"
+  },
+  "notes": {
+   "image": "Paris square with benches; people sitting and standing, traffic in the street beyond railings"
+  }
+ },
+ "000000396200.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person",
+   "P1-H1": "person",
+   "P1-H2": "person",
+   "P1-H3": "person"
+  },
+  "traffic_area": {
+   "H0": "yes",
+   "H1": "yes",
+   "H2": "yes"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road"
+  },
+  "notes": {
+   "image": "two skateboarders on a wide plaza, one filming; cars on the road far beyond"
+  }
+ },
+ "000000419408.jpg": {
+  "scene": "safe",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P0-H1": "person",
+   "P0-H2": "person",
+   "P1-H3": "person"
+  },
+  "traffic_area": {
+   "H2": "yes",
+   "H3": "yes"
+  },
+  "person_area": {
+   "P0": "off_road",
+   "P1": "off_road"
+  },
+  "notes": {
+   "image": "skateboarder jumping a park chain; a man on a bench; cars on the street beyond the park"
+  }
+ },
+ "000000172648.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P1-H1": "person"
+  },
+  "traffic_area": {
+   "H1": "yes"
+  },
+  "person_area": {
+   "P1": "road"
+  },
+  "confidence": {
+   "P1": "medium"
+  },
+  "motion": {
+   "H1": "stopped"
+  },
+  "notes": {
+   "P1": "road worker standing in the carriageway at the side of a tipper truck stopped in the road (as the sanitation worker in 000000334006.jpg)",
+   "image": "London street; a works truck stopped at the kerb side of the road, workers in hi-vis"
+  }
+ },
+ "000000453841.jpg": {
+  "scene": "safe",
+  "lighting": "dawn_dusk",
+  "weather": "clear",
+  "nearer": {
+   "P0-H4": "hazard",
+   "P1-H4": "hazard",
+   "P1-H5": "unclear"
+  },
+  "roles": {
+   "P0": [
+    "occupant",
+    "H4"
+   ]
+  },
+  "notes": {
+   "P1": "pedestrian beyond the car's right tail light, partly hidden by it",
+   "image": "dusk traffic stopped at a red light, seen from a car behind"
+  },
+  "traffic_area": {
+   "H5": "yes"
+  },
+  "person_area": {
+   "P1": "unclear"
+  }
+ },
+ "000000369812.jpg": {
+  "scene": "small_distant",
+  "lighting": "day",
+  "weather": "clear",
+  "nearer": {
+   "P1-H0": "unclear",
+   "P2-H0": "unclear",
+   "P2-H1": "unclear",
+   "P3-H0": "unclear",
+   "P3-H1": "unclear",
+   "P4-H0": "unclear",
+   "P4-H1": "unclear",
+   "P4-H2": "unclear",
+   "P5-H0": "person",
+   "P5-H1": "unclear",
+   "P5-H2": "unclear",
+   "P6-H4": "unclear",
+   "P6-H5": "hazard",
+   "P6-H6": "hazard"
+  },
+  "traffic_area": {
+   "H0": "yes"
+  },
+  "person_area": {
+   "P5": "off_road"
+  },
+  "notes": {
+   "image": "Tottenham High Road; small figures at a bus stop on the left pavement, traffic in the road"
+  }
+ },
+ "000000233727.jpg": {
+  "scene": "beside_parked",
+  "lighting": "day",
+  "weather": "unclear",
+  "nearer": {
+   "P0-H0": "unclear",
+   "P1-H0": "unclear",
+   "P2-H0": "hazard",
+   "P3-H0": "hazard",
+   "P4-H0": "unclear",
+   "P4-H1": "person",
+   "P4-H2": "person",
+   "P4-H3": "person",
+   "P4-H4": "person",
+   "P4-H5": "unclear",
+   "P5-H0": "unclear",
+   "P5-H1": "unclear",
+   "P5-H2": "unclear",
+   "P5-H3": "person",
+   "P5-H4": "person",
+   "P5-H5": "person",
+   "P5-H6": "unclear",
+   "P5-H7": "unclear",
+   "P6-H1": "unclear",
+   "P6-H2": "unclear",
+   "P6-H3": "unclear",
+   "P6-H4": "unclear",
+   "P6-H5": "unclear",
+   "P6-H6": "unclear",
+   "P6-H7": "unclear",
+   "P7-H2": "unclear",
+   "P7-H3": "unclear",
+   "P7-H4": "unclear",
+   "P7-H5": "unclear",
+   "P7-H6": "unclear",
+   "P7-H7": "unclear",
+   "P8-H5": "unclear",
+   "P8-H6": "unclear",
+   "P8-H7": "person",
+   "P8-H8": "person"
+  },
+  "roles": {
+   "P2": [
+    "occupant",
+    "H0"
+   ],
+   "P3": [
+    "occupant",
+    "H0"
+   ]
+  },
+  "traffic_area": {
+   "H1": "no",
+   "H2": "no",
+   "H3": "no",
+   "H4": "no",
+   "H5": "no",
+   "H7": "no",
+   "H8": "no"
+  },
+  "person_area": {
+   "P4": "off_road",
+   "P5": "off_road",
+   "P8": "off_road"
+  },
+  "confidence": {
+   "P4": "medium",
+   "P5": "medium",
+   "P8": "medium"
+  },
+  "motion": {
+   "H0": "stopped"
+  },
+  "notes": {
+   "image": "Leiden bus at a station crossing with its driver and a passenger; children and a woman standing with bicycles on the paved square"
+  }
+ },
+ "000000100624.jpg": {
+  "scene": "safe",
+  "lighting": "night",
+  "weather": "clear",
+  "nearer": {
+   "P0-H0": "person",
+   "P0-H1": "person"
+  },
+  "traffic_area": {
+   "H0": "unclear",
+   "H1": "yes"
+  },
+  "person_area": {
+   "P0": "off_road"
+  },
+  "notes": {
+   "image": "woman on the phone on a night pavement; a car at the kerb behind her"
+  }
+ }
+}
