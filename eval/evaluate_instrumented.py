@@ -1,10 +1,10 @@
 """Instrumented version of evaluate.py that captures detailed intermediate outputs.
 
-CHANGES FROM ORIGINAL:
-1. Saves detailed per-image JSON with detections, facts, transcripts
-2. Matches ground truth to system outputs explicitly
-3. Records all intermediate representations for error attribution
-4. Preserves exact same evaluation logic and metrics
+It shares evaluate.py's matching and scoring (null labels are ignored, see evaluate.score) and adds:
+1. a detailed per-image JSONL with detections, facts, statements and SNePS output
+2. explicit matching of ground truth to detections, for error attribution
+3. hidden(x) scored against hidden labels where the annotations have them
+4. image-level recall of dangerous(x), and danger metrics per sampling stratum (Phase 4 sets)
 
 Usage: python eval/evaluate_instrumented.py [same args as evaluate.py]
 
@@ -24,61 +24,21 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "eval"))
 
+from evaluate import QUERIES, QUESTIONS, cue, image_path, match, prf, ratio, score  # noqa: E402
 from yolo_sneps.backends import AllegroBatchBackend, SnepspacyBackend  # noqa: E402
 from yolo_sneps.pipeline import describe  # noqa: E402
-from yolo_sneps.relations import focus_pairs, relations  # noqa: E402
-from yolo_sneps.scene import Detection, iou  # noqa: E402
-from yolo_sneps.snepslog import load_rules, parse_answers, scene_statements  # noqa: E402
+from yolo_sneps.relations import focus_pairs  # noqa: E402
+from yolo_sneps.scene import iou  # noqa: E402
+from yolo_sneps.snepslog import load_rules, parse_answers  # noqa: E402
 
-QUESTIONS = ("dangerous", "alert", "hidden")
-QUERIES = [f"{q}(?x)" for q in QUESTIONS]
-
-
-def image_path(item, coco_dir):
-    return (ROOT / "examples" / item["file"]) if item["source"] == "examples" else coco_dir / "images/train2017" / item["file"]
+STRATA_KEY = ("coco_split", "stratum")
 
 
-def match(predicted, truth, threshold=0.5):
-    """Greedy one-to-one matching by IoU: {predicted index: truth index}."""
-    pairs = sorted(((iou(p, t), i, j) for i, p in enumerate(predicted) for j, t in enumerate(truth)), reverse=True)
-    used_p, used_t, result = set(), set(), {}
-    for score, i, j in pairs:
-        if score >= threshold and i not in used_p and j not in used_t:
-            result[i] = j
-            used_p.add(i)
-            used_t.add(j)
-    return result
-
-
-def cue(person_box, hazard_box, height):
-    """What the infrontof cue says about a person and a hazard: 'person', 'hazard' or 'none'."""
-    p, h = Detection("p", "person", tuple(person_box), 1.0), Detection("h", "hazard", tuple(hazard_box), 1.0)
-    facts = set(relations([p, h], height))
-    if ("infrontof", "p", "h") in facts:
-        return "person"
-    if ("infrontof", "h", "p") in facts:
-        return "hazard"
-    return "none"
-
-
-def score(flagged, people, persons):
-    """(tp, fp, fn) of the flagged labels against the annotated dangerous people."""
-    flagged_people = [d for d in people if d.label in flagged]
-    hits = match([d.box for d in flagged_people], [p["box"] for p in persons])
-    tp = sum(persons[j]["dangerous"] for j in hits.values())
-    return tp, len(flagged_people) - tp, sum(p["dangerous"] for p in persons) - tp
-
-
-def prf(tp, fp, fn):
-    precision = tp / (tp + fp) if tp + fp else 0.0
-    recall = tp / (tp + fn) if tp + fn else 0.0
-    f1 = 2 * precision * recall / (precision + recall) if precision + recall else 0.0
-    return round(precision, 3), round(recall, 3), round(f1, 3)
-
-
-def ratio(a, b):
-    return f"{a}/{b} = {a / b:.0%}" if b else f"{a}/0"
+def stratum_of(item):
+    """The image's sampling stratum (Phase 4 sets), or its source (baseline)."""
+    return " ".join(item[k] for k in STRATA_KEY) if "stratum" in item else item["source"]
 
 
 def ask(session, statements):
@@ -150,6 +110,7 @@ def main():
     parser.add_argument("--rules", help="default: kb/danger.snepslog, danger_road.snepslog with --road, "
                                         "danger_english.snepslog with --route english")
     parser.add_argument("--road", action="store_true", help="assert onroad/onsidewalk from road segmentation")
+    parser.add_argument("--riders", action="store_true", help="assert rides(p, v) and pedestrian(p) (for the rider rules)")
     parser.add_argument("--route", choices=["typed", "english"], default="typed")
     parser.add_argument("--backend", choices=["allegro", "snepspacy"],
                         default="snepspacy" if os.environ.get("SNEPSPACY_DIR") else "allegro")
@@ -174,6 +135,7 @@ def main():
         "conf": args.conf,
         "rules": str(args.rules) if args.rules else None,
         "road": args.road,
+        "riders": args.riders,
         "route": args.route,
         "backend": args.backend,
         "annotations_file": args.annotations,
@@ -211,7 +173,9 @@ def main():
 
     totals = {"gt_persons": 0, "found": 0, "pairs": 0, "pairs_correct": 0, "pairs_none": 0,
               "dangerous": [0, 0, 0], "alert": [0, 0, 0], "hidden": 0, "errors": 0, "agree": 0,
-              "warnings": 0, "yolo_seconds": 0.0, "sneps_seconds": 0.0, "translate_seconds": 0.0}
+              "warnings": 0, "yolo_seconds": 0.0, "sneps_seconds": 0.0, "translate_seconds": 0.0,
+              "hidden_tp_fp_fn": [0, 0, 0], "images_dangerous": 0, "images_dangerous_found": 0}
+    by_stratum = {}
     rows = []
     detailed_rows = []
     
@@ -239,7 +203,7 @@ def main():
             totals["yolo_seconds"] += yolo_time
             
             detections, facts, scene = describe(result, conf=args.conf, pair_filter=focus_pairs({"person"}),
-                                                road_model=road_model)
+                                                road_model=road_model, find_riders=args.riders)
             
             # Match ground truth to detections
             matched_persons = match_ground_truth_to_detections(item["persons"], detections)
@@ -248,6 +212,7 @@ def main():
             detailed_row = {
                 "image": item["file"],
                 "source": item["source"],
+                "stratum": stratum_of(item),
                 "image_height": height,
                 "ground_truth": {
                     "persons": item["persons"],
@@ -311,13 +276,24 @@ def main():
                 totals["gt_persons"] += len(truth)
                 totals["found"] += len(match([d.box for d in people], truth))
             
-            counts = {q: score(answers[q], people, item["persons"]) for q in ("dangerous", "alert")}
-            for q, c in counts.items():
-                totals[q] = [a + b for a, b in zip(totals[q], c)]
+            counts = {q: score(answers[q], people, item["persons"], "hidden" if q == "hidden" else "dangerous")
+                      for q in QUESTIONS}
+            for q in ("dangerous", "alert"):
+                totals[q] = [a + b for a, b in zip(totals[q], counts[q])]
+            totals["hidden_tp_fp_fn"] = [a + b for a, b in zip(totals["hidden_tp_fp_fn"], counts["hidden"])]
             totals["hidden"] += len(answers["hidden"])
-            
+            positive = any(p["dangerous"] is True for p in item["persons"])
+            totals["images_dangerous"] += positive
+            totals["images_dangerous_found"] += positive and counts["dangerous"][0] > 0
+            s = by_stratum.setdefault(stratum_of(item), {"images": 0, "danger_tp_fp_fn": [0, 0, 0],
+                                                          "images_dangerous": 0, "images_dangerous_found": 0})
+            s["images"] += 1
+            s["danger_tp_fp_fn"] = [a + b for a, b in zip(s["danger_tp_fp_fn"], counts["dangerous"])]
+            s["images_dangerous"] += positive
+            s["images_dangerous_found"] += positive and counts["dangerous"][0] > 0
+
             row.update({"persons": len(truth), "detected": len(match([d.box for d in people], truth)),
-                        "dangerous": sum(p["dangerous"] for p in item["persons"]),
+                        "dangerous": sum(p["dangerous"] is True for p in item["persons"]),
                         "flagged": sorted(answers["dangerous"]), "alert": sorted(answers["alert"]),
                         "hidden": sorted(answers["hidden"]), "tp_fp_fn": list(counts["dangerous"]),
                         "alert_tp_fp_fn": list(counts["alert"]), "errors": len(errors)})
@@ -332,6 +308,7 @@ def main():
             detailed_row["evaluation"] = {
                 "dangerous": {"tp": counts["dangerous"][0], "fp": counts["dangerous"][1], "fn": counts["dangerous"][2]},
                 "alert": {"tp": counts["alert"][0], "fp": counts["alert"][1], "fn": counts["alert"][2]},
+                "hidden": {"tp": counts["hidden"][0], "fp": counts["hidden"][1], "fn": counts["hidden"][2]},
                 "persons_detected": len(match([d.box for d in people], truth)),
                 "persons_ground_truth": len(truth)
             }
@@ -345,7 +322,7 @@ def main():
     summary = {
         "model": Path(args.model).name, "imgsz": args.imgsz, "conf": args.conf,
         "rules": rules_path.name,
-        "route": args.route, "road": args.road, "backend": args.backend, "images": n,
+        "route": args.route, "road": args.road, "riders": args.riders, "backend": args.backend, "images": n,
         "person_recall_coco128": ratio(t["found"], t["gt_persons"]),
         "infrontof_accuracy": ratio(t["pairs_correct"], t["pairs"]),
         "infrontof_no_answer": ratio(t["pairs_none"], t["pairs"]),
@@ -354,6 +331,9 @@ def main():
         "alert_tp_fp_fn": t["alert"],
         **dict(zip(("alert_precision", "alert_recall", "alert_f1"), prf(*t["alert"]))),
         "hidden_flagged": t["hidden"],
+        "hidden_tp_fp_fn": t["hidden_tp_fp_fn"],
+        **dict(zip(("hidden_precision", "hidden_recall", "hidden_f1"), prf(*t["hidden_tp_fp_fn"]))),
+        "image_recall_dangerous": ratio(t["images_dangerous_found"], t["images_dangerous"]),
         "images_with_sneps_errors": t["errors"],
         "yolo_seconds_per_image": round(t["yolo_seconds"] / n, 3),
         "sneps_seconds_per_image": round(t["sneps_seconds"] / n, 3),
@@ -362,14 +342,21 @@ def main():
         summary.update({"translate_seconds_per_image": round(t["translate_seconds"] / n, 3),
                         "translation_warnings": t["warnings"],
                         "same_answers_as_typed_route": ratio(t["agree"], n)})
-    
+    summary["by_stratum"] = {k: {**v, **dict(zip(("danger_precision", "danger_recall", "danger_f1"),
+                                                 prf(*v["danger_tp_fp_fn"])))} for k, v in by_stratum.items()}
+
     out = ROOT / "eval" / "results"
     out.mkdir(exist_ok=True)
     
     # Original format outputs (for regression testing)
     json.dump({"summary": summary, "images": rows}, open(out / f"{name}.json", "w", encoding="utf-8"), indent=1)
     md = [f"# Evaluation: {name}", "", "| Measure | Value |", "|---|---|"]
-    md += [f"| {k} | {v} |" for k, v in summary.items()]
+    md += [f"| {k} | {v} |" for k, v in summary.items() if k != "by_stratum"]
+    md += ["", "| Stratum | Images | TP / FP / FN | Precision | Recall | Images with a dangerous person found |",
+           "|---|---|---|---|---|---|"]
+    md += [f"| {k} | {v['images']} | {' / '.join(map(str, v['danger_tp_fp_fn']))} | {v['danger_precision']} | "
+           f"{v['danger_recall']} | {ratio(v['images_dangerous_found'], v['images_dangerous'])} |"
+           for k, v in summary["by_stratum"].items()]
     md += ["", "| Image | People | Detected | Dangerous | Flagged | Alert | Hidden | TP | FP | FN |",
            "|---|---|---|---|---|---|---|---|---|---|"]
     md += [f"| {r['image']} | {r['persons']} | {r['detected']} | {r['dangerous']} | {', '.join(r['flagged']) or '-'} | "

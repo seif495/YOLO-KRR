@@ -7,6 +7,7 @@ Reads the per-image records written by evaluate_instrumented.py and attributes e
 dangerous(x) answer:
   FP  a flagged person detection matched to a person annotated safe, or matched to nobody
   FN  a person annotated dangerous whom no flagged detection matches
+A person whose label is null (ambiguous) is never an error, as in evaluate.score.
 Errors are found with the evaluator's own matching (evaluate.match on the flagged people, as
 evaluate.score does) against the ground truth stored in the records, so they are exactly the
 TP/FP/FN the evaluator counted. The counts are reconciled per image with the records and in total
@@ -318,10 +319,10 @@ def image_errors(scene):
     errors = []
     for d in scene.people:
         j = scene.scored.get(d["label"])
-        if d["label"] in scene.flagged and (j is None or not scene.truth["persons"][j]["dangerous"]):
+        if d["label"] in scene.flagged and (j is None or scene.truth["persons"][j]["dangerous"] is False):
             errors.append(attribute_fp(scene, d["label"]))
     hit = set(scene.scored.values())
-    errors += [attribute_fn(scene, j) for j, p in enumerate(scene.truth["persons"]) if p["dangerous"] and j not in hit]
+    errors += [attribute_fn(scene, j) for j, p in enumerate(scene.truth["persons"]) if p["dangerous"] is True and j not in hit]
     return errors
 
 
@@ -334,7 +335,7 @@ def analyze(records, hazards, summary=None):
     for record in records:
         scene = Scene(record, hazards)
         found = image_errors(scene)
-        tp = sum(scene.truth["persons"][j]["dangerous"] for j in scene.scored.values())
+        tp = sum(scene.truth["persons"][j]["dangerous"] is True for j in scene.scored.values())
         counts = [tp, sum(e["type"] == "FP" for e in found), sum(e["type"] == "FN" for e in found)]
         reported = [record["evaluation"]["dangerous"][k] for k in ("tp", "fp", "fn")]
         if counts != reported:

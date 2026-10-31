@@ -38,7 +38,13 @@ QUERIES = [f"{q}(?x)" for q in QUESTIONS]
 
 
 def image_path(item, coco_dir):
-    return (ROOT / "examples" / item["file"]) if item["source"] == "examples" else coco_dir / "images/train2017" / item["file"]
+    """examples/ for the example images, coco128 for the baseline's COCO images, and
+    <datasets_dir>/coco_<split>/images for the Phase 4 sets (source coco_val2017 or coco_train2017)."""
+    if item["source"] == "examples":
+        return ROOT / "examples" / item["file"]
+    if item["source"] == "coco128":
+        return coco_dir / "images/train2017" / item["file"]
+    return coco_dir.parent / item["source"] / "images" / item["file"]
 
 
 def match(predicted, truth, threshold=0.5):
@@ -64,12 +70,18 @@ def cue(person_box, hazard_box, height):
     return "none"
 
 
-def score(flagged, people, persons):
-    """(tp, fp, fn) of the flagged labels against the annotated dangerous people."""
+def score(flagged, people, persons, key="dangerous"):
+    """(tp, fp, fn) of the flagged labels against the people annotated true for `key`.
+
+    A person whose label is null (ambiguous) is ignored: a flagged detection matched to them counts
+    as neither TP nor FP, and they are never a FN. People without the key (the baseline has no
+    hidden labels) count as false.
+    """
     flagged_people = [d for d in people if d.label in flagged]
     hits = match([d.box for d in flagged_people], [p["box"] for p in persons])
-    tp = sum(persons[j]["dangerous"] for j in hits.values())
-    return tp, len(flagged_people) - tp, sum(p["dangerous"] for p in persons) - tp
+    tp = sum(persons[j].get(key, False) is True for j in hits.values())
+    ignored = sum(key in persons[j] and persons[j][key] is None for j in hits.values())
+    return tp, len(flagged_people) - tp - ignored, sum(p.get(key, False) is True for p in persons) - tp
 
 
 def prf(tp, fp, fn):
@@ -181,7 +193,7 @@ def main():
                 totals[q] = [a + b for a, b in zip(totals[q], c)]
             totals["hidden"] += len(answers["hidden"])
             row.update({"persons": len(truth), "detected": len(match([d.box for d in people], truth)),
-                        "dangerous": sum(p["dangerous"] for p in item["persons"]),
+                        "dangerous": sum(p["dangerous"] is True for p in item["persons"]),
                         "flagged": sorted(answers["dangerous"]), "alert": sorted(answers["alert"]),
                         "hidden": sorted(answers["hidden"]), "tp_fp_fn": list(counts["dangerous"]),
                         "alert_tp_fp_fn": list(counts["alert"]), "errors": len(errors)})
